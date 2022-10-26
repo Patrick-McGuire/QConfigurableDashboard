@@ -1,0 +1,3 @@
+/home/patrick/QConfigurableDashboard/cmake-build-debug/CMakeFiles/QConfigurableDashboard.dir
+/home/patrick/QConfigurableDashboard/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/patrick/QConfigurableDashboard/cmake-build-debug/CMakeFiles/rebuild_cache.dir
