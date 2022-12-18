@@ -1,18 +1,18 @@
-#ifndef QCONFIGURABLEDASHBOARD_PANELCOLLECTION_H
-#define QCONFIGURABLEDASHBOARD_PANELCOLLECTION_H
+#ifndef QCONFIGURABLEDASHBOARD_PANELCONTAINER_H
+#define QCONFIGURABLEDASHBOARD_PANELCONTAINER_H
 
 #include <QPainter>
 #include <QVBoxLayout>
 #include "vector"
 #include "../BaseWidget.h"
 #include "../../QCD.h"
-#include "BaseCollection.h"
+#include "BaseContainer.h"
 
 namespace QCD {
-    class PanelCollection : public BaseCollection {
+    class PanelContainer : public BaseContainer {
     Q_OBJECT
     public:
-        explicit PanelCollection();
+        explicit PanelContainer();
 
 
         bool addWidget(BaseWidget *baseWidget, int x = 0, int y = 0);
@@ -30,4 +30,4 @@ namespace QCD {
 }
 
 
-#endif //QCONFIGURABLEDASHBOARD_PANELCOLLECTION_H
+#endif //QCONFIGURABLEDASHBOARD_PANELCONTAINER_H

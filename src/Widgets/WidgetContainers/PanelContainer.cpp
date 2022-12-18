@@ -1,7 +1,7 @@
-#include "PanelCollection.h"
+#include "PanelContainer.h"
 #include "QPushButton"
 
-QCD::PanelCollection::PanelCollection() : BaseCollection() {
+QCD::PanelContainer::PanelContainer() : BaseContainer() {
     // Configure widget
     disableBorder();
     // Construct members
@@ -10,14 +10,14 @@ QCD::PanelCollection::PanelCollection() : BaseCollection() {
     setLayout(m_layout);
 }
 
-void QCD::PanelCollection::onUpdate(QCD::WidgetFocus focus) {
+void QCD::PanelContainer::onUpdate(QCD::WidgetFocus focus) {
     bool inFocus = focus == QCD::WidgetFocus::IN_FOCUS || focus == QCD::WidgetFocus::ON_IN_FOCUS;
     for (auto &childWidget: m_childWidgets) {
         childWidget->smartUpdate(inFocus);
     }
 }
 
-bool QCD::PanelCollection::addWidget(QCD::BaseWidget *baseWidget, int x, int y) {
+bool QCD::PanelContainer::addWidget(QCD::BaseWidget *baseWidget, int x, int y) {
     bool added = registerChildWidget(baseWidget);
     if (added) {
         baseWidget->move(x, y);
@@ -26,7 +26,7 @@ bool QCD::PanelCollection::addWidget(QCD::BaseWidget *baseWidget, int x, int y) 
     return false;
 }
 
-bool QCD::PanelCollection::setBackgroundWidget(BaseWidget *baseWidget, QFlags<Qt::AlignmentFlag> alignment) {
+bool QCD::PanelContainer::setBackgroundWidget(BaseWidget *baseWidget, QFlags<Qt::AlignmentFlag> alignment) {
     bool added = registerChildWidget(baseWidget);
     if (added) {
         removeChildWidget(m_backgroundWidget);

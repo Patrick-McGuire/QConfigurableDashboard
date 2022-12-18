@@ -13,7 +13,7 @@ execute_process(
         COMMAND scripts/compile_helper.bash ${CMAKE_SOURCE_DIR}
 )
 
-add_executable(QConfigurableDashboard main.cpp src/QConfigurableDashboard.cpp src/QConfigurableDashboard.h src/Widgets/BaseWidget.cpp src/Widgets/BaseWidget.h src/QCD.h src/Util/FlagVariable.h src/WidgetConfig.h src/GuiManager.cpp src/GuiManager.h src/Widgets/WidgetContainers/PanelCollection.cpp src/Widgets/WidgetContainers/PanelCollection.h src/Widgets/CustomWidgets/ButtonWidget.cpp src/Widgets/CustomWidgets/ButtonWidget.h src/Widgets/CustomWidgets/LineDisplayWidget.cpp src/Widgets/CustomWidgets/LineDisplayWidget.h src/Widgets/WidgetContainers/BaseCollection.cpp src/Widgets/WidgetContainers/BaseCollection.h)
+add_executable(QConfigurableDashboard main.cpp src/QConfigurableDashboard.cpp src/QConfigurableDashboard.h src/Widgets/BaseWidget.cpp src/Widgets/BaseWidget.h src/QCD.h src/Util/FlagVariable.h src/WidgetConfig.h src/GuiManager.cpp src/GuiManager.h src/Widgets/WidgetContainers/PanelContainer.cpp src/Widgets/WidgetContainers/PanelContainer.h src/Widgets/CustomWidgets/ButtonWidget.cpp src/Widgets/CustomWidgets/ButtonWidget.h src/Widgets/CustomWidgets/LineDisplayWidget.cpp src/Widgets/CustomWidgets/LineDisplayWidget.h src/Widgets/WidgetContainers/BaseContainer.cpp src/Widgets/WidgetContainers/BaseContainer.h)
 set(SOURCE_FILES main.cpp)
 include_directories(/usr/include/)
 

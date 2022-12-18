@@ -1,14 +1,14 @@
-#ifndef QCONFIGURABLEDASHBOARD_BASECOLLECTION_H
-#define QCONFIGURABLEDASHBOARD_BASECOLLECTION_H
+#ifndef QCONFIGURABLEDASHBOARD_BASECONTAINER_H
+#define QCONFIGURABLEDASHBOARD_BASECONTAINER_H
 
 #include "../BaseWidget.h"
 #include "vector"
 
 namespace QCD {
-    class BaseCollection : public BaseWidget {
+    class BaseContainer : public BaseWidget {
     Q_OBJECT
     public:
-        BaseCollection();
+        BaseContainer();
 
     protected:
         bool registerChildWidget(BaseWidget *a_childWidget);
@@ -22,4 +22,4 @@ namespace QCD {
 
 } // QCD
 
-#endif //QCONFIGURABLEDASHBOARD_BASECOLLECTION_H
+#endif //QCONFIGURABLEDASHBOARD_BASECONTAINER_H

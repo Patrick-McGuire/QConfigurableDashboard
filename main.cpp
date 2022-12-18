@@ -1,5 +1,5 @@
 #include "src/QConfigurableDashboard.h"
-#include "src/Widgets/WidgetContainers/PanelCollection.h"
+#include "src/Widgets/WidgetContainers/PanelContainer.h"
 #include "src/Widgets/CustomWidgets/ButtonWidget.h"
 #include "src/Widgets/CustomWidgets/LineDisplayWidget.h"
 #include "src/QCD.h"
@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
 
     QCD::QConfigurableDashboard dashboard(argc, argv);
 
-    auto *panelCollection = new QCD::PanelCollection();
+    auto *panelCollection = new QCD::PanelContainer();
     dashboard.setCentralWidget(panelCollection);
 
     auto *button = new QCD::ButtonWidget("Hi yall");
