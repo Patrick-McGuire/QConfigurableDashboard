@@ -21,11 +21,11 @@ namespace QCD {
     class QConfigurableDashboard : QObject {
     Q_OBJECT
     public:
-        QConfigurableDashboard(int argc, char **argv);
+        QConfigurableDashboard(int a_argc, char **a_argv);
 
         int run();
 
-        bool setCentralWidget(BaseWidget *widget, QFlags<Qt::AlignmentFlag> alignment = Qt::Alignment());
+        bool setCentralWidget(BaseWidget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 
     private slots:
         void updateGUI();

@@ -1,9 +1,9 @@
 #include "QConfigurableDashboard.h"
 
-QCD::QConfigurableDashboard::QConfigurableDashboard(int argc, char **argv) {
+QCD::QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv) {
     // Save these because why not
-    m_argv = argv;
-    m_argc = argc;
+    m_argv = a_argv;
+    m_argc = a_argc;
     // Construct core objects
     m_qApplication = new QApplication(m_argc, m_argv);
     m_mainWindow = new QMainWindow();
@@ -32,12 +32,12 @@ int QCD::QConfigurableDashboard::run() {
     return out;
 }
 
-bool QCD::QConfigurableDashboard::setCentralWidget(QCD::BaseWidget *widget, QFlags<Qt::AlignmentFlag> alignment) {
-    if (widget != nullptr) {
+bool QCD::QConfigurableDashboard::setCentralWidget(QCD::BaseWidget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment) {
+    if (a_widget != nullptr) {
         m_layout->removeWidget(m_centralWidget);
         delete m_centralWidget;
-        m_layout->addWidget(widget, 0, alignment);
-        m_centralWidget = widget;
+        m_layout->addWidget(a_widget, 0, a_alignment);
+        m_centralWidget = a_widget;
         m_centralWidget->disableFloating();
         m_centralWidget->setGuiManager(m_guiManager);
         return true;

@@ -56,5 +56,4 @@ namespace QCD {
     };
 }
 
-
 #endif //ROBOT_GUI_V3_BASEWIDGET_H
