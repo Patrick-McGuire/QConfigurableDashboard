@@ -29,4 +29,8 @@ namespace QCD {
         }
     }
 
+    bool BaseContainer::isInFocus(QCD::WidgetFocus focus) {
+        return focus == QCD::WidgetFocus::IN_FOCUS || focus == QCD::WidgetFocus::ON_IN_FOCUS;
+    }
+
 } // QCD

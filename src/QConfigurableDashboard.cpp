@@ -14,21 +14,30 @@ QCD::QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv) {
     m_mainWindow->setCentralWidget(m_window);
     m_mainWindow->show();
     m_window->show();
-    timer = new QTimer(this);
+    m_timer = new QTimer(this);
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
     // Leave null for now;
     m_centralWidget = nullptr;
     m_guiManager = new GuiManager();
 }
 
-int QCD::QConfigurableDashboard::run() {
-    m_centralWidget->run();
+QCD::QConfigurableDashboard::~QConfigurableDashboard() {
+    delete m_qApplication;
+    delete m_guiManager;
+}
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-    timer->start(100);
+int QCD::QConfigurableDashboard::run() {
+    // Start all the widgets
+    m_centralWidget->run();
+    // Start all the interfaces
+    for(auto & interface : m_interfaces) {
+        interface->run();
+    }
+    // Start the periodic updating of widgets
+    m_timer->start(100);
 
     // Runs QT main loop
     int out = QApplication::exec();
-
     return out;
 }
 
@@ -45,6 +54,17 @@ bool QCD::QConfigurableDashboard::setCentralWidget(QCD::BaseWidget *a_widget, QF
     return false;
 }
 
+bool QCD::QConfigurableDashboard::addInterface(QCD::BaseInterface *a_baseInterface) {
+    if (a_baseInterface != nullptr && std::find(m_interfaces.begin(), m_interfaces.end(), a_baseInterface) == m_interfaces.end()) {
+        m_interfaces.push_back(a_baseInterface);
+        a_baseInterface->setGuiManager(m_guiManager);
+        return true;
+    }
+    return false;
+}
+
 void QCD::QConfigurableDashboard::updateGUI() {
     m_centralWidget->smartUpdate(true);
 }
+
+

@@ -20,6 +20,7 @@ namespace QCD {
         bool setBackgroundWidget(BaseWidget *baseWidget, QFlags<Qt::AlignmentFlag> alignment = Qt::Alignment());
 
     protected:
+
         void onUpdate(QCD::WidgetFocus focus) override;
 
         // QT Members

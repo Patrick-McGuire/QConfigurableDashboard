@@ -15,6 +15,7 @@
 #include "QCD.h"
 #include "Widgets/BaseWidget.h"
 #include "GuiManager.h"
+#include "Interfaces/BaseInterface.h"
 
 
 namespace QCD {
@@ -23,9 +24,13 @@ namespace QCD {
     public:
         QConfigurableDashboard(int a_argc, char **a_argv);
 
+        ~QConfigurableDashboard();
+
         int run();
 
         bool setCentralWidget(BaseWidget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
+
+        bool addInterface(BaseInterface *a_baseInterface);
 
     private slots:
         void updateGUI();
@@ -40,10 +45,11 @@ namespace QCD {
         QMainWindow *m_mainWindow;
         QWidget *m_window;
         QVBoxLayout *m_layout;
-        QTimer *timer;
+        QTimer *m_timer;
         // Custom objects
         GuiManager *m_guiManager;
         BaseWidget *m_centralWidget;
+        std::vector<BaseInterface*> m_interfaces;
     };
 
 }

@@ -14,10 +14,15 @@ namespace QCD {
 
     void LineDisplayWidget::onUpdate(QCD::WidgetFocus focus) {
         if (focus == QCD::WidgetFocus::ON_IN_FOCUS || focus == QCD::WidgetFocus::IN_FOCUS) {
-            if(m_guiManager->getInputData().contains("KEY1") && m_guiManager->getInputData()["KEY1"].is_string()) {
-                m_textBox->setText(m_guiManager->getInputData()["KEY1"].get<std::string>().c_str());
-                adjustSize();
+            Json &dataJsonValue = m_guiManager->getInputData()["KEY5"];
+            if(dataJsonValue.is_string()) {
+                m_textBox->setText(dataJsonValue.get<std::string>().c_str());
+            } else if(dataJsonValue.is_number_integer()) {
+                m_textBox->setText(QString::number(dataJsonValue.get<int>()));
+            } else if(dataJsonValue.is_number_float()) {
+                m_textBox->setText(QString::number(dataJsonValue.get<double>()));
             }
+            adjustSize();
         }
     }
 

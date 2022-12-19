@@ -10,7 +10,9 @@ namespace QCD {
         GuiManager();
 
         Json &getInputData();
+
         Json &getOutputData();
+
         Json &getConfigData();
 
         void enableDragging();
@@ -22,11 +24,10 @@ namespace QCD {
     private:
         bool m_draggingEnabled = true;
 
-        Json inputData = Json::object();
-        Json outputData = Json::object();
-        Json configData = Json::object();
-
-        bool getDragState() const;
+        Json m_inputData = Json::object();
+        Json m_outputData = Json::object();
+        Json m_configData = Json::object();
+        Json m_themeData = Json();
     };
 }
 

@@ -14,20 +14,16 @@ namespace QCD {
         m_draggingEnabled = false;
     }
 
-    bool GuiManager::getDragState() const {
-        return m_draggingEnabled;
-    }
-
     Json &GuiManager::getInputData() {
-        return inputData;
+        return m_inputData;
     }
 
     Json &GuiManager::getOutputData() {
-        return outputData;
+        return m_outputData;
     }
 
     Json &GuiManager::getConfigData() {
-        return configData;
+        return m_configData;
     }
 
     bool GuiManager::getDraggingEnabled() const {

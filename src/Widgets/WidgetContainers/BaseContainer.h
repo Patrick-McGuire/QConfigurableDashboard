@@ -16,6 +16,9 @@ namespace QCD {
         bool removeChildWidget(BaseWidget *a_childWidget);
 
         void onRun() override;
+
+        static bool isInFocus(QCD::WidgetFocus focus);
+
         std::vector<BaseWidget*> m_childWidgets;
 
     };

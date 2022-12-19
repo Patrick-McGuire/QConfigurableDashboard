@@ -11,7 +11,7 @@ QCD::PanelContainer::PanelContainer() : BaseContainer() {
 }
 
 void QCD::PanelContainer::onUpdate(QCD::WidgetFocus focus) {
-    bool inFocus = focus == QCD::WidgetFocus::IN_FOCUS || focus == QCD::WidgetFocus::ON_IN_FOCUS;
+    bool inFocus = isInFocus(focus);
     for (auto &childWidget: m_childWidgets) {
         childWidget->smartUpdate(inFocus);
     }
@@ -19,11 +19,8 @@ void QCD::PanelContainer::onUpdate(QCD::WidgetFocus focus) {
 
 bool QCD::PanelContainer::addWidget(QCD::BaseWidget *baseWidget, int x, int y) {
     bool added = registerChildWidget(baseWidget);
-    if (added) {
-        baseWidget->move(x, y);
-        return true;
-    }
-    return false;
+    if (added) baseWidget->move(x, y);
+    return added;
 }
 
 bool QCD::PanelContainer::setBackgroundWidget(BaseWidget *baseWidget, QFlags<Qt::AlignmentFlag> alignment) {
