@@ -11,6 +11,8 @@ namespace QCD {
     public:
         explicit GridContainer();
 
+        bool addWidget(BaseWidget *a_baseWidget) override;
+
         bool addWidget(BaseWidget *a_baseWidget, int a_row, int a_col);
 
         QGridLayout *getLayout();

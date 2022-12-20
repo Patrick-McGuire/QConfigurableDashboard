@@ -8,10 +8,18 @@ namespace QCD {
         registerTheme(m_wrapperWidget, CONTAINER_BACKGROUND_CLASS);
     }
 
+    bool GridContainer::addWidget(BaseWidget *a_baseWidget) {
+        return addWidget(a_baseWidget, -1, -1);
+    }
+
     bool GridContainer::addWidget(BaseWidget *a_baseWidget, int a_row, int a_col) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) {
-            m_layout->addWidget(a_baseWidget, a_row, a_col);
+            if(a_row < 0 || a_col < 0) {
+                m_layout->addWidget(a_baseWidget);
+            } else {
+                m_layout->addWidget(a_baseWidget, a_row, a_col);
+            }
             a_baseWidget->disableFloating();
         }
         return added;

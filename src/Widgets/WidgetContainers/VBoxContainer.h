@@ -11,7 +11,7 @@ namespace QCD {
     public:
         explicit VBoxContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget);
+        bool addWidget(BaseWidget *a_baseWidget) override;
 
         QVBoxLayout *getLayout();
 

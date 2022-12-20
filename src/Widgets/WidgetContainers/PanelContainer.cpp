@@ -12,6 +12,10 @@ namespace QCD {
         registerTheme(m_wrapperWidget, CONTAINER_BACKGROUND_CLASS);
     }
 
+    bool PanelContainer::addWidget(BaseWidget *a_baseWidget) {
+        return addWidget(a_baseWidget, 0, 0);
+    }
+
     bool PanelContainer::addWidget(BaseWidget *a_baseWidget, int a_x, int a_y) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) a_baseWidget->move(a_x, a_y);
@@ -34,6 +38,9 @@ namespace QCD {
         return false;
 
     }
+
+
+
 }
 
 

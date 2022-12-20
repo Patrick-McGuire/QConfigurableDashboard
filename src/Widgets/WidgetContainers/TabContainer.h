@@ -12,7 +12,9 @@ namespace QCD {
     public:
         explicit TabContainer();
 
-        bool addTab(BaseWidget *a_baseWidget, const QString &a_name);
+        bool addWidget(BaseWidget *a_baseWidget) override;
+
+        bool addWidget(BaseWidget *a_baseWidget, const QString &a_name);
 
         QTabWidget *getTabs();
 

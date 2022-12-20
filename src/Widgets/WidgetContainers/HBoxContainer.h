@@ -11,7 +11,7 @@ namespace QCD {
     public:
         explicit HBoxContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget);
+        bool addWidget(BaseWidget *a_baseWidget) override;
 
         QHBoxLayout *getLayout();
 

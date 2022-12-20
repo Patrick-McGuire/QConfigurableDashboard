@@ -14,7 +14,9 @@ namespace QCD {
     public:
         explicit PanelContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget, int a_x = 0, int a_y = 0);
+        bool addWidget(BaseWidget *a_baseWidget) override;
+
+        bool addWidget(BaseWidget *a_baseWidget, int a_x, int a_y);
 
         bool setBackgroundWidget(BaseWidget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 

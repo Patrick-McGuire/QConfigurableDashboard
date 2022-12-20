@@ -11,6 +11,8 @@ namespace QCD {
     public:
         BaseContainer();
 
+        virtual bool addWidget(BaseWidget *a_baseWidget);
+
     protected:
         void onUpdate(QCD::WidgetFocus a_focus) override;
 
