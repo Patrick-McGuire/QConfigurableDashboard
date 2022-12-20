@@ -14,7 +14,7 @@
 // Personal includes
 #include "QCD.h"
 #include "Widgets/BaseWidget.h"
-#include "GuiManager.h"
+#include "DataPasser.h"
 #include "Interfaces/BaseInterface.h"
 
 
@@ -36,17 +36,18 @@ namespace QCD {
 
         QAction *addMenuAction(const QString &a_name, const QString &a_parentName = "none");
 
+        void updateTheme(const QString &a_activeTheme);
+
         static QString getClassStylesheet(const QString &a_class, const QString &a_style);
 
         QString getThemeData(const QString &a_themeName, const QString &a_attribute);
-
-        void updateTheme(const QString &a_activeTheme);
 
     public slots:
 
         void updateTheme(QAction *a_action);
 
     private slots:
+        void updateDragging(QAction *a_action);
 
         void updateGUI();
 
@@ -64,7 +65,7 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-        GuiManager *m_guiManager;
+        DataPasser *m_guiManager;
         BaseWidget *m_centralWidget;
         std::vector<BaseInterface *> m_interfaces;
     };

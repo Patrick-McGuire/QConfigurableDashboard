@@ -1,13 +1,13 @@
-#ifndef QCONFIGURABLEDASHBOARD_GUIMANAGER_H
-#define QCONFIGURABLEDASHBOARD_GUIMANAGER_H
+#ifndef QCONFIGURABLEDASHBOARD_DATAPASSER_H
+#define QCONFIGURABLEDASHBOARD_DATAPASSER_H
 
 #include "QCD.h"
 #include "../lib/NlohmannJson/json.hpp"
 
 namespace QCD {
-    class GuiManager {
+    class DataPasser {
     public:
-        GuiManager();
+        DataPasser();
 
         Json &getInputData();
 
@@ -24,7 +24,7 @@ namespace QCD {
         bool getDraggingEnabled() const;
 
     private:
-        bool m_draggingEnabled = true;
+        bool m_draggingEnabled = false;
 
         Json m_inputData = Json::object();
         Json m_outputData = Json::object();
@@ -34,4 +34,4 @@ namespace QCD {
 }
 
 
-#endif //QCONFIGURABLEDASHBOARD_GUIMANAGER_H
+#endif //QCONFIGURABLEDASHBOARD_DATAPASSER_H

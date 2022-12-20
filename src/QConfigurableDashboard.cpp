@@ -23,11 +23,13 @@ namespace QCD {
         m_window->show();
         m_timer = new QTimer(this);
         connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-        m_guiManager = new GuiManager();
+        m_guiManager = new DataPasser();
 
         addMenu("Settings");
-        addMenu("File");
         addMenu("Tools");
+        addMenuAction("Enable Dragging", "Tools")->setData(true);
+        addMenuAction("Disable Dragging", "Tools")->setData(false);
+        connect(findMenu("Tools"), SIGNAL(triggered(QAction * )), this, SLOT(updateDragging(QAction * )));
         addMenu("Theme");
         for (const auto &el: m_guiManager->getThemeData().items()) {
             addMenuAction(el.key().c_str(), "Theme")->setData(QString(el.key().c_str()));
@@ -138,7 +140,15 @@ namespace QCD {
     }
 
     QString QConfigurableDashboard::getThemeData(const QString &a_themeName, const QString &a_attribute) {
-        return m_guiManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string&>().c_str();
+        return m_guiManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string &>().c_str();
+    }
+
+    void QConfigurableDashboard::updateDragging(QAction *a_action) {
+        if (a_action->data().toBool()) {
+            m_guiManager->enableDragging();
+        } else {
+            m_guiManager->disableDragging();
+        }
     }
 
 }

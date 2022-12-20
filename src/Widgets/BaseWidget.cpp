@@ -85,7 +85,7 @@ bool QCD::BaseWidget::setUpdateRateScale(int a_scale) {
     return false;
 }
 
-void QCD::BaseWidget::setGuiManager(QCD::GuiManager *a_guiManager) {
+void QCD::BaseWidget::setGuiManager(QCD::DataPasser *a_guiManager) {
     m_guiManager = a_guiManager;
 }
 

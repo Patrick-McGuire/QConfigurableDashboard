@@ -9,7 +9,7 @@ namespace QCD {
 
     }
 
-    void BaseInterface::setGuiManager(GuiManager *a_guiManager) {
+    void BaseInterface::setGuiManager(DataPasser *a_guiManager) {
         m_guiManager = a_guiManager;
     }
 

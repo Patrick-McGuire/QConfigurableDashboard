@@ -16,12 +16,11 @@ int main(int argc, char **argv) {
     QCD::QConfigurableDashboard dashboard(argc, argv);
 
     dashboard.addMenu("Test");
-    dashboard.addMenu("Test2");
     dashboard.addMenu("Thing1", "Settings");
     dashboard.addMenu("Bing","Thing1");
     dashboard.addMenuAction("Bong","Thing1");
     dashboard.addMenu("Thing2", "Settings");
-    dashboard.addMenuAction("Yo", "File");
+    dashboard.addMenuAction("Yo", "Settings");
 
     QCD::RandomDataInterface randomDataInterface(10);
     dashboard.addInterface(&randomDataInterface);
@@ -32,7 +31,13 @@ int main(int argc, char **argv) {
     auto *grid = new QCD::TabContainer();
     auto *label2 = new QCD::LineDisplayWidget();
     auto *label3 = new QCD::LineDisplayWidget();
+
     auto *label4 = new QCD::PanelContainer();
+    auto *label22 = new QCD::LineDisplayWidget();
+    auto *label32 = new QCD::LineDisplayWidget();
+    label4->addWidget(label22, 100, 100);
+    label4->addWidget(label32, 100, 300);
+
     auto *label5 = new QCD::ButtonWidget("Test12");
     grid->addWidget(label2);
     grid->addWidget(label3);

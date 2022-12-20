@@ -1,9 +1,9 @@
 #include <iostream>
-#include "GuiManager.h"
+#include "DataPasser.h"
 
 namespace QCD {
 
-    GuiManager::GuiManager() {
+    DataPasser::DataPasser() {
         m_themeData = Json::parse(R"delim({
             "Dark" : {
                 "widgetBackground" : "background-color: rgb(23, 23, 23)",
@@ -36,31 +36,31 @@ namespace QCD {
         })delim");
     }
 
-    void GuiManager::enableDragging() {
+    void DataPasser::enableDragging() {
         m_draggingEnabled = true;
     }
 
-    void GuiManager::disableDragging() {
+    void DataPasser::disableDragging() {
         m_draggingEnabled = false;
     }
 
-    Json &GuiManager::getInputData() {
+    Json &DataPasser::getInputData() {
         return m_inputData;
     }
 
-    Json &GuiManager::getOutputData() {
+    Json &DataPasser::getOutputData() {
         return m_outputData;
     }
 
-    Json &GuiManager::getConfigData() {
+    Json &DataPasser::getConfigData() {
         return m_configData;
     }
 
-    bool GuiManager::getDraggingEnabled() const {
+    bool DataPasser::getDraggingEnabled() const {
         return m_draggingEnabled;
     }
 
-    Json &GuiManager::getThemeData() {
+    Json &DataPasser::getThemeData() {
         return m_themeData;
     }
 

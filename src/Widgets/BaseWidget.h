@@ -3,7 +3,7 @@
 
 #include "QWidget"
 #include "../QCD.h"
-#include "../GuiManager.h"
+#include "../DataPasser.h"
 #include "QMouseEvent"
 
 namespace QCD {
@@ -14,7 +14,7 @@ namespace QCD {
 
         virtual void run();
 
-        void setGuiManager(GuiManager *a_guiManager);
+        void setGuiManager(DataPasser *a_guiManager);
 
         void smartUpdate(bool a_inFocus);
 
@@ -33,7 +33,7 @@ namespace QCD {
 
         virtual void onUpdate(WidgetFocus a_focus);
 
-        GuiManager *m_guiManager;
+        DataPasser *m_guiManager;
 
 
     private:
