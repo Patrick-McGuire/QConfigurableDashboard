@@ -6,6 +6,10 @@
 #include "iostream"
 #include "src/Util/UtilFuntions.h"
 #include "src/Interfaces/Examples/RandomDataInterface.h"
+#include "src/Widgets/WidgetContainers/GridContainer.h"
+#include "src/Widgets/WidgetContainers/VBoxContainer.h"
+#include "src/Widgets/WidgetContainers/HBoxContainer.h"
+#include "src/Widgets/WidgetContainers/TabContainer.h"
 
 
 int main(int argc, char **argv) {
@@ -36,6 +40,17 @@ int main(int argc, char **argv) {
     panelCollection->addWidget(label1, 200, 200);
 
     panelCollection->setBackgroundWidget(button2, Qt::AlignHCenter);
+
+    auto *grid = new QCD::TabContainer();
+    auto *label2 = new QCD::LineDisplayWidget();
+    auto *label3 = new QCD::LineDisplayWidget();
+    auto *label4 = new QCD::PanelContainer();
+    auto *label5 = new QCD::ButtonWidget("Test12");
+    grid->addTab(label2, "T1");
+    grid->addTab(label3, "T2");
+    grid->addTab(label4, "T3");
+    grid->addTab(label5, "T4");
+    panelCollection->setBackgroundWidget(grid);
 
     return dashboard.run();
 }

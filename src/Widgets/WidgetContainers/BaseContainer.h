@@ -12,13 +12,15 @@ namespace QCD {
         BaseContainer();
 
     protected:
+        void onUpdate(QCD::WidgetFocus a_focus) override;
+
         bool registerChildWidget(BaseWidget *a_childWidget);
 
         bool removeChildWidget(BaseWidget *a_childWidget);
 
         void onRun() override;
 
-        static bool isInFocus(QCD::WidgetFocus focus);
+        static bool isInFocus(QCD::WidgetFocus a_focus);
 
         std::vector<BaseWidget*> m_childWidgets;
         // QT Members

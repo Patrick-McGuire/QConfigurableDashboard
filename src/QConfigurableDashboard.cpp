@@ -119,12 +119,14 @@ namespace QCD {
 
     void QConfigurableDashboard::updateTheme(const QString &a_activeTheme) {
         QString backgroundColor = getThemeData(a_activeTheme, CONTAINER_BACKGROUND_CLASS);
-        QString widgetBackgroundColor = getThemeData(a_activeTheme, HIGHLIGHT_COLOR_CLASS);
+        QString highlightBackgroundColor = getThemeData(a_activeTheme, HIGHLIGHT_COLOR_CLASS);
         QString textColor = getThemeData(a_activeTheme, TITLE_TEXT_COLOR_CLASS);
 
         QString style;
         style += "QMenuBar, QMenuBar::item, QMenu, QMenu::item { " + backgroundColor + " ; " + textColor + ";}";
-        style += "QMenuBar::item:selected, QMenu::item:selected { " + widgetBackgroundColor + ";}";
+        style += "QMenuBar::item:selected, QMenu::item:selected { " + highlightBackgroundColor + ";}";
+        style += "QTabBar, QTabBar::tab { " + backgroundColor + " ; " + textColor + ";}";
+        style += "QTabBar::tab:selected, QTabBar::tab:hover { " + highlightBackgroundColor + ";}";
         for (const auto &el: m_guiManager->getThemeData()[a_activeTheme.toStdString()].items()) {
             style += getClassStylesheet(el.key().c_str(), getThemeData(a_activeTheme, el.key().c_str()));
         }
@@ -136,7 +138,7 @@ namespace QCD {
     }
 
     QString QConfigurableDashboard::getThemeData(const QString &a_themeName, const QString &a_attribute) {
-        return m_guiManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get<std::string>().c_str();
+        return m_guiManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string&>().c_str();
     }
 
 }

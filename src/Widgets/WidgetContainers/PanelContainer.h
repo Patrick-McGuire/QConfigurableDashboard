@@ -14,15 +14,11 @@ namespace QCD {
     public:
         explicit PanelContainer();
 
+        bool addWidget(BaseWidget *a_baseWidget, int a_x = 0, int a_y = 0);
 
-        bool addWidget(BaseWidget *baseWidget, int x = 0, int y = 0);
-
-        bool setBackgroundWidget(BaseWidget *baseWidget, QFlags<Qt::AlignmentFlag> alignment = Qt::Alignment());
+        bool setBackgroundWidget(BaseWidget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 
     protected:
-
-        void onUpdate(QCD::WidgetFocus focus) override;
-
         // QT Members
         QVBoxLayout *m_layout;
         // Custom members
