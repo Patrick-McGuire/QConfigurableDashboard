@@ -44,7 +44,7 @@ namespace QCD {
     }
 
     int QConfigurableDashboard::run() {
-        updateTheme("dark");
+        updateTheme("Dark");
         // Start all the widgets
         m_centralWidget->run();
         // Start all the interfaces
@@ -140,7 +140,3 @@ namespace QCD {
     }
 
 }
-
-
-
-
