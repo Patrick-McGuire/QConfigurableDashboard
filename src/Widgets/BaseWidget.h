@@ -26,6 +26,8 @@ namespace QCD {
 
         bool setUpdateRateScale(int a_scale);
 
+        static void registerTheme(QWidget *a_widget, const QString &attribute);
+
     protected:
         virtual void onRun();
 

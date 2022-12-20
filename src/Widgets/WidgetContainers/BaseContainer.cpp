@@ -2,12 +2,18 @@
 
 namespace QCD {
 
-    BaseContainer::BaseContainer() : BaseWidget() {}
+    BaseContainer::BaseContainer() : BaseWidget() {
+        m_layout = new QVBoxLayout();
+        m_layout->setMargin(0);
+        this->setLayout(m_layout);
+        m_wrapperWidget = new QWidget(this);
+        m_layout->addWidget(m_wrapperWidget);
+    }
 
     bool BaseContainer::registerChildWidget(BaseWidget *a_childWidget) {
         if (a_childWidget != nullptr && std::find(m_childWidgets.begin(), m_childWidgets.end(), a_childWidget) == m_childWidgets.end()) {
             m_childWidgets.push_back(a_childWidget);
-            a_childWidget->setParent(this);
+            a_childWidget->setParent(m_wrapperWidget);
             return true;
         }
         return false;

@@ -24,7 +24,7 @@ namespace QCD {
     public:
         QConfigurableDashboard(int a_argc, char **a_argv);
 
-        ~QConfigurableDashboard();
+        ~QConfigurableDashboard() override;
 
         int run();
 
@@ -32,10 +32,26 @@ namespace QCD {
 
         bool addInterface(BaseInterface *a_baseInterface);
 
+        QMenu *addMenu(const QString &a_name, const QString &a_parentName = "none");
+
+        QAction *addMenuAction(const QString &a_name, const QString &a_parentName = "none");
+
+        static QString getClassStylesheet(const QString &a_class, const QString &a_style);
+
+        QString getThemeData(const QString &a_themeName, const QString &a_attribute);
+
+        void updateTheme(const QString &a_activeTheme);
+
+    public slots:
+
+        void updateTheme(QAction *a_action);
+
     private slots:
+
         void updateGUI();
 
     private:
+        QMenu *findMenu(const QString &a_name);
 
         // Things
         int m_argc;
@@ -46,10 +62,11 @@ namespace QCD {
         QWidget *m_window;
         QVBoxLayout *m_layout;
         QTimer *m_timer;
+        std::vector<QMenu *> m_menus;
         // Custom objects
         GuiManager *m_guiManager;
         BaseWidget *m_centralWidget;
-        std::vector<BaseInterface*> m_interfaces;
+        std::vector<BaseInterface *> m_interfaces;
     };
 
 }

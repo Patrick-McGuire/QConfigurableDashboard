@@ -14,6 +14,10 @@ namespace QCD {
         connect(m_pushButton, SIGNAL(pressed()), this, SLOT(onClick()));
         connect(m_pushButton, SIGNAL(released()), this, SLOT(onRelease()));
         m_layout->addWidget(m_pushButton);
+
+        registerTheme(m_pushButton, WIDGET_BACKGROUND_CLASS);
+        registerTheme(m_pushButton, TEXT_COLOR_CLASS);
+
         adjustSize();
     }
 

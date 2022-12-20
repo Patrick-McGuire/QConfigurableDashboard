@@ -10,6 +10,9 @@ namespace QCD {
         m_textBox = new QLabel("U suck");
         m_layout->addWidget(m_textBox);
         adjustSize();
+
+        registerTheme(m_textBox, WIDGET_BACKGROUND_CLASS);
+        registerTheme(m_textBox, TEXT_COLOR_CLASS);
     }
 
     void LineDisplayWidget::onUpdate(QCD::WidgetFocus focus) {

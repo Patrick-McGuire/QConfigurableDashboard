@@ -1,4 +1,5 @@
 #include <QPainter>
+#include <iostream>
 #include "BaseWidget.h"
 
 QCD::BaseWidget::BaseWidget() : QWidget() {
@@ -86,6 +87,15 @@ bool QCD::BaseWidget::setUpdateRateScale(int a_scale) {
 
 void QCD::BaseWidget::setGuiManager(QCD::GuiManager *a_guiManager) {
     m_guiManager = a_guiManager;
+}
+
+void QCD::BaseWidget::registerTheme(QWidget *a_widget, const QString &attribute) {
+    QString currentProperties = a_widget->property(THEME_PROPERTY).toString();
+    if(currentProperties == "") {
+        a_widget->setProperty(THEME_PROPERTY, attribute);
+    } else {
+        a_widget->setProperty(THEME_PROPERTY, currentProperties + " " + attribute);
+    }
 }
 
 

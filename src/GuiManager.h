@@ -15,6 +15,8 @@ namespace QCD {
 
         Json &getConfigData();
 
+        Json &getThemeData();
+
         void enableDragging();
 
         void disableDragging();
@@ -27,7 +29,7 @@ namespace QCD {
         Json m_inputData = Json::object();
         Json m_outputData = Json::object();
         Json m_configData = Json::object();
-        Json m_themeData = Json();
+        Json m_themeData = Json::object();
     };
 }
 
