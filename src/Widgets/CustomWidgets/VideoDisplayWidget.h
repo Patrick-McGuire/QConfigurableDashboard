@@ -20,7 +20,7 @@ namespace QCD {
         static const int AUTO_SIZE = -1;
 
     private:
-        void onUpdate(QCD::WidgetFocus focus) override;
+        void onUpdate(QCD::WidgetFocus a_focus) override;
 
         QVBoxLayout *m_layout;
         QLabel *m_videoWidget;

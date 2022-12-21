@@ -15,8 +15,8 @@ namespace QCD {
             std::shared_ptr<cv::Mat> img2(new cv::Mat);
             img1->copyTo(*img2);
             cv::rectangle(*img2, cv::Rect(10, 10, 100, 100), cv::Scalar(0, 0, 255), 2);
-            m_guiManager->getImageMap()["CAM1"] = img1;
-            m_guiManager->getImageMap()["CAM2"] = img2;
+            m_dataPasser->getImageMap()["CAM1"] = img1;
+            m_dataPasser->getImageMap()["CAM2"] = img2;
         }
     }
 

@@ -1,11 +1,11 @@
 #include "TextListWidget.h"
 
 namespace QCD {
-    TextListWidget::TextListWidget(const std::string &title) : BaseWidget() {
+    TextListWidget::TextListWidget(const std::string &a_title) : BaseWidget() {
         m_layout = new QVBoxLayout();
         m_layout->setMargin(5);
         setLayout(m_layout);
-        m_titleBox = new QLabel(title.c_str());
+        m_titleBox = new QLabel(a_title.c_str());
         m_textBox = new QLabel("No data");
         m_layout->addWidget(m_titleBox);
         m_layout->addWidget(m_textBox);
@@ -16,15 +16,15 @@ namespace QCD {
         registerTheme(this, BORDER_COLOR_CLASS);
     }
 
-    void TextListWidget::listen(const std::string &key, const std::string &header) {
-        m_lines.push_back({key, header});
+    void TextListWidget::listen(const std::string &a_key, const std::string &a_header) {
+        m_lines.push_back({a_key, a_header});
     }
 
-    void TextListWidget::onUpdate(QCD::WidgetFocus focus) {
-        if(isInFocus(focus)) {
+    void TextListWidget::onUpdate(QCD::WidgetFocus a_focus) {
+        if(isInFocus(a_focus)) {
             m_text = "";
             for(auto & line : m_lines) {
-                Json &jsonVal = m_guiManager->getInputData()[line.key];
+                Json &jsonVal = m_dataPasser->getInputData()[line.key];
                 if(jsonVal.is_string()) {
                     m_text += line.header + ":\t" + jsonVal.get_ref<std::string&>() + "\n";
                 } else if(jsonVal.is_number_float()) {

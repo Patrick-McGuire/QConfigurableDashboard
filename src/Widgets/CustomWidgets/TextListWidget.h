@@ -10,9 +10,9 @@ namespace QCD {
     class TextListWidget : public BaseWidget {
     Q_OBJECT
     public:
-        explicit TextListWidget(const std::string &title = "");
+        explicit TextListWidget(const std::string &a_title = "");
 
-        void listen(const std::string &key, const std::string &header);
+        void listen(const std::string &a_key, const std::string &a_header);
 
     private:
         struct Line {
@@ -20,7 +20,7 @@ namespace QCD {
             std::string header;
         };
 
-        void onUpdate(QCD::WidgetFocus focus) override;
+        void onUpdate(QCD::WidgetFocus a_focus) override;
 
         QVBoxLayout *m_layout;
         QLabel *m_titleBox;

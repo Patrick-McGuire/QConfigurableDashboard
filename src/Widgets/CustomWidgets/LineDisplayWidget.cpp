@@ -15,9 +15,9 @@ namespace QCD {
         registerTheme(m_textBox, TEXT_COLOR_CLASS);
     }
 
-    void LineDisplayWidget::onUpdate(QCD::WidgetFocus focus) {
-        if (focus == QCD::WidgetFocus::ON_IN_FOCUS || focus == QCD::WidgetFocus::IN_FOCUS) {
-            Json &dataJsonValue = m_guiManager->getInputData()["KEY5"];
+    void LineDisplayWidget::onUpdate(QCD::WidgetFocus a_focus) {
+        if (a_focus == QCD::WidgetFocus::ON_IN_FOCUS || a_focus == QCD::WidgetFocus::IN_FOCUS) {
+            Json &dataJsonValue = m_dataPasser->getInputData()["KEY5"];
             if (dataJsonValue.is_string()) {
                 m_textBox->setText(dataJsonValue.get_ref<std::string &>().c_str());
             } else if (dataJsonValue.is_number_integer()) {

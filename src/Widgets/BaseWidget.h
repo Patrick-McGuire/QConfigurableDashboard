@@ -34,14 +34,13 @@ namespace QCD {
 
         virtual void onUpdate(WidgetFocus a_focus);
 
-        DataPasser *m_guiManager;
-
         static bool isInFocus(QCD::WidgetFocus a_focus);
+
+        DataPasser *m_dataPasser;
+
 
 
     private:
-        void paintEvent(QPaintEvent *a_event) override;
-
         void mousePressEvent(QMouseEvent *a_event) override;
 
         void mouseReleaseEvent(QMouseEvent *a_event) override;

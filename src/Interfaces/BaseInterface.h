@@ -16,7 +16,7 @@ namespace QCD {
         void setGuiManager(DataPasser *a_guiManager);
 
     protected:
-        DataPasser *m_guiManager;
+        DataPasser *m_dataPasser;
 
 
     private:

@@ -23,7 +23,7 @@ namespace QCD {
         m_window->show();
         m_timer = new QTimer(this);
         connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-        m_guiManager = new DataPasser();
+        m_dataPasser = new DataPasser();
 
         addMenu("Settings");
         addMenu("Tools");
@@ -31,7 +31,7 @@ namespace QCD {
         addMenuAction("Disable Dragging", "Tools")->setData(false);
         connect(findMenu("Tools"), SIGNAL(triggered(QAction * )), this, SLOT(updateDragging(QAction * )));
         addMenu("Theme");
-        for (const auto &el: m_guiManager->getThemeData().items()) {
+        for (const auto &el: m_dataPasser->getThemeData().items()) {
             addMenuAction(el.key().c_str(), "Theme")->setData(QString(el.key().c_str()));
         }
         connect(findMenu("Theme"), SIGNAL(triggered(QAction * )), this, SLOT(updateTheme(QAction * )));
@@ -42,7 +42,7 @@ namespace QCD {
 
     QConfigurableDashboard::~QConfigurableDashboard() {
         delete m_qApplication;
-        delete m_guiManager;
+        delete m_dataPasser;
     }
 
     int QConfigurableDashboard::run() {
@@ -68,7 +68,7 @@ namespace QCD {
             m_layout->addWidget(a_widget, 0, a_alignment);
             m_centralWidget = a_widget;
             m_centralWidget->disableFloating();
-            m_centralWidget->setGuiManager(m_guiManager);
+            m_centralWidget->setGuiManager(m_dataPasser);
             return true;
         }
         return false;
@@ -77,14 +77,14 @@ namespace QCD {
     bool QConfigurableDashboard::addInterface(BaseInterface *a_baseInterface) {
         if (a_baseInterface != nullptr && std::find(m_interfaces.begin(), m_interfaces.end(), a_baseInterface) == m_interfaces.end()) {
             m_interfaces.push_back(a_baseInterface);
-            a_baseInterface->setGuiManager(m_guiManager);
+            a_baseInterface->setGuiManager(m_dataPasser);
             return true;
         }
         return false;
     }
 
     void QConfigurableDashboard::updateGUI() {
-        m_centralWidget->smartUpdate(true);
+        m_centralWidget->smartUpdate(m_mainWindow->isActiveWindow());
     }
 
     QMenu *QConfigurableDashboard::addMenu(const QString &a_name, const QString &a_parentName) {
@@ -129,7 +129,7 @@ namespace QCD {
         style += "QMenuBar::item:selected, QMenu::item:selected { " + highlightBackgroundColor + ";}";
         style += "QTabBar, QTabBar::tab { " + backgroundColor + " ; " + textColor + ";}";
         style += "QTabBar::tab:selected, QTabBar::tab:hover { " + highlightBackgroundColor + ";}";
-        for (const auto &el: m_guiManager->getThemeData()[a_activeTheme.toStdString()].items()) {
+        for (const auto &el: m_dataPasser->getThemeData()[a_activeTheme.toStdString()].items()) {
             style += getClassStylesheet(el.key().c_str(), getThemeData(a_activeTheme, el.key().c_str()));
         }
         m_mainWindow->setStyleSheet(style);
@@ -140,14 +140,14 @@ namespace QCD {
     }
 
     QString QConfigurableDashboard::getThemeData(const QString &a_themeName, const QString &a_attribute) {
-        return m_guiManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string &>().c_str();
+        return m_dataPasser->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string &>().c_str();
     }
 
     void QConfigurableDashboard::updateDragging(QAction *a_action) {
         if (a_action->data().toBool()) {
-            m_guiManager->enableDragging();
+            m_dataPasser->enableDragging();
         } else {
-            m_guiManager->disableDragging();
+            m_dataPasser->disableDragging();
         }
     }
 

@@ -14,7 +14,7 @@ namespace QCD {
         LineDisplayWidget();
 
     protected:
-        void onUpdate(QCD::WidgetFocus focus) override;
+        void onUpdate(QCD::WidgetFocus a_focus) override;
 
     private:
         QVBoxLayout *m_layout;

@@ -65,7 +65,7 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-        DataPasser *m_guiManager;
+        DataPasser *m_dataPasser;
         BaseWidget *m_centralWidget;
         std::vector<BaseInterface *> m_interfaces;
     };
