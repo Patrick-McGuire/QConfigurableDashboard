@@ -3,6 +3,9 @@
 
 #include "QCD.h"
 #include "../lib/NlohmannJson/json.hpp"
+#include "map"
+#include "memory"
+#include "opencv2/opencv.hpp"
 
 namespace QCD {
     class DataPasser {
@@ -17,6 +20,8 @@ namespace QCD {
 
         Json &getThemeData();
 
+        std::map<std::string, std::shared_ptr<cv::Mat>> &getImageMap();
+
         void enableDragging();
 
         void disableDragging();
@@ -30,6 +35,7 @@ namespace QCD {
         Json m_outputData = Json::object();
         Json m_configData = Json::object();
         Json m_themeData = Json::object();
+        std::map<std::string, std::shared_ptr<cv::Mat>> m_images;
     };
 }
 

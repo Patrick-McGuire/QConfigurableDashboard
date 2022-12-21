@@ -1,5 +1,7 @@
 #include <iostream>
 #include "DataPasser.h"
+#include "opencv2/opencv.hpp"
+
 
 namespace QCD {
 
@@ -66,6 +68,10 @@ namespace QCD {
 
     Json &DataPasser::getThemeData() {
         return m_themeData;
+    }
+
+    std::map<std::string, std::shared_ptr<cv::Mat>> &DataPasser::getImageMap() {
+        return m_images;
     }
 
 }

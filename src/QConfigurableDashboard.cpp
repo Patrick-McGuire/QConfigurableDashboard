@@ -54,7 +54,7 @@ namespace QCD {
             interface->run();
         }
         // Start the periodic updating of widgets
-        m_timer->start(100);
+        m_timer->start(10);
 
         // Runs QT main loop
         int out = QApplication::exec();
