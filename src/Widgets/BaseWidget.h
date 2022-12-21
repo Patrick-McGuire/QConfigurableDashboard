@@ -5,9 +5,10 @@
 #include "../QCD.h"
 #include "../DataPasser.h"
 #include "QMouseEvent"
+#include "QFrame"
 
 namespace QCD {
-    class BaseWidget : public QWidget {
+    class BaseWidget : public QFrame {
     Q_OBJECT
     public:
         explicit BaseWidget();
@@ -34,6 +35,8 @@ namespace QCD {
         virtual void onUpdate(WidgetFocus a_focus);
 
         DataPasser *m_guiManager;
+
+        static bool isInFocus(QCD::WidgetFocus a_focus);
 
 
     private:

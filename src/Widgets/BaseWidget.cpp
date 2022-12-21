@@ -1,8 +1,9 @@
 #include <QPainter>
 #include <iostream>
 #include "BaseWidget.h"
+#include "QFrame"
 
-QCD::BaseWidget::BaseWidget() : QWidget() {
+QCD::BaseWidget::BaseWidget() : QFrame() {
 
 }
 
@@ -66,10 +67,10 @@ void QCD::BaseWidget::enableFloating() {
 
 void QCD::BaseWidget::paintEvent(QPaintEvent *a_event) {
     QWidget::paintEvent(a_event);
-    if (m_drawBorder) {
-        QPainter painter(this);
-        painter.drawRect(2, 2, width() - 5, height() - 5);
-    }
+//    if (m_drawBorder) {
+//        QPainter painter(this);
+//        painter.drawRect(2, 2, width() - 5, height() - 5);
+//    }
 }
 
 void QCD::BaseWidget::disableBorder() {
@@ -96,6 +97,10 @@ void QCD::BaseWidget::registerTheme(QWidget *a_widget, const QString &attribute)
     } else {
         a_widget->setProperty(THEME_PROPERTY, currentProperties + " " + attribute);
     }
+}
+
+bool QCD::BaseWidget::isInFocus(QCD::WidgetFocus a_focus) {
+    return a_focus == QCD::WidgetFocus::IN_FOCUS || a_focus == QCD::WidgetFocus::ON_IN_FOCUS;
 }
 
 

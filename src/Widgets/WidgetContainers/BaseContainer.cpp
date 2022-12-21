@@ -35,10 +35,6 @@ namespace QCD {
         }
     }
 
-    bool BaseContainer::isInFocus(QCD::WidgetFocus a_focus) {
-        return a_focus == QCD::WidgetFocus::IN_FOCUS || a_focus == QCD::WidgetFocus::ON_IN_FOCUS;
-    }
-
     void BaseContainer::onUpdate(QCD::WidgetFocus a_focus) {
         bool inFocus = isInFocus(a_focus);
         for (auto &childWidget: m_childWidgets) {

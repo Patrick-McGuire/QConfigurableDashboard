@@ -8597,8 +8597,8 @@ scan_number_done:
     }
 
     /*!
-    @param[in] literal_text  the literal text to expect
-    @param[in] length        the length of the passed literal text
+    @param[in] literal_text  the literal m_text to expect
+    @param[in] length        the length of the passed literal m_text
     @param[in] return_type   the token type to return on success
     */
     JSON_HEDLEY_NON_NULL(2)
@@ -11783,7 +11783,7 @@ class binary_reader
         if (JSON_HEDLEY_UNLIKELY(result_remainder != token_type::end_of_input))
         {
             return sax->parse_error(chars_read, number_string, parse_error::create(115, chars_read,
-                                    exception_message(input_format, concat("invalid number text: ", number_lexer.get_token_string()), "high-precision number"), nullptr));
+                                    exception_message(input_format, concat("invalid number m_text: ", number_lexer.get_token_string()), "high-precision number"), nullptr));
         }
 
         switch (result_number)
@@ -11810,7 +11810,7 @@ class binary_reader
             case token_type::literal_or_value:
             default:
                 return sax->parse_error(chars_read, number_string, parse_error::create(115, chars_read,
-                                        exception_message(input_format, concat("invalid number text: ", number_lexer.get_token_string()), "high-precision number"), nullptr));
+                                        exception_message(input_format, concat("invalid number m_text: ", number_lexer.get_token_string()), "high-precision number"), nullptr));
         }
     }
 
@@ -12250,7 +12250,7 @@ class parser
     @brief public accept interface
 
     @param[in] strict  whether to expect the last token to be EOF
-    @return whether the input is a proper JSON text
+    @return whether the input is a proper JSON m_text
     */
     bool accept(const bool strict = true)
     {
@@ -14414,7 +14414,7 @@ class json_pointer
             // find next slash
             slash = reference_string.find_first_of('/', start))
         {
-            // use the text between the beginning of the reference token
+            // use the m_text between the beginning of the reference token
             // (start) and the last slash (slash).
             auto reference_token = reference_string.substr(start, slash - start);
 
@@ -18749,7 +18749,7 @@ class serializer
 
     void dump_float(number_float_t x, std::false_type /*is_ieee_single_or_double*/)
     {
-        // get number of digits for a float -> text -> float round-trip
+        // get number of digits for a float -> m_text -> float round-trip
         static constexpr auto d = std::numeric_limits<number_float_t>::max_digits10;
 
         // the actual conversion

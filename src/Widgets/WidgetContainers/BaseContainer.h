@@ -22,8 +22,6 @@ namespace QCD {
 
         void onRun() override;
 
-        static bool isInFocus(QCD::WidgetFocus a_focus);
-
         std::vector<BaseWidget*> m_childWidgets;
         // QT Members
         QWidget *m_wrapperWidget;
