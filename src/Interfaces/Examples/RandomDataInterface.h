@@ -10,7 +10,7 @@ namespace QCD {
     public:
         explicit RandomDataInterface(double a_rate);
     private:
-        void update() override;
+        void onUpdate() override;
     };
 
 } // QCD

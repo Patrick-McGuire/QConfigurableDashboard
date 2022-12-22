@@ -16,7 +16,7 @@ namespace QCD {
     void BaseWidget::onRun() {}
 
     void BaseWidget::smartUpdate(bool a_inFocus) {
-        // Provide a scalar to the global update rate (run every nth time)
+        // Provide a scalar to the global onUpdate rate (run every nth time)
         m_updateCounter--;
         if (m_updateCounter <= 0) {
             m_updateCounter = m_updateRateScale;

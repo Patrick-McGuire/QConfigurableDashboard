@@ -13,7 +13,11 @@ namespace QCD {
 
         virtual void run();
 
-        void setGuiManager(DataPasser *a_guiManager);
+        virtual void update();
+
+        virtual void finish();
+
+        virtual void setGuiManager(DataPasser *a_guiManager);
 
     protected:
         DataPasser *m_dataPasser;

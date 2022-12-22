@@ -13,7 +13,7 @@ namespace QCD {
         explicit WebCamStreamInterface(double a_rate);
 
     private:
-        void update() override;
+        void onUpdate() override;
 
         cv::VideoCapture *m_camera;
         QLabel label;

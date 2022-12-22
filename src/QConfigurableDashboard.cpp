@@ -58,6 +58,12 @@ namespace QCD {
 
         // Runs QT main loop
         int out = QApplication::exec();
+
+        // end all the interfaces
+        for (auto &interface: m_interfaces) {
+            interface->finish();
+        }
+
         return out;
     }
 
@@ -84,6 +90,11 @@ namespace QCD {
     }
 
     void QConfigurableDashboard::updateGUI() {
+        // Update all interfaces
+        for(auto &interface : m_interfaces) {
+            interface->update();
+        }
+        // Update all widgets
         m_centralWidget->smartUpdate(m_mainWindow->isActiveWindow());
     }
 

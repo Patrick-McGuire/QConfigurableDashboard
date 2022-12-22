@@ -7,6 +7,7 @@
 #include "iostream"
 #include "src/Util/UtilFuntions.h"
 #include "src/Interfaces/Examples/RandomDataInterface.h"
+#include "src/Interfaces/Examples/ThreadedRandomDataInterface.h"
 #include "src/Interfaces/Examples/WebCamStreamInterface.h"
 #include "src/Widgets/WidgetContainers/GridContainer.h"
 #include "src/Widgets/WidgetContainers/VBoxContainer.h"
@@ -18,6 +19,7 @@
 #include "opencv2/opencv.hpp"
 
 int main(int argc, char **argv) {
+
     QCD::QConfigurableDashboard dashboard(argc, argv);
     // Menus
     dashboard.addMenu("Test");
@@ -27,7 +29,7 @@ int main(int argc, char **argv) {
     dashboard.addMenu("Thing2", "Settings");
     dashboard.addMenuAction("Yo", "Settings");
     // Interfaces
-    QCD::RandomDataInterface randomDataInterface(10);
+    QCD::ThreadedRandomDataInterface randomDataInterface(30);
     dashboard.addInterface(&randomDataInterface);
     QCD::WebCamStreamInterface webCamStreamInterface(60);
     dashboard.addInterface(&webCamStreamInterface);
@@ -44,8 +46,8 @@ int main(int argc, char **argv) {
     auto *label32 = new QCD::TextListWidget("Here is a title");
     label32->listen("KEY2", ":KEY2");
     label32->listen("KEY4", ":KEY4");
-    label32->listen("KEY6", ":KEY6");
-    label32->setUpdateRateScale(10);
+    label32->listen("KEY5", ":KEY5");
+//    label32->setUpdateRateScale(10);
     label4->addWidget(label22, 100, 100);
     label4->addWidget(label32, 100, 300);
 

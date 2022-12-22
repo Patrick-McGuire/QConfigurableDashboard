@@ -14,7 +14,7 @@ namespace QCD {
         void run() override;
 
     protected slots:
-        virtual void update();
+        virtual void onUpdate();
 
     protected:
         int m_interval;

@@ -7,7 +7,7 @@ namespace QCD {
         m_camera = new cv::VideoCapture(0);
     }
 
-    void WebCamStreamInterface::update() {
+    void WebCamStreamInterface::onUpdate() {
         if(m_camera->isOpened()) {
             std::shared_ptr<cv::Mat> img1(new cv::Mat);
             *m_camera >> *img1;

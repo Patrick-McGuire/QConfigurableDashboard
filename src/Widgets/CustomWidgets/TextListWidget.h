@@ -27,6 +27,11 @@ namespace QCD {
         QLabel *m_textBox;
         std::vector<Line> m_lines;
         std::string m_text;
+
+        static const int m_ringSize = 10;
+        int m_ringIndex = 0;
+        int m_sizeRingBuffer[m_ringSize];
+
     };
 
 } // QCD
