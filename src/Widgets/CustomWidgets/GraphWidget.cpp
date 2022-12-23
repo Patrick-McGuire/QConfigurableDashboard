@@ -10,6 +10,7 @@ namespace QCD {
 
         m_layout = new QVBoxLayout();
         m_layout->setMargin(10);
+
         setLayout(m_layout);
 
         m_plot = new QCustomPlot(this);
