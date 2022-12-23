@@ -70,8 +70,17 @@ namespace QCD {
         return m_themeData;
     }
 
-    std::map<std::string, std::shared_ptr<cv::Mat>> &DataPasser::getImageMap() {
+    std::map<std::string, Image> &DataPasser::getImageMap() {
         return m_images;
     }
+
+    std::string &DataPasser::getTheme() {
+        return m_theme;
+    }
+
+    void DataPasser::setTheme(const std::string &a_theme) {
+        m_theme = a_theme;
+    }
+
 
 }

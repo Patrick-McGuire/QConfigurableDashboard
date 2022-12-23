@@ -18,7 +18,10 @@ namespace QCD {
 
     bool PanelContainer::addWidget(BaseWidget *a_baseWidget, int a_x, int a_y) {
         bool added = registerChildWidget(a_baseWidget);
-        if (added) a_baseWidget->move(a_x, a_y);
+        if (added) {
+            a_baseWidget->setInLayout(false);
+            a_baseWidget->move(a_x, a_y);
+        }
         return added;
     }
 
@@ -38,7 +41,6 @@ namespace QCD {
         return false;
 
     }
-
 
 
 }

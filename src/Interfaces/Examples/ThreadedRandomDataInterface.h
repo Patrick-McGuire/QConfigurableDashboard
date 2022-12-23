@@ -11,7 +11,7 @@ namespace QCD {
         explicit ThreadedRandomDataInterface(double a_rate);
     private:
         void onRun() override;
-
+        double m_x = 0;
         int m_interval;
     };
 

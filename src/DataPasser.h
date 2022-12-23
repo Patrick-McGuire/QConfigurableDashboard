@@ -6,9 +6,11 @@
 #include "map"
 #include "memory"
 #include "opencv2/opencv.hpp"
+#include "QObject"
 
 namespace QCD {
-    class DataPasser {
+    class DataPasser : public QObject {
+    Q_OBJECT
     public:
         DataPasser();
 
@@ -20,13 +22,20 @@ namespace QCD {
 
         Json &getThemeData();
 
-        std::map<std::string, std::shared_ptr<cv::Mat>> &getImageMap();
+        std::map<std::string, Image> &getImageMap();
 
         void enableDragging();
 
         void disableDragging();
 
         bool getDraggingEnabled() const;
+
+        void setTheme(const std::string &a_theme);
+
+        std::string &getTheme();
+
+    signals:
+        void themeChanged();
 
     private:
         bool m_draggingEnabled = false;
@@ -35,7 +44,8 @@ namespace QCD {
         Json m_outputData = Json::object();
         Json m_configData = Json::object();
         Json m_themeData = Json::object();
-        std::map<std::string, std::shared_ptr<cv::Mat>> m_images;
+        std::map<std::string, Image> m_images;
+        std::string m_theme;
     };
 }
 

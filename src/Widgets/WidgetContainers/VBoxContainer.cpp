@@ -19,7 +19,9 @@ namespace QCD {
 
     void VBoxContainer::onUpdate(QCD::WidgetFocus a_focus) {
         BaseContainer::onUpdate(a_focus);
-        adjustSize();
+        if(!m_inLayout) {
+            adjustSize();
+        }
     }
 
     QVBoxLayout *VBoxContainer::getLayout() {

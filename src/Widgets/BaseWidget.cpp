@@ -96,4 +96,9 @@ namespace QCD {
     bool BaseWidget::isInFocus(WidgetFocus a_focus) {
         return a_focus == WidgetFocus::IN_FOCUS || a_focus == WidgetFocus::ON_IN_FOCUS;
     }
+
+    void BaseWidget::setInLayout(bool a_inLayout) {
+        m_inLayout = a_inLayout;
+    }
+
 }

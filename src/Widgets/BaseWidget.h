@@ -25,9 +25,11 @@ namespace QCD {
 
         void disableBorder();
 
-        bool setUpdateRateScale(int a_scale);
+        virtual bool setUpdateRateScale(int a_scale);
 
         static void registerTheme(QWidget *a_widget, const QString &attribute);
+
+        void setInLayout(bool a_inLayout);
 
     protected:
         virtual void onRun();
@@ -37,6 +39,7 @@ namespace QCD {
         static bool isInFocus(QCD::WidgetFocus a_focus);
 
         DataPasser *m_dataPasser;
+        bool m_inLayout = true;
 
 
 

@@ -10,7 +10,6 @@ namespace QCD {
     void BaseThreadedInterface::run() {
         m_active = true;
         m_thread = new std::thread(&BaseThreadedInterface::onRun, this);
-//        m_thread.
     }
 
 
@@ -35,7 +34,7 @@ namespace QCD {
         }
         // Remove all json values. This improves performance for code with update rates slower than the main update rate
         // Turn on in constructor of derived with: m_autoClear = true;
-        if(m_autoClear) {
+        if (m_autoClear) {
             m_jsonData.clear();
         }
     }

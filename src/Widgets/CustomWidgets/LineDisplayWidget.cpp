@@ -25,7 +25,9 @@ namespace QCD {
             } else if (dataJsonValue.is_number_float()) {
                 m_textBox->setText(QString::number(dataJsonValue.get<double>()));
             }
-            adjustSize();
+            if(!m_inLayout) {
+                adjustSize();
+            }
         }
     }
 

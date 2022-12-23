@@ -28,7 +28,7 @@ namespace QCD {
         std::vector<Line> m_lines;
         std::string m_text;
 
-        static const int m_ringSize = 10;
+        static const int m_ringSize = 30;
         int m_ringIndex = 0;
         int m_sizeRingBuffer[m_ringSize];
 

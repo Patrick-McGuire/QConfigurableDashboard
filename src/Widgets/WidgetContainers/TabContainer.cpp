@@ -32,6 +32,9 @@ namespace QCD {
             inFocus = isInFocus(a_focus) && childWidget == m_tabs->currentWidget();
             childWidget->smartUpdate(inFocus);
         }
+        if(!m_inLayout) {
+            adjustSize();
+        }
     }
 
     QTabWidget *TabContainer::getTabs() {

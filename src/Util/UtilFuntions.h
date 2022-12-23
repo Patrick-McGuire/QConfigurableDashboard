@@ -22,6 +22,10 @@ namespace QCD {
         }
         return output;
     }
+
+    inline double getEpochTime() {
+        return (double) std::chrono::duration_cast<std::chrono::milliseconds> (std::chrono::system_clock::now().time_since_epoch()).count() / 1000;
+    }
 }
 
 #endif //QCONFIGURABLEDASHBOARD_UTILFUNTIONS_H

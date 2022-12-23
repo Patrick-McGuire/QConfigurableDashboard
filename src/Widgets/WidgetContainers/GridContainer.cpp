@@ -27,7 +27,9 @@ namespace QCD {
 
     void GridContainer::onUpdate(QCD::WidgetFocus a_focus) {
         BaseContainer::onUpdate(a_focus);
-        adjustSize();
+        if(!m_inLayout) {
+            adjustSize();
+        }
     }
 
     QGridLayout *GridContainer::getLayout() {

@@ -23,7 +23,7 @@ namespace QCD {
                 int w = m_width <= 0 ? size().width() : m_width;
                 int h = m_height <= 0 ? size().height() : m_height;
                 auto rgb_image = map[m_key];
-                m_videoWidget->setPixmap(QPixmap::fromImage(QImage((unsigned char *) rgb_image->data, rgb_image->cols, rgb_image->rows, QImage::Format_RGB888)).scaled(w, h,
+                m_videoWidget->setPixmap(QPixmap::fromImage(QImage((unsigned char *) rgb_image.data, rgb_image.cols, rgb_image.rows, QImage::Format_RGB888)).scaled(w, h,
                                                                                                                                                                        Qt::KeepAspectRatio));
             }
         }

@@ -8,9 +8,7 @@ namespace QCD {
     }
 
     void ThreadedRandomDataInterface::onRun() {
-        std::string s = "Testname";
         while (m_active) {
-            pthread_setname_np(pthread_self(), s.c_str());
             Json value = randomInt(-100, 100);
             setJson("KEY1", value);
             value = randomInt(-10, 10);
@@ -23,6 +21,11 @@ namespace QCD {
             setJson("KEY5", value);
             value = randomString(10);
             setJson("KEY6", value);
+            value = sin(m_x) * 3;
+            setJson("KEY7", value);
+            value = cos(m_x) * 2;
+            m_x += 0.1;
+            setJson("KEY8", value);
             std::this_thread::sleep_for(std::chrono::milliseconds(m_interval));
         }
     }

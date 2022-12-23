@@ -8,11 +8,13 @@ namespace QCD {
         disableBorder();
         // Construct members
         m_layout = new QVBoxLayout();
-        m_layout->setMargin(0);
+        m_layout->setMargin(2);
         setLayout(m_layout);
         m_pushButton = new QPushButton(a_text, this);
         connect(m_pushButton, SIGNAL(pressed()), this, SLOT(onClick()));
         connect(m_pushButton, SIGNAL(released()), this, SLOT(onRelease()));
+        connect(m_pushButton, SIGNAL(pressed()), this, SIGNAL(pressed()));
+        connect(m_pushButton, SIGNAL(released()), this, SIGNAL(released()));
         m_layout->addWidget(m_pushButton);
 
         registerTheme(m_pushButton, WIDGET_BACKGROUND_CLASS);
@@ -24,11 +26,6 @@ namespace QCD {
     void ButtonWidget::onClick() {
         m_state = true;
         std::cout << "Clicked" << "\n";
-        std::string a = "";
-        if(m_dataPasser->getInputData().contains("KEY1") && m_dataPasser->getInputData()["KEY1"].is_string()) {
-            a = m_dataPasser->getInputData()["KEY1"].get<std::string>();
-        }
-        m_dataPasser->getInputData()["KEY1"] = "adsf" + a;
     }
 
     void ButtonWidget::onRelease() {

@@ -46,13 +46,15 @@ namespace QCD {
     }
 
     int QConfigurableDashboard::run() {
-        updateTheme("Dark");
         // Start all the widgets
         m_centralWidget->run();
         // Start all the interfaces
         for (auto &interface: m_interfaces) {
             interface->run();
         }
+
+        updateTheme("Dark");
+
         // Start the periodic updating of widgets
         m_timer->start(10);
 
@@ -95,7 +97,7 @@ namespace QCD {
             interface->update();
         }
         // Update all widgets
-        m_centralWidget->smartUpdate(m_mainWindow->isActiveWindow());
+        m_centralWidget->smartUpdate(m_mainWindow->isActiveWindow() || m_updateAlways);
     }
 
     QMenu *QConfigurableDashboard::addMenu(const QString &a_name, const QString &a_parentName) {
@@ -131,6 +133,8 @@ namespace QCD {
     }
 
     void QConfigurableDashboard::updateTheme(const QString &a_activeTheme) {
+        m_dataPasser->setTheme(a_activeTheme.toStdString());
+
         QString backgroundColor = getThemeData(a_activeTheme, CONTAINER_BACKGROUND_CLASS);
         QString highlightBackgroundColor = getThemeData(a_activeTheme, HIGHLIGHT_COLOR_CLASS);
         QString textColor = getThemeData(a_activeTheme, TITLE_TEXT_COLOR_CLASS);
@@ -144,6 +148,8 @@ namespace QCD {
             style += getClassStylesheet(el.key().c_str(), getThemeData(a_activeTheme, el.key().c_str()));
         }
         m_mainWindow->setStyleSheet(style);
+
+        emit m_dataPasser->themeChanged();
     }
 
     QString QConfigurableDashboard::getClassStylesheet(const QString &a_class, const QString &a_style) {
@@ -160,6 +166,10 @@ namespace QCD {
         } else {
             m_dataPasser->disableDragging();
         }
+    }
+
+    void QConfigurableDashboard::setUpdateAlways(bool a_updateAlways) {
+        m_updateAlways = a_updateAlways;
     }
 
 }

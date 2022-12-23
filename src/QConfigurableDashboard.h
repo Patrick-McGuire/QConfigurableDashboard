@@ -42,6 +42,8 @@ namespace QCD {
 
         QString getThemeData(const QString &a_themeName, const QString &a_attribute);
 
+        void setUpdateAlways(bool a_updateAlways);
+
     public slots:
 
         void updateTheme(QAction *a_action);
@@ -57,6 +59,7 @@ namespace QCD {
         // Things
         int m_argc;
         char **m_argv;
+        bool m_updateAlways = true;
         // Core objects
         QApplication *m_qApplication;
         QMainWindow *m_mainWindow;

@@ -10,7 +10,12 @@ namespace QCD {
     class ButtonWidget : public BaseWidget {
     Q_OBJECT
     public:
-        ButtonWidget(const QString &a_text = "");
+        explicit ButtonWidget(const QString &a_text = "");
+
+    signals:
+        void pressed();
+
+        void released();
 
     private slots:
         void onClick();
