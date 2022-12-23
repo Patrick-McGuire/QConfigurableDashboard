@@ -3,14 +3,13 @@
 #include <boost/algorithm/string/erase.hpp>
 
 namespace QCD {
-    GraphWidget::GraphWidget(const QString &a_title) {
+    GraphWidget::GraphWidget(const QString &a_title, const QString &a_yAxisTitle) {
 
         m_title = new QLabel(a_title);
         registerTheme(m_title, TITLE_TEXT_COLOR_CLASS);
 
         m_layout = new QVBoxLayout();
         m_layout->setMargin(10);
-
         setLayout(m_layout);
 
         m_plot = new QCustomPlot(this);
@@ -20,8 +19,8 @@ namespace QCD {
         m_plot->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         // give the axes some labels:
-        m_plot->xAxis->setLabel("x");
-        m_plot->yAxis->setLabel("y");
+        m_plot->xAxis->setLabel("Time (s)");
+        m_plot->yAxis->setLabel(a_yAxisTitle);
         // set axes ranges, so we see all data:
         m_plot->xAxis->setRange(-20, 1);
         m_plot->yAxis->setRange(-10, 10);

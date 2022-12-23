@@ -11,7 +11,7 @@ namespace QCD {
     class GraphWidget : public BaseWidget {
     Q_OBJECT
     public:
-        explicit GraphWidget(const QString &a_title = "");
+        explicit GraphWidget(const QString &a_title = "", const QString &a_yAxisTitle = "y");
 
         void listen(const std::string &a_key, const QString &a_name = "", const QString &a_color = "");
 

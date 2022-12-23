@@ -47,7 +47,7 @@ namespace QCD {
         int max = 0;
         for (int &i: m_sizeRingBuffer) max = std::max(max, i);
         // Correct size
-        setMinimumWidth(max);
+        setMinimumWidth(max + 10);
         if(!m_inLayout) {
             adjustSize();
         }

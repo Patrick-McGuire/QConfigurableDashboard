@@ -20,8 +20,8 @@ namespace QCD {
         if (isInFocus(a_focus)) {
             auto map = m_dataPasser->getImageMap();
             if (map.count(m_key) != 0) {
-                int w = m_width <= 0 ? size().width() : m_width;
-                int h = m_height <= 0 ? size().height() : m_height;
+                int w = m_width <= 0 ? size().width() - 5 : m_width;
+                int h = m_height <= 0 ? size().height() - 5 : m_height;
                 auto rgb_image = map[m_key];
                 m_videoWidget->setPixmap(QPixmap::fromImage(QImage((unsigned char *) rgb_image.data, rgb_image.cols, rgb_image.rows, QImage::Format_RGB888)).scaled(w, h,
                                                                                                                                                                        Qt::KeepAspectRatio));
