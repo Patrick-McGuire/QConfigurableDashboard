@@ -18,6 +18,10 @@ namespace QCD {
         m_jsonData[a_key] = a_value;
     }
 
+    void BaseThreadedInterface::setImage(const std::string &a_key, const Image &a_image) {
+        m_images[a_key] = a_image;
+    }
+
     void BaseThreadedInterface::onRun() {}
 
     void BaseThreadedInterface::update() {
@@ -30,7 +34,10 @@ namespace QCD {
                 data[el.key()] = el.value();
             }
             // Iterate though all updated images
-            //// Coming soon!
+            auto &imgData = m_dataPasser->getImageMap();
+            for (const auto &el: m_images) {
+                imgData[el.first] = el.second;
+            }
         }
         // Remove all json values. This improves performance for code with update rates slower than the main update rate
         // Turn on in constructor of derived with: m_autoClear = true;
@@ -48,4 +55,5 @@ namespace QCD {
         // Wait for this thread to finish
         m_thread->join();
     }
+
 } // QCD

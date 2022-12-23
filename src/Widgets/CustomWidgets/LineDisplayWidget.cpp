@@ -2,7 +2,8 @@
 #include "LineDisplayWidget.h"
 
 namespace QCD {
-    LineDisplayWidget::LineDisplayWidget() {
+    LineDisplayWidget::LineDisplayWidget(const std::string &a_key) {
+        m_key = a_key;
         // Construct members
         m_layout = new QVBoxLayout();
         m_layout->setMargin(0);
@@ -17,7 +18,7 @@ namespace QCD {
 
     void LineDisplayWidget::onUpdate(QCD::WidgetFocus a_focus) {
         if (a_focus == QCD::WidgetFocus::ON_IN_FOCUS || a_focus == QCD::WidgetFocus::IN_FOCUS) {
-            Json &dataJsonValue = m_dataPasser->getInputData()["KEY5"];
+            Json &dataJsonValue = m_dataPasser->getInputData()[m_key];
             if (dataJsonValue.is_string()) {
                 m_textBox->setText(dataJsonValue.get_ref<std::string &>().c_str());
             } else if (dataJsonValue.is_number_integer()) {
@@ -29,6 +30,10 @@ namespace QCD {
                 adjustSize();
             }
         }
+    }
+
+    void LineDisplayWidget::listen(const std::string &a_key) {
+        m_key = a_key;
     }
 
 } // QCD

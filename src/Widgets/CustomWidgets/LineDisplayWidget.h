@@ -11,7 +11,9 @@ namespace QCD {
     class LineDisplayWidget : public BaseWidget {
         Q_OBJECT
     public:
-        LineDisplayWidget();
+        explicit LineDisplayWidget(const std::string &a_key = "KEY5");
+
+        void listen(const std::string &a_key);
 
     protected:
         void onUpdate(QCD::WidgetFocus a_focus) override;
@@ -19,6 +21,7 @@ namespace QCD {
     private:
         QVBoxLayout *m_layout;
         QLabel *m_textBox;
+        std::string m_key;
 
     };
 

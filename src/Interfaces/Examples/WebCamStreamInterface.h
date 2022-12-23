@@ -16,8 +16,6 @@ namespace QCD {
         void onUpdate() override;
 
         cv::VideoCapture *m_camera;
-        QLabel label;
-
     };
 
 } // QCD

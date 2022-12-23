@@ -1,7 +1,6 @@
 #include "src/QConfigurableDashboard.h"
 #include "src/Widgets/WidgetContainers/PanelContainer.h"
 #include "src/Widgets/CustomWidgets/ButtonWidget.h"
-//#include "src/Widgets/CustomWidgets/TextListWidget.h"
 #include "src/Widgets/CustomWidgets/LineDisplayWidget.h"
 #include "src/QCD.h"
 #include "iostream"
@@ -16,8 +15,8 @@
 #include "src/Widgets/CustomWidgets/TextListWidget.h"
 #include "src/Widgets/CustomWidgets/GraphWidget.h"
 #include "src/Widgets/CustomWidgets/VideoDisplayWidget.h"
-#include "QCamera"
-#include "opencv2/opencv.hpp"
+#include "src/Util/UtilFuntions.h"
+#include "src/Interfaces/Examples/ThreadedWebCamInterface.h"
 
 int main(int argc, char **argv) {
 
@@ -30,13 +29,26 @@ int main(int argc, char **argv) {
     dashboard.addMenu("Thing2", "Settings");
     dashboard.addMenuAction("Yo", "Settings");
     // Interfaces
-    QCD::ThreadedRandomDataInterface randomDataInterface(30);
+    QCD::ThreadedRandomDataInterface randomDataInterface(200);
     dashboard.addInterface(&randomDataInterface);
-    QCD::WebCamStreamInterface webCamStreamInterface(60);
+    QCD::ThreadedWebCamInterface webCamStreamInterface(70);
     dashboard.addInterface(&webCamStreamInterface);
     // Create the GUI
+    auto *whole = new QCD::VBoxContainer();
+    dashboard.setCentralWidget(whole);
+    auto *topBat = new QCD:: HBoxContainer();
+    whole->addWidget(topBat);
+    auto *tkTime = new QCD::LineDisplayWidget(QCD::TICK_TIME_KEY);
+    tkTime->setMinimumWidth(150);
+    tkTime->setUpdateRateScale(20);
+    auto *tkRate = new QCD::LineDisplayWidget(QCD::TICK_RATE_KEY);
+    tkRate->setMinimumWidth(150);
+    tkRate->setUpdateRateScale(20);
+    topBat->addWidget(tkTime);
+    topBat->addWidget(tkRate);
+
     auto *tabContainer = new QCD::TabContainer();
-    dashboard.setCentralWidget(tabContainer);
+    whole->addWidget(tabContainer);
     // Create tab 1
     auto *gridContainer1 = new QCD::GridContainer();
     tabContainer->addWidget(gridContainer1, "Primary");
@@ -65,9 +77,14 @@ int main(int argc, char **argv) {
     sideLayout->addWidget(dataLabel);
     sideLayout->addWidget(graph1);
     graph1->setMinimumSize(700, 400);
-    sideLayout->addWidget(new QCD::ButtonWidget("defg"));
+//    auto *tkTime = new QCD::LineDisplayWidget(QCD::TICK_TIME_KEY);
+//    tkTime->setMinimumWidth(150);
+//    auto *tkRate = new QCD::LineDisplayWidget(QCD::TICK_RATE_KEY);
+//    tkRate->setMinimumWidth(150);
+    sideLayout->addWidget(new QCD::ButtonWidget("edfg"));
     sideLayout->addWidget(new QCD::ButtonWidget("abcd"));
-    topLayout->addWidget(new QCD::ButtonWidget("dd"));
+//    topLayout->addWidget(tkTime);
+//    topLayout->addWidget(tkRate);
     topLayout->addWidget(new QCD::ButtonWidget("1"));
     topLayout->addWidget(new QCD::ButtonWidget("2"));
     topLayout->addWidget(new QCD::ButtonWidget("3"));

@@ -16,6 +16,7 @@
 #include "Widgets/BaseWidget.h"
 #include "DataPasser.h"
 #include "Interfaces/BaseInterface.h"
+#include "Util/UtilFuntions.h"
 
 
 namespace QCD {
@@ -60,6 +61,7 @@ namespace QCD {
         int m_argc;
         char **m_argv;
         bool m_updateAlways = true;
+        double m_lastTime = 0;
         // Core objects
         QApplication *m_qApplication;
         QMainWindow *m_mainWindow;

@@ -24,6 +24,9 @@ namespace QCD {
     const char *const TEXT_COLOR_CLASS = "textColor";
     const char *const BORDER_COLOR_CLASS = "borderColor";
 
+    const char *const TICK_TIME_KEY = "tickTime";
+    const char *const TICK_RATE_KEY = "tickRate";
+
     const int NULL_WIDGET_ID = -1;
     const int CENTRAL_WIDGET_ID = 0;
 

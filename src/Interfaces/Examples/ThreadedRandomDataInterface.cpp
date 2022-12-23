@@ -4,7 +4,7 @@
 
 namespace QCD {
     ThreadedRandomDataInterface::ThreadedRandomDataInterface(double a_rate) {
-        m_interval = (int) ((1.0 / a_rate) * 1000);;
+        m_interval = (int) ((1.0 / a_rate) * 1000);
     }
 
     void ThreadedRandomDataInterface::onRun() {

@@ -56,7 +56,7 @@ namespace QCD {
         updateTheme("Dark");
 
         // Start the periodic updating of widgets
-        m_timer->start(10);
+        m_timer->start(5);
 
         // Runs QT main loop
         int out = QApplication::exec();
@@ -92,6 +92,11 @@ namespace QCD {
     }
 
     void QConfigurableDashboard::updateGUI() {
+        // Track tick time
+        double time = getEpochTime();
+        m_dataPasser->getInputData()[TICK_TIME_KEY] = time - m_lastTime;
+        m_dataPasser->getInputData()[TICK_RATE_KEY] = 1 / (time - m_lastTime);
+        m_lastTime = time;
         // Update all interfaces
         for(auto &interface : m_interfaces) {
             interface->update();

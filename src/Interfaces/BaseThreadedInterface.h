@@ -21,6 +21,8 @@ namespace QCD {
     protected:
         void setJson(const std::string &a_key, Json &a_value);
 
+        void setImage(const std::string &a_key, const Image& a_image);
+
         virtual void onRun();
 
         bool m_active;
@@ -31,6 +33,7 @@ namespace QCD {
         using BaseInterface::m_dataPasser;
 
         Json m_jsonData = Json::object();
+        std::map<std::string, Image> m_images;
 
         typedef std::lock_guard<std::mutex> LockGard;
         std::thread *m_thread;
