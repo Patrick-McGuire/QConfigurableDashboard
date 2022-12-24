@@ -45,6 +45,8 @@ namespace QCD {
 
         void setUpdateAlways(bool a_updateAlways);
 
+        DataPasser *getDataPasser();
+
     public slots:
 
         void updateTheme(QAction *a_action);

@@ -178,4 +178,11 @@ namespace QCD {
         b = str.substr(0, str.find(',', str.find(',', str.find(','))));
         return {std::stoi(r), std::stoi(g), std::stoi(b)};
     }
+
+    void GraphWidget::reset(const Json& value) {
+        m_xValues.clear();
+        for(auto &el : m_seriesList) {
+            el.values.clear();
+        }
+    }
 } // QCD

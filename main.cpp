@@ -17,10 +17,11 @@
 #include "src/Widgets/CustomWidgets/VideoDisplayWidget.h"
 #include "src/Util/UtilFuntions.h"
 #include "src/Interfaces/Examples/ThreadedWebCamInterface.h"
+#include "functional"
 
 int main(int argc, char **argv) {
-
     QCD::QConfigurableDashboard dashboard(argc, argv);
+    dashboard.setUpdateAlways(true);
     // Menus
     dashboard.addMenu("Test");
     dashboard.addMenu("Thing1", "Settings");
@@ -36,7 +37,7 @@ int main(int argc, char **argv) {
     // Create the GUI
     auto *whole = new QCD::VBoxContainer();
     dashboard.setCentralWidget(whole);
-    auto *topBat = new QCD:: HBoxContainer();
+    auto *topBat = new QCD::HBoxContainer();
     whole->addWidget(topBat);
     auto *tkTime = new QCD::LineDisplayWidget(QCD::TICK_TIME_KEY);
     tkTime->setMinimumWidth(150);
@@ -44,8 +45,11 @@ int main(int argc, char **argv) {
     auto *tkRate = new QCD::LineDisplayWidget(QCD::TICK_RATE_KEY);
     tkRate->setMinimumWidth(150);
     tkRate->setUpdateRateScale(20);
+    auto *testButton = new QCD::ButtonWidget("Push me!");
+    testButton->publishTo("b1");
     topBat->addWidget(tkTime);
     topBat->addWidget(tkRate);
+    topBat->addWidget(testButton);
 
     auto *tabContainer = new QCD::TabContainer();
     whole->addWidget(tabContainer);
@@ -76,15 +80,10 @@ int main(int argc, char **argv) {
     graph1->listen("KEY7", "COS", "red");
     sideLayout->addWidget(dataLabel);
     sideLayout->addWidget(graph1);
+    dashboard.getDataPasser()->registerCallback("random1", QCD_CALLBACK(graph1, reset));
     graph1->setMinimumSize(700, 400);
-//    auto *tkTime = new QCD::LineDisplayWidget(QCD::TICK_TIME_KEY);
-//    tkTime->setMinimumWidth(150);
-//    auto *tkRate = new QCD::LineDisplayWidget(QCD::TICK_RATE_KEY);
-//    tkRate->setMinimumWidth(150);
     sideLayout->addWidget(new QCD::ButtonWidget("edfg"));
     sideLayout->addWidget(new QCD::ButtonWidget("abcd"));
-//    topLayout->addWidget(tkTime);
-//    topLayout->addWidget(tkRate);
     topLayout->addWidget(new QCD::ButtonWidget("1"));
     topLayout->addWidget(new QCD::ButtonWidget("2"));
     topLayout->addWidget(new QCD::ButtonWidget("3"));
@@ -112,12 +111,12 @@ int main(int argc, char **argv) {
     auto *graph4 = new QCD::GraphWidget("Graph4");
     auto *graph5 = new QCD::GraphWidget("Graph5");
     auto *graph6 = new QCD::GraphWidget("Graph6");
-    gphGrid->addWidget(graph7,0,0);
-    gphGrid->addWidget(graph2,1,0);
-    gphGrid->addWidget(graph3,2,0);
-    gphGrid->addWidget(graph4,0,1);
-    gphGrid->addWidget(graph5,1,1);
-    gphGrid->addWidget(graph6,2,1);
+    gphGrid->addWidget(graph7, 0, 0);
+    gphGrid->addWidget(graph2, 1, 0);
+    gphGrid->addWidget(graph3, 2, 0);
+    gphGrid->addWidget(graph4, 0, 1);
+    gphGrid->addWidget(graph5, 1, 1);
+    gphGrid->addWidget(graph6, 2, 1);
     graph7->listen("KEY8", "SIN", "Light green");
     graph7->listen("KEY7", "COS", "red");
     graph2->listen("KEY8", "SIN", "Light green");

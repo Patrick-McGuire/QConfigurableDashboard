@@ -9,12 +9,16 @@ namespace QCD {
     Q_OBJECT
     public:
         explicit ThreadedWebCamInterface(double a_rate);
+
+        void toggleColor(const Json &value);
+
     private:
+        void setup() override;
 
-        void onRun() override;
+        void tick() override;
 
-        int m_interval;
         cv::VideoCapture *m_camera;
+        bool m_squareColor = false;
     };
 
 } // QCD

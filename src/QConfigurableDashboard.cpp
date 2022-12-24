@@ -56,7 +56,7 @@ namespace QCD {
         updateTheme("Dark");
 
         // Start the periodic updating of widgets
-        m_timer->start(5);
+        m_timer->start(1000/60);
 
         // Runs QT main loop
         int out = QApplication::exec();
@@ -175,6 +175,10 @@ namespace QCD {
 
     void QConfigurableDashboard::setUpdateAlways(bool a_updateAlways) {
         m_updateAlways = a_updateAlways;
+    }
+
+    DataPasser *QConfigurableDashboard::getDataPasser() {
+        return m_dataPasser;
     }
 
 }

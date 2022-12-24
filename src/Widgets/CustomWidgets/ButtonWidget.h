@@ -12,6 +12,8 @@ namespace QCD {
     public:
         explicit ButtonWidget(const QString &a_text = "");
 
+        void publishTo(const std::string &a_key, bool onClick = true);
+
     signals:
         void pressed();
 
@@ -25,6 +27,8 @@ namespace QCD {
         QVBoxLayout *m_layout;
         bool m_state = false;
         QPushButton *m_pushButton;
+        std::string m_outputKey;
+        std::string m_outputKey2;
     };
 }
 

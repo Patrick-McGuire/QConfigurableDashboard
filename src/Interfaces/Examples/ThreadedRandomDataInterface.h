@@ -10,9 +10,8 @@ namespace QCD {
     public:
         explicit ThreadedRandomDataInterface(double a_rate);
     private:
-        void onRun() override;
+        void tick() override;
         double m_x = 0;
-        int m_interval;
     };
 
 } // QCD

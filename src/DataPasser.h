@@ -7,9 +7,10 @@
 #include "memory"
 #include "opencv2/opencv.hpp"
 #include "QObject"
+#include "CallbackDispatcher.h"
 
 namespace QCD {
-    class DataPasser : public QObject {
+    class DataPasser : public QObject, public CallbackDispatcher {
     Q_OBJECT
     public:
         DataPasser();

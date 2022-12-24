@@ -17,6 +17,8 @@ namespace QCD {
 
         bool setUpdateRateScale(int a_scale) override;
 
+        void reset(const Json& value = Json::object());
+
     private slots:
 
         void mouseMoveSignal(QMouseEvent *a_event);

@@ -10,11 +10,17 @@
 #include "../lib/NlohmannJson/json.hpp"
 #include "QMenuBar"
 #include "QMenu"
+#include "functional"
 #include "opencv2/opencv.hpp"
+
+#define QCD_CALLBACK(ptr, func) std::bind(&boost::remove_reference_t<decltype(*ptr)>::func, ptr, std::placeholders::_1)
+#define QCD_ID_CALLBACK(ptr, func) std::bind(&boost::remove_reference_t<decltype(*ptr)>::func, ptr, std::placeholders::_1, std::placeholders::_2)
 
 namespace QCD {
     typedef nlohmann::json Json;
     typedef cv::Mat Image;
+    typedef std::function<void(Json)> Callback;
+    typedef std::function<void(Json, std::string)> IdCallback;
 
     const char *const THEME_PROPERTY = "theme";
     const char *const WIDGET_BACKGROUND_CLASS = "widgetBackground";
