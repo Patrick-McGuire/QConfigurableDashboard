@@ -11,7 +11,7 @@ namespace QCD {
 
     void BaseThreadedInterface::run() {
         // Start event tunneling
-        m_dataPasser->registerIdCallback(QCD_ID_CALLBACK(this, queueCallback));
+        m_appManager->registerIdCallback(QCD_ID_CALLBACK(this, queueCallback));
         // Start the thread
         m_active = true;
         m_thread = new std::thread(&BaseThreadedInterface::internalRun, this);
@@ -59,22 +59,22 @@ namespace QCD {
         // This function should only be called from the main thread, but needs to access memory shared with m_thread
         LockGard gard(m_dataMutex);
         if (!isThisThread()) {
-            // Iterate though all updated json values, and copy them into the main thread's DataPasser
-            auto &data = m_dataPasser->getInputData();
+            // Iterate though all updated json values, and copy them into the main thread's AppManager
+            auto &data = m_appManager->getInputData();
             for (const auto &el: m_outgoingData.items()) {
                 data[el.key()] = el.value();
             }
             // Iterate though all updated images
-            auto &imgData = m_dataPasser->getImageMap();
+            auto &imgData = m_appManager->getImageMap();
             for (const auto &el: m_outgoingImages) {
                 imgData[el.first] = el.second;
             }
             // Copy in the incoming data
-            m_incomingData = m_dataPasser->getOutputData();     // Copying so much ugh
+            m_incomingData = m_appManager->getOutputData();     // Copying so much ugh
             // Trigger all pending callbacks
             while (!m_outgoingEventQueue.empty()) {
                 auto &callback = m_outgoingEventQueue.front();
-                m_dataPasser->triggerCallback(callback.first, callback.second);
+                m_appManager->triggerCallback(callback.first, callback.second);
                 m_outgoingEventQueue.pop();
             }
             // Remove all json values. This improves performance for code with update rates slower than the main update rate

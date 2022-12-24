@@ -18,7 +18,7 @@ namespace QCD {
 
     void VideoDisplayWidget::onUpdate(QCD::WidgetFocus a_focus) {
         if (isInFocus(a_focus)) {
-            auto map = m_dataPasser->getImageMap();
+            auto map = m_appManager->getImageMap();
             if (map.count(m_key) != 0) {
                 int w = m_width <= 0 ? size().width() - 5 : m_width;
                 int h = m_height <= 0 ? size().height() - 5 : m_height;

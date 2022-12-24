@@ -6,7 +6,7 @@
 #define ROBOT_GUI_V3_QCD_H
 
 #include "boost/optional.hpp"
-#include "QString"
+
 #include "../lib/NlohmannJson/json.hpp"
 #include "QMenuBar"
 #include "QMenu"

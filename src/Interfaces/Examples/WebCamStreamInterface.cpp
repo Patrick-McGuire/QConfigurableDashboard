@@ -15,8 +15,8 @@ namespace QCD {
             cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
             frame.copyTo(frame2);
             cv::rectangle(frame2, cv::Rect(10, 10, 100, 100), cv::Scalar(0, 0, 255), 2);
-            m_dataPasser->getImageMap()["CAM1"] = frame;
-            m_dataPasser->getImageMap()["CAM2"] = frame2;
+            m_appManager->getImageMap()["CAM1"] = frame;
+            m_appManager->getImageMap()["CAM2"] = frame2;
         }
     }
 

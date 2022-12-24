@@ -18,7 +18,7 @@ namespace QCD {
 
     void LineDisplayWidget::onUpdate(QCD::WidgetFocus a_focus) {
         if (a_focus == QCD::WidgetFocus::ON_IN_FOCUS || a_focus == QCD::WidgetFocus::IN_FOCUS) {
-            Json &dataJsonValue = m_dataPasser->getInputData()[m_key];
+            Json &dataJsonValue = m_appManager->getInputData()[m_key];
             if (dataJsonValue.is_string()) {
                 m_textBox->setText(dataJsonValue.get_ref<std::string &>().c_str());
             } else if (dataJsonValue.is_number_integer()) {

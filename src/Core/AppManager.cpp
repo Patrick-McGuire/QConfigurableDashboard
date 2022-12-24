@@ -1,11 +1,11 @@
 #include <iostream>
-#include "DataPasser.h"
+#include "AppManager.h"
 #include "opencv2/opencv.hpp"
 
 
 namespace QCD {
 
-    DataPasser::DataPasser() {
+    AppManager::AppManager() {
         m_themeData = Json::parse(R"delim({
             "Dark" : {
                 "widgetBackground" : "background-color: rgb(23, 23, 23)",
@@ -42,43 +42,43 @@ namespace QCD {
         })delim");
     }
 
-    void DataPasser::enableDragging() {
+    void AppManager::enableDragging() {
         m_draggingEnabled = true;
     }
 
-    void DataPasser::disableDragging() {
+    void AppManager::disableDragging() {
         m_draggingEnabled = false;
     }
 
-    Json &DataPasser::getInputData() {
+    Json &AppManager::getInputData() {
         return m_inputData;
     }
 
-    Json &DataPasser::getOutputData() {
+    Json &AppManager::getOutputData() {
         return m_outputData;
     }
 
-    Json &DataPasser::getConfigData() {
+    Json &AppManager::getConfigData() {
         return m_configData;
     }
 
-    bool DataPasser::getDraggingEnabled() const {
+    bool AppManager::getDraggingEnabled() const {
         return m_draggingEnabled;
     }
 
-    Json &DataPasser::getThemeData() {
+    Json &AppManager::getThemeData() {
         return m_themeData;
     }
 
-    std::map<std::string, Image> &DataPasser::getImageMap() {
+    std::map<std::string, Image> &AppManager::getImageMap() {
         return m_images;
     }
 
-    std::string &DataPasser::getTheme() {
+    std::string &AppManager::getTheme() {
         return m_theme;
     }
 
-    void DataPasser::setTheme(const std::string &a_theme) {
+    void AppManager::setTheme(const std::string &a_theme) {
         m_theme = a_theme;
     }
 

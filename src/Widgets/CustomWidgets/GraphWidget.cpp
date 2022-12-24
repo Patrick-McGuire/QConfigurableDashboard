@@ -58,7 +58,7 @@ namespace QCD {
 
     void GraphWidget::updateSeriesData() {
         // Get the data we need
-        auto &json = m_dataPasser->getInputData();
+        auto &json = m_appManager->getInputData();
         double time = getEpochTime();
         // Add new x value to list
         m_xValues.push_back(time - m_lastTime);
@@ -165,11 +165,11 @@ namespace QCD {
     }
 
     void GraphWidget::onRun() {
-        connect(m_dataPasser, SIGNAL(themeChanged()), this, SLOT(onThemeChange()));
+        connect(m_appManager, SIGNAL(themeChanged()), this, SLOT(onThemeChange()));
     }
 
     QColor GraphWidget::getThemeData(const QString &a_attribute) {
-        std::string str = m_dataPasser->getThemeData()[m_dataPasser->getTheme()][a_attribute.toStdString()].get<std::string>();
+        std::string str = m_appManager->getThemeData()[m_appManager->getTheme()][a_attribute.toStdString()].get<std::string>();
         str = str.substr(str.find("rgb(") + 4);
         boost::algorithm::erase_all(str, " ");
         std::string r, g, b;

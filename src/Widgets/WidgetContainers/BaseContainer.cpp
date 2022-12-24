@@ -30,7 +30,7 @@ namespace QCD {
 
     void BaseContainer::onRun() {
         for (auto &childWidget: m_childWidgets) {
-            childWidget->setGuiManager(m_dataPasser);
+            childWidget->setGuiManager(m_appManager);
             childWidget->run();
         }
     }

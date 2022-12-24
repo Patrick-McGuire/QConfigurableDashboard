@@ -3,8 +3,8 @@
 
 #include <thread>
 #include "BaseInterface.h"
-#include "../DataPasser.h"
-#include "../CallbackDispatcher.h"
+#include "../Core/AppManager.h"
+#include "../Core/CallbackDispatcher.h"
 
 namespace QCD {
     /**
@@ -17,7 +17,7 @@ namespace QCD {
     public:
         /**
          * @brief Constructor
-         * @param a_rate Update rate, Hz
+         * @param a_rate Update rate, Hz. This is a dumb rate, which does not account for execution time
          */
         explicit BaseThreadedInterface(double a_rate);
 
@@ -113,7 +113,7 @@ namespace QCD {
         bool isThisThread();
 
         // Make private, to avoid derived classes from accessing in thread
-        using BaseInterface::m_dataPasser;
+        using BaseInterface::m_appManager;
         using CallbackDispatcher::triggerCallback;
         using CallbackDispatcher::registerIdCallback;
         int m_interval;                         // Set in constructor from main thread, then only read from this thread

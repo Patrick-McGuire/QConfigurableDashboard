@@ -7,7 +7,7 @@ namespace QCD {
     }
 
     void RandomDataInterface::onUpdate() {
-        Json &data = m_dataPasser->getInputData();
+        Json &data = m_appManager->getInputData();
         data["KEY1"] = randomInt(-100, 100);
         data["KEY2"] = randomInt(-10, 10);
         data["KEY3"] = randomDouble(-100, 100);

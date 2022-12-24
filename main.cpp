@@ -80,7 +80,7 @@ int main(int argc, char **argv) {
     graph1->listen("KEY7", "COS", "red");
     sideLayout->addWidget(dataLabel);
     sideLayout->addWidget(graph1);
-    dashboard.getDataPasser()->registerCallback("random1", QCD_CALLBACK(graph1, reset));
+    dashboard.getAppManager()->registerCallback("random1", QCD_CALLBACK(graph1, reset));
     graph1->setMinimumSize(700, 400);
     sideLayout->addWidget(new QCD::ButtonWidget("edfg"));
     sideLayout->addWidget(new QCD::ButtonWidget("abcd"));

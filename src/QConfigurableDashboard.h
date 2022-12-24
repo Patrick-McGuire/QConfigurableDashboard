@@ -14,7 +14,7 @@
 // Personal includes
 #include "QCD.h"
 #include "Widgets/BaseWidget.h"
-#include "DataPasser.h"
+#include "Core/AppManager.h"
 #include "Interfaces/BaseInterface.h"
 #include "Util/UtilFuntions.h"
 
@@ -45,7 +45,7 @@ namespace QCD {
 
         void setUpdateAlways(bool a_updateAlways);
 
-        DataPasser *getDataPasser();
+        AppManager *getAppManager();
 
     public slots:
 
@@ -72,7 +72,7 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-        DataPasser *m_dataPasser;
+        AppManager *m_appManager;
         BaseWidget *m_centralWidget;
         std::vector<BaseInterface *> m_interfaces;
     };

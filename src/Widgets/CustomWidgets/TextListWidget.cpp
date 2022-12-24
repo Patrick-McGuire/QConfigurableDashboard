@@ -28,7 +28,7 @@ namespace QCD {
         if (isInFocus(a_focus)) {
             m_text = "";
             for (auto &line: m_lines) {
-                Json &jsonVal = m_dataPasser->getInputData()[line.key];
+                Json &jsonVal = m_appManager->getInputData()[line.key];
                 if (jsonVal.is_string()) {
                     m_text += line.header + ":\t" + jsonVal.get_ref<std::string &>() + "\n";
                 } else if (jsonVal.is_number_float()) {

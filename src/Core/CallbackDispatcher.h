@@ -3,7 +3,7 @@
 
 #include <map>
 #include <vector>
-#include "QCD.h"
+#include "../QCD.h"
 
 namespace QCD {
 
@@ -11,11 +11,11 @@ namespace QCD {
     public:
         CallbackDispatcher();
 
-        virtual void registerCallback(const std::string &a_name, const Callback &a_callback);
+        void registerCallback(const std::string &a_name, const Callback &a_callback);
 
-        virtual void registerIdCallback(const IdCallback &a_callback);
+        void registerIdCallback(const IdCallback &a_callback);
 
-        virtual void triggerCallback(const std::string &a_name, const Json &a_json = Json::object());
+        void triggerCallback(const std::string &a_name, const Json &a_json = Json::object());
 
     private:
         std::map<std::string, std::vector<Callback>> m_callbacks;

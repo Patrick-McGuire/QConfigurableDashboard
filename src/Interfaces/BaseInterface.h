@@ -2,7 +2,7 @@
 #define QCONFIGURABLEDASHBOARD_BASEINTERFACE_H
 
 #include "QObject"
-#include "../DataPasser.h"
+#include "../Core/AppManager.h"
 
 namespace QCD {
 
@@ -17,10 +17,10 @@ namespace QCD {
 
         virtual void finish();
 
-        virtual void setGuiManager(DataPasser *a_guiManager);
+        virtual void setGuiManager(AppManager *a_guiManager);
 
     protected:
-        DataPasser *m_dataPasser;
+        AppManager *m_appManager;
 
 
     private:

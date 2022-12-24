@@ -36,7 +36,7 @@ namespace QCD {
     void BaseWidget::onUpdate(WidgetFocus a_focus) {}
 
     void BaseWidget::mouseMoveEvent(QMouseEvent *a_event) {
-        if (m_clicked && m_dataPasser->getDraggingEnabled() && !m_staticPos) {
+        if (m_clicked && m_appManager->getDraggingEnabled() && !m_staticPos) {
             move(a_event->globalX() - m_eventDragStartX + m_dragStartX, a_event->globalY() - m_eventDragStartY + m_dragStartY);
         }
     }
@@ -50,7 +50,7 @@ namespace QCD {
     }
 
     void BaseWidget::mousePressEvent(QMouseEvent *a_event) {
-        if (!m_staticPos && m_dataPasser->getDraggingEnabled()) {
+        if (!m_staticPos && m_appManager->getDraggingEnabled()) {
             m_clicked = true;
             m_eventDragStartX = a_event->globalX();
             m_eventDragStartY = a_event->globalY();
@@ -80,8 +80,8 @@ namespace QCD {
         return false;
     }
 
-    void BaseWidget::setGuiManager(DataPasser *a_guiManager) {
-        m_dataPasser = a_guiManager;
+    void BaseWidget::setGuiManager(AppManager *a_guiManager) {
+        m_appManager = a_guiManager;
     }
 
     void BaseWidget::registerTheme(QWidget *a_widget, const QString &attribute) {

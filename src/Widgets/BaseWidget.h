@@ -3,7 +3,7 @@
 
 #include "QWidget"
 #include "../QCD.h"
-#include "../DataPasser.h"
+#include "../Core/AppManager.h"
 #include "QMouseEvent"
 #include "QFrame"
 
@@ -15,7 +15,7 @@ namespace QCD {
 
         virtual void run();
 
-        void setGuiManager(DataPasser *a_guiManager);
+        void setGuiManager(AppManager *a_guiManager);
 
         void smartUpdate(bool a_inFocus);
 
@@ -38,7 +38,7 @@ namespace QCD {
 
         static bool isInFocus(QCD::WidgetFocus a_focus);
 
-        DataPasser *m_dataPasser;
+        AppManager *m_appManager;
         bool m_inLayout = true;
 
 

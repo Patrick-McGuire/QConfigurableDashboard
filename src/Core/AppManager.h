@@ -1,8 +1,8 @@
-#ifndef QCONFIGURABLEDASHBOARD_DATAPASSER_H
-#define QCONFIGURABLEDASHBOARD_DATAPASSER_H
+#ifndef QCONFIGURABLEDASHBOARD_APPMANAGER_H
+#define QCONFIGURABLEDASHBOARD_APPMANAGER_H
 
-#include "QCD.h"
-#include "../lib/NlohmannJson/json.hpp"
+#include "../QCD.h"
+#include "../../lib/NlohmannJson/json.hpp"
 #include "map"
 #include "memory"
 #include "opencv2/opencv.hpp"
@@ -10,10 +10,10 @@
 #include "CallbackDispatcher.h"
 
 namespace QCD {
-    class DataPasser : public QObject, public CallbackDispatcher {
+    class AppManager : public QObject, public CallbackDispatcher {
     Q_OBJECT
     public:
-        DataPasser();
+        AppManager();
 
         Json &getInputData();
 
@@ -51,4 +51,4 @@ namespace QCD {
 }
 
 
-#endif //QCONFIGURABLEDASHBOARD_DATAPASSER_H
+#endif //QCONFIGURABLEDASHBOARD_APPMANAGER_H

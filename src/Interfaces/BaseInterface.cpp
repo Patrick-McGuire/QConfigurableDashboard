@@ -2,15 +2,15 @@
 
 namespace QCD {
     BaseInterface::BaseInterface()  : QObject() {
-        m_dataPasser = nullptr;
+        m_appManager = nullptr;
     }
 
     void BaseInterface::run() {
 
     }
 
-    void BaseInterface::setGuiManager(DataPasser *a_guiManager) {
-        m_dataPasser = a_guiManager;
+    void BaseInterface::setGuiManager(AppManager *a_guiManager) {
+        m_appManager = a_guiManager;
     }
 
     void BaseInterface::update() {
