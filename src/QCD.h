@@ -32,6 +32,12 @@ namespace QCD {
 
     const char *const TICK_TIME_KEY = "tickTime";
     const char *const TICK_RATE_KEY = "tickRate";
+    const char *const TICK_DESIRED_RATE_KEY = "tickDesRate";
+
+    const char *const VIDEO_RECORD_KEY = "recordVideoEvent";
+    const char *const VIDEO_RECORD_PATH_KEY = "path";
+    const char *const VIDEO_RECORD_ID_KEY = "key";
+    const char *const VIDEO_RECORD_TYPE_KEY = "type";
 
     const int NULL_WIDGET_ID = -1;
     const int CENTRAL_WIDGET_ID = 0;

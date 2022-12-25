@@ -36,6 +36,7 @@ namespace QCD {
         std::string &getTheme();
 
     signals:
+
         void themeChanged();
 
     private:

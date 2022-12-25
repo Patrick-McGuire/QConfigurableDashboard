@@ -11,7 +11,7 @@ namespace QCD {
 
     void BaseThreadedInterface::run() {
         // Start event tunneling
-        m_appManager->registerIdCallback(QCD_ID_CALLBACK(this, queueCallback));
+        m_callbackID = m_appManager->registerIdCallback(QCD_ID_CALLBACK(this, queueCallback));
         // Start the thread
         m_active = true;
         m_thread = new std::thread(&BaseThreadedInterface::internalRun, this);
@@ -52,36 +52,44 @@ namespace QCD {
     }
 
     void BaseThreadedInterface::setImage(const std::string &a_key, const Image &a_image) {
+        LockGard gard(m_dataMutex);
         m_outgoingImages[a_key] = a_image;
     }
 
     void BaseThreadedInterface::update() {
         // This function should only be called from the main thread, but needs to access memory shared with m_thread
-        LockGard gard(m_dataMutex);
         if (!isThisThread()) {
-            // Iterate though all updated json values, and copy them into the main thread's AppManager
-            auto &data = m_appManager->getInputData();
-            for (const auto &el: m_outgoingData.items()) {
-                data[el.key()] = el.value();
+            // Handle incoming and outgoing data
+            {
+                LockGard gard2(m_dataMutex);
+                // Iterate though all updated json values, and copy them into the main thread's AppManager
+                auto &data = m_appManager->getInputData();
+                for (const auto &el: m_outgoingData.items()) {
+                    data[el.key()] = el.value();
+                }
+                // Iterate though all updated images
+                auto &imgData = m_appManager->getImageMap();
+                for (const auto &el: m_outgoingImages) {
+                    imgData[el.first] = el.second;
+                }
+                // Copy in the incoming data
+                m_incomingData = m_appManager->getOutputData();     // Copying so much ugh
+                // Remove all json values. This improves performance for code with update rates slower than the main update rate
+                // Turn on in constructor of derived with: m_autoClear = true;
+                if (m_autoClear) {
+                    m_outgoingData.clear();
+                    m_outgoingImages.clear();
+                }
             }
-            // Iterate though all updated images
-            auto &imgData = m_appManager->getImageMap();
-            for (const auto &el: m_outgoingImages) {
-                imgData[el.first] = el.second;
-            }
-            // Copy in the incoming data
-            m_incomingData = m_appManager->getOutputData();     // Copying so much ugh
-            // Trigger all pending callbacks
-            while (!m_outgoingEventQueue.empty()) {
-                auto &callback = m_outgoingEventQueue.front();
-                m_appManager->triggerCallback(callback.first, callback.second);
-                m_outgoingEventQueue.pop();
-            }
-            // Remove all json values. This improves performance for code with update rates slower than the main update rate
-            // Turn on in constructor of derived with: m_autoClear = true;
-            if (m_autoClear) {
-                m_outgoingData.clear();
-                m_outgoingImages.clear();
+            // Handle outgoing events
+            {
+                LockGard gard(m_eventMutex);
+                // Trigger all pending callbacks
+                while (!m_outgoingEventQueue.empty()) {
+                    auto &callback = m_outgoingEventQueue.front();
+                    m_appManager->triggerCallback(callback.first, callback.second, m_callbackID);
+                    m_outgoingEventQueue.pop();
+                }
             }
         }
 
@@ -93,13 +101,14 @@ namespace QCD {
 
     //// Callback I/O functions /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void BaseThreadedInterface::queueCallback(const Json &a_json, const std::string &a_name) {
-        LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
         if (!isThisThread()) {                                                 // This should never run from this thread
+            LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
             m_incomingEventQueue.push({a_name, a_json});
         }
     }
 
     void BaseThreadedInterface::triggerIncomingCallbacks() {
+        LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
         while (!m_incomingEventQueue.empty()) {
             auto &callback = m_incomingEventQueue.front();
             triggerCallback(callback.first, callback.second);
@@ -108,6 +117,7 @@ namespace QCD {
     }
 
     void BaseThreadedInterface::triggerOutgoingCallback(const std::string &a_name, const Json &a_json) {
+        LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
         m_outgoingEventQueue.push({a_name, a_json});
     }
 

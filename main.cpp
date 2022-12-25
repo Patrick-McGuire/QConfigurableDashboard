@@ -15,13 +15,48 @@
 #include "src/Widgets/CustomWidgets/TextListWidget.h"
 #include "src/Widgets/CustomWidgets/GraphWidget.h"
 #include "src/Widgets/CustomWidgets/VideoDisplayWidget.h"
+#include "src/Widgets/CustomWidgets/VideoRecorderWidget.h"
 #include "src/Util/UtilFuntions.h"
 #include "src/Interfaces/Examples/ThreadedWebCamInterface.h"
 #include "functional"
+#include "src/Util/VideoRecorder.h"
+#include "opencv2/opencv.hpp"
+
+/*
+ * TODO: Across app (no particular order):
+ * --------------- Front end
+ * Right click menu editing
+ * Settings menu
+ * Re-do stylesheet stuff
+ * Figure out size policy/hints
+ * --------------- Back end
+ * Config Loading, and OS specific config stuff
+ * Look into subscriber/publisher direct connection
+ * Connect menus to internal event structure (base menu & base action class?)
+ * --------------- Hard/separate
+ * Python and C++ libs for communicating over TCP
+ * Map vis
+ * 3D vis
+ * Windows compatibility
+ * Mac compatibility
+ * --------------- Maintenance
+ * Finish event based video recording architecture, add timer to recorder widget
+ * Finish update rate scaling
+ * Add get/set methods to all widgets
+ * Doxygen comments
+ * Change updateTheme signal to use internal event format
+ * --------------- Implementations
+ * GUIManagers: Base, (XML, ROS, FRC dash, Example)
+ * Port widgets: (Basic charts, annunciator, compas, nav ball, ros/dropdown)
+ * New widgets: (static plot)
+ * Interfaces: (ROS interface, TCP interface, Serial interface)
+ */
 
 int main(int argc, char **argv) {
-    QCD::QConfigurableDashboard dashboard(argc, argv);
+
+    QCD::QConfigurableDashboard dashboard(argc, argv, 60);
     dashboard.setUpdateAlways(true);
+    dashboard.setAutoScale(true);
     // Menus
     dashboard.addMenu("Test");
     dashboard.addMenu("Thing1", "Settings");
@@ -42,6 +77,9 @@ int main(int argc, char **argv) {
     auto *tkTime = new QCD::LineDisplayWidget(QCD::TICK_TIME_KEY);
     tkTime->setMinimumWidth(150);
     tkTime->setUpdateRateScale(20);
+    auto *tkDesRate = new QCD::LineDisplayWidget(QCD::TICK_DESIRED_RATE_KEY);
+    tkDesRate->setMinimumWidth(150);
+//    tkDesRate->setUpdateRateScale(20);
     auto *tkRate = new QCD::LineDisplayWidget(QCD::TICK_RATE_KEY);
     tkRate->setMinimumWidth(150);
     tkRate->setUpdateRateScale(20);
@@ -49,6 +87,7 @@ int main(int argc, char **argv) {
     testButton->publishTo("b1");
     topBat->addWidget(tkTime);
     topBat->addWidget(tkRate);
+    topBat->addWidget(tkDesRate);
     topBat->addWidget(testButton);
 
     auto *tabContainer = new QCD::TabContainer();
@@ -59,7 +98,9 @@ int main(int argc, char **argv) {
     auto *topLayout = new QCD::HBoxContainer();
     auto *sideLayout = new QCD::VBoxContainer();
     auto *video1 = new QCD::VideoDisplayWidget("CAM2");
+    auto *recorder = new QCD::VideoRecorderWidget();
     gridContainer1->addWidget(topLayout, 0, 0);
+    gridContainer1->addWidget(recorder, 0, 1);
     gridContainer1->addWidget(sideLayout, 1, 1);
     gridContainer1->addWidget(video1, 1, 0);
     topLayout->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
@@ -76,11 +117,11 @@ int main(int argc, char **argv) {
     dataLabel->listen("KEY7", "::7");
     dataLabel->listen("KEY8", "::8");
     auto graph1 = new QCD::GraphWidget("Test graph", "Pickles");
-    graph1->listen("KEY8", "SIN", "Light green");
-    graph1->listen("KEY7", "COS", "red");
+    graph1->listen(QCD::TICK_RATE_KEY, "Real", "red");
+    graph1->listen(QCD::TICK_DESIRED_RATE_KEY, "Desired", "Light green");
     sideLayout->addWidget(dataLabel);
     sideLayout->addWidget(graph1);
-    dashboard.getAppManager()->registerCallback("random1", QCD_CALLBACK(graph1, reset));
+//    dashboard.getAppManager()->registerCallback("random1", QCD_CALLBACK(graph1, reset));
     graph1->setMinimumSize(700, 400);
     sideLayout->addWidget(new QCD::ButtonWidget("edfg"));
     sideLayout->addWidget(new QCD::ButtonWidget("abcd"));
@@ -102,6 +143,7 @@ int main(int argc, char **argv) {
     panel->addWidget(new QCD::ButtonWidget("3"), 100, 500);
     panel->addWidget(new QCD::ButtonWidget("3"), 300, 100);
     panel->addWidget(new QCD::LineDisplayWidget(), 300, 500);
+    panel->addWidget(new QCD::VideoRecorderWidget());
     tabContainer->addWidget(panel, "Panel demo");
     // Create tab 3
     auto *gphGrid = new QCD::GridContainer();

@@ -103,13 +103,14 @@ namespace QCD {
 
     void GraphWidget::mouseMoveSignal(QMouseEvent *a_event) {
         if (m_clicked) {
-//            move(a_event->globalX() - m_eventDragStartX + m_dragStartX, a_event->globalY() - m_eventDragStartY + m_dragStartY);
-
             QRectF rect = m_plot->axisRect()->insetLayout()->insetRect(0);
             // since insetRect is in axisRect coordinates (0..1), we transform the mouse position:
             QPointF mousePoint((a_event->pos().x() - m_plot->axisRect()->left()) / (double) m_plot->axisRect()->width(),
                                (a_event->pos().y() - m_plot->axisRect()->top()) / (double) m_plot->axisRect()->height());
             rect.moveTopLeft(mousePoint - dragLegendOrigin);
+            // Clip pos
+            rect.setX(std::min(1.0, std::max(0.0, rect.x())));
+            rect.setY(std::min(1.0, std::max(0.0, rect.y())));
             m_plot->axisRect()->insetLayout()->setInsetRect(0, rect);
             m_plot->replot();
         }

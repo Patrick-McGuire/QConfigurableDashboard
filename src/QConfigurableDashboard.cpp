@@ -5,9 +5,14 @@
 #include "QMenu"
 #include "QCD.h"
 
+// @todo remove macro
+#define RATE_TO_INTERVAL(rateV) ((int) ((1.0 / rateV) * 1000))
+
 namespace QCD {
 
-    QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv) {
+    QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv, double a_rate) {
+        m_desiredRate = a_rate;
+        m_currentRate = a_rate;
         // Save these because why not
         m_argv = a_argv;
         m_argc = a_argc;
@@ -46,26 +51,35 @@ namespace QCD {
     }
 
     int QConfigurableDashboard::run() {
+        qDebug("Initializing GUI");
+
         // Start all the widgets
         m_centralWidget->run();
         // Start all the interfaces
         for (auto &interface: m_interfaces) {
             interface->run();
         }
+        qDebug("Widgets initialized");
 
         updateTheme("Dark");
+        qDebug("Theme set");
 
         // Start the periodic updating of widgets
-        m_timer->start(1000/60);
+        m_timer->start(RATE_TO_INTERVAL(m_currentRate));
+        qDebug("Update loop started");
 
         // Runs QT main loop
+        qDebug("Starting GUI");
         int out = QApplication::exec();
+        qDebug("GUI Closed");
 
         // end all the interfaces
+        qDebug("Ending interfaces");
         for (auto &interface: m_interfaces) {
             interface->finish();
         }
 
+        qDebug("Done!");
         return out;
     }
 
@@ -94,11 +108,30 @@ namespace QCD {
     void QConfigurableDashboard::updateGUI() {
         // Track tick time
         double time = getEpochTime();
+        double tickRate = 1 / (time - m_lastTime);
         m_appManager->getInputData()[TICK_TIME_KEY] = time - m_lastTime;
-        m_appManager->getInputData()[TICK_RATE_KEY] = 1 / (time - m_lastTime);
+        m_appManager->getInputData()[TICK_RATE_KEY] = tickRate;
+        if (m_times.full()) m_times.pop_front();
+        m_times.push_back(tickRate);
         m_lastTime = time;
+        // Calc stuff todo: abstract to function
+        if(m_autoScale) {
+            double av;
+            for (auto el: m_times) {
+                av += el;
+            }
+            av /= (double) m_times.size();
+            if (av - m_currentRate < m_currentRate * -0.075) {
+                m_currentRate -= .1;
+                m_timer->setInterval(RATE_TO_INTERVAL(m_currentRate));
+            } else if (av - m_desiredRate < m_currentRate * -0.075 && m_currentRate < m_desiredRate) {
+                m_currentRate += .2;
+                m_timer->setInterval(RATE_TO_INTERVAL(m_currentRate));
+            }
+            m_appManager->getInputData()[TICK_DESIRED_RATE_KEY] = m_currentRate;
+        }
         // Update all interfaces
-        for(auto &interface : m_interfaces) {
+        for (auto &interface: m_interfaces) {
             interface->update();
         }
         // Update all widgets
@@ -179,6 +212,10 @@ namespace QCD {
 
     AppManager *QConfigurableDashboard::getAppManager() {
         return m_appManager;
+    }
+
+    void QConfigurableDashboard::setAutoScale(bool a_autoScale) {
+        m_autoScale = a_autoScale;
     }
 
 }

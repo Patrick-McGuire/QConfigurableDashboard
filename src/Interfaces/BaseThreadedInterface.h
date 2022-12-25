@@ -11,6 +11,7 @@ namespace QCD {
      * @class BaseThreadedInterface
      * @brief Base class for all threaded interfaces
      * @note Comments in this file refer to "this thread". This means the thread spawned by a instance of a BaseThreadedInterface object
+     * @note Only lock 1 mutex at a time!!!!
      */
     class BaseThreadedInterface : public BaseInterface, protected CallbackDispatcher {
     Q_OBJECT
@@ -132,7 +133,10 @@ namespace QCD {
         //// All event tunnel object
         std::queue<std::pair<std::string, Json>> m_outgoingEventQueue;
         std::queue<std::pair<std::string, Json>> m_incomingEventQueue;
+        int m_callbackID = -1;
         std::mutex m_eventMutex;
+//        #define m_eventMutex m_dataMutex
+//#define m_threadMutex m_dataMutex
     };
 
 } // QCD

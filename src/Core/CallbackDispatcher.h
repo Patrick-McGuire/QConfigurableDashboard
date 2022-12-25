@@ -11,11 +11,11 @@ namespace QCD {
     public:
         CallbackDispatcher();
 
-        void registerCallback(const std::string &a_name, const Callback &a_callback);
+        int registerCallback(const std::string &a_name, const Callback &a_callback);
 
-        void registerIdCallback(const IdCallback &a_callback);
+        int registerIdCallback(const IdCallback &a_callback);
 
-        void triggerCallback(const std::string &a_name, const Json &a_json = Json::object());
+        void triggerCallback(const std::string &a_name, const Json &a_json = Json::object(), int a_excludeIdIndex = -1);
 
     private:
         std::map<std::string, std::vector<Callback>> m_callbacks;

@@ -17,13 +17,14 @@
 #include "Core/AppManager.h"
 #include "Interfaces/BaseInterface.h"
 #include "Util/UtilFuntions.h"
+#include "boost/circular_buffer.hpp"
 
 
 namespace QCD {
     class QConfigurableDashboard : QObject {
     Q_OBJECT
     public:
-        QConfigurableDashboard(int a_argc, char **a_argv);
+        QConfigurableDashboard(int a_argc, char **a_argv, double a_rate = 30);
 
         ~QConfigurableDashboard() override;
 
@@ -45,6 +46,8 @@ namespace QCD {
 
         void setUpdateAlways(bool a_updateAlways);
 
+        void setAutoScale(bool a_autoScale);
+
         AppManager *getAppManager();
 
     public slots:
@@ -63,7 +66,10 @@ namespace QCD {
         int m_argc;
         char **m_argv;
         bool m_updateAlways = true;
+        bool m_autoScale = false;
         double m_lastTime = 0;
+        double m_desiredRate;
+        double m_currentRate;
         // Core objects
         QApplication *m_qApplication;
         QMainWindow *m_mainWindow;
@@ -75,6 +81,7 @@ namespace QCD {
         AppManager *m_appManager;
         BaseWidget *m_centralWidget;
         std::vector<BaseInterface *> m_interfaces;
+        boost::circular_buffer<double> m_times = boost::circular_buffer<double>(100);
     };
 
 }

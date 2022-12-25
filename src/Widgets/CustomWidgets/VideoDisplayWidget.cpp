@@ -9,6 +9,7 @@ namespace QCD {
         m_layout->addWidget(m_videoWidget);
         m_layout->setAlignment(Qt::AlignCenter);
         m_key = a_key;
+        setMinimumSize(1,1);
         m_videoWidget->setMinimumSize(1, 1);
     }
 

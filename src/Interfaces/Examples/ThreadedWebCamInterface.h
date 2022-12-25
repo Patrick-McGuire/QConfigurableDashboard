@@ -2,6 +2,7 @@
 #define QCONFIGURABLEDASHBOARD_THREADEDWEBCAMINTERFACE_H
 
 #include "../BaseThreadedInterface.h"
+#include "../../Util/VideoRecorder.h"
 
 namespace QCD {
 
@@ -19,6 +20,7 @@ namespace QCD {
 
         cv::VideoCapture *m_camera;
         bool m_squareColor = false;
+        VideoRecorder *m_recorder;
     };
 
 } // QCD
