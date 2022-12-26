@@ -1,5 +1,5 @@
 #include "ThreadedRandomDataInterface.h"
-#include "../../Util/UtilFuntions.h"
+#include "../../Util/UtilFunctions.h"
 #include <chrono>
 
 namespace QCD {

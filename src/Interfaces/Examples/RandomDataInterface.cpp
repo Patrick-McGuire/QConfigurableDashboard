@@ -1,5 +1,5 @@
 #include "RandomDataInterface.h"
-#include "../../Util/UtilFuntions.h"
+#include "../../Util/UtilFunctions.h"
 
 namespace QCD {
     RandomDataInterface::RandomDataInterface(double a_rate) : BaseTimerInterface(a_rate) {

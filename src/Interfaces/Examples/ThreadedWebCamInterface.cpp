@@ -1,5 +1,5 @@
 #include "ThreadedWebCamInterface.h"
-#include "../../Util/UtilFuntions.h"
+#include "../../Util/UtilFunctions.h"
 
 namespace QCD {
     ThreadedWebCamInterface::ThreadedWebCamInterface(double a_rate) : BaseThreadedInterface(a_rate){

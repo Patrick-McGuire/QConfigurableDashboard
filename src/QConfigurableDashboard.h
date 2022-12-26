@@ -16,7 +16,7 @@
 #include "Widgets/BaseWidget.h"
 #include "Core/AppManager.h"
 #include "Interfaces/BaseInterface.h"
-#include "Util/UtilFuntions.h"
+#include "Util/UtilFunctions.h"
 #include "boost/circular_buffer.hpp"
 
 

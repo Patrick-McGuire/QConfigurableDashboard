@@ -4,7 +4,7 @@
 #include "src/Widgets/CustomWidgets/LineDisplayWidget.h"
 #include "src/QCD.h"
 #include "iostream"
-#include "src/Util/UtilFuntions.h"
+#include "src/Util/UtilFunctions.h"
 #include "src/Interfaces/Examples/RandomDataInterface.h"
 #include "src/Interfaces/Examples/ThreadedRandomDataInterface.h"
 #include "src/Interfaces/Examples/WebCamStreamInterface.h"
@@ -16,14 +16,14 @@
 #include "src/Widgets/CustomWidgets/GraphWidget.h"
 #include "src/Widgets/CustomWidgets/VideoDisplayWidget.h"
 #include "src/Widgets/CustomWidgets/VideoRecorderWidget.h"
-#include "src/Util/UtilFuntions.h"
+#include "src/Util/UtilFunctions.h"
 #include "src/Interfaces/Examples/ThreadedWebCamInterface.h"
 #include "functional"
 #include "src/Util/VideoRecorder.h"
 #include "opencv2/opencv.hpp"
 
 /*
- * TODO: Across app (no particular order):
+ * TODO: Future work (no particular order):
  * --------------- Front end
  * Right click menu editing
  * Settings menu
@@ -39,6 +39,7 @@
  * 3D vis
  * Windows compatibility
  * Mac compatibility
+ * Figure out how to do multiple build configurations within same project
  * --------------- Maintenance
  * Finish event based video recording architecture, add timer to recorder widget
  * Finish update rate scaling
@@ -52,9 +53,10 @@
  * Interfaces: (ROS interface, TCP interface, Serial interface)
  */
 
+
 int main(int argc, char **argv) {
 
-    QCD::QConfigurableDashboard dashboard(argc, argv, 60);
+    QCD::QConfigurableDashboard dashboard(argc, argv, 90);
     dashboard.setUpdateAlways(true);
     dashboard.setAutoScale(true);
     // Menus
