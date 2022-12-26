@@ -75,13 +75,6 @@ find_package(OpenCV REQUIRED)
 find_package(Qt5 REQUIRED COMPONENTS Gui)
 set(allLibs Qt5::Core Qt5::Widgets Qt5::Network Qt5::Charts Qt5::Multimedia Qt5::PrintSupport Qt5::Gui stdc++fs ${OpenCV_LIBS})
 
-## Run scripts
-execute_process(
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        COMMAND build/createDoxygen.bash ${CMAKE_SOURCE_DIR}
-)
-
-
 ## Configure all source files as a library
 set(allExecutablesNames QcdExample Playground XmlTcp)
 set(allExecutables examples/QcdExample.cpp examples/Playground.cpp examples/XmlTcp.cpp)
@@ -89,6 +82,11 @@ foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_executable(${exeName} ${exe} ${allFiles})
     target_link_libraries(${exeName} ${allLibs})
     target_include_directories(${exeName} PRIVATE include)
+    add_custom_command(
+            TARGET ${exeName}
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMAND build/createDoxygen.bash ${CMAKE_SOURCE_DIR}
+            USES_TERMINAL
+    )
 endforeach(exe ${allExecutables})
-
 

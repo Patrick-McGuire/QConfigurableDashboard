@@ -6,7 +6,11 @@
 #include "Widget.h"
 
 namespace QCD {
-
+    /**
+     * @class TextListWidget
+     * @brief Displays a selection of lines
+     * @todo Change std strings to QStrings
+     */
     class TextListWidget : public Widget {
     Q_OBJECT
     public:
