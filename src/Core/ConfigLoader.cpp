@@ -1,4 +1,4 @@
-#include "../../include/ConfigLoader.h"
+#include <ConfigLoader.h>
 
 namespace QCD {
 } // QCD

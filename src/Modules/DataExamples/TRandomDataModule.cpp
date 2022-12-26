@@ -1,6 +1,8 @@
-#include "../../../include/TRandomDataModule.h"
-#include "../../../include/UtilFunctions.h"
 #include <chrono>
+#include <UtilFunctions.h>
+#include <TRandomDataModule.h>
+#include <QCD.h>
+
 
 namespace QCD {
     TRandomDataModule::TRandomDataModule(double a_rate) : ThreadedModule(a_rate) {

@@ -1,4 +1,4 @@
-#include "../../../include/HBoxContainer.h"
+#include <HBoxContainer.h>
 
 namespace QCD {
     HBoxContainer::HBoxContainer() {

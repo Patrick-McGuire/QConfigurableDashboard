@@ -1,5 +1,5 @@
-#include "../../../include/TextListWidget.h"
-#include "algorithm"
+#include <algorithm>
+#include <TextListWidget.h>
 
 namespace QCD {
     TextListWidget::TextListWidget(const std::string &a_title) : Widget() {

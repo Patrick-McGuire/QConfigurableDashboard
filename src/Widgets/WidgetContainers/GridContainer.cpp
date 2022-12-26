@@ -1,4 +1,4 @@
-#include "../../../include/GridContainer.h"
+#include <GridContainer.h>
 
 namespace QCD {
     GridContainer::GridContainer() : Container() {

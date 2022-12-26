@@ -1,12 +1,12 @@
 #include <QPainter>
 #include <iostream>
-#include "../../include/Widget.h"
 #include "QFrame"
+#include <Widget.h>
 
 namespace QCD {
 
     Widget::Widget() : QFrame() {
-
+        m_appManager = nullptr;
     }
 
     void Widget::run() {

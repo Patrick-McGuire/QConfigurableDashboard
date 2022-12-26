@@ -1,19 +1,19 @@
 #ifndef ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 #define ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 
+#include <boost/circular_buffer.hpp>
 // QT Includes
 #include <QObject>
 #include <QVBoxLayout>
 #include "QApplication"
-#include "QMainWindow"
-#include "QTimer"
+#include <QMainWindow>
+#include <QTimer>
 // Personal includes
-#include "QCD.h"
-#include "Widget.h"
-#include "AppManager.h"
-#include "Module.h"
-#include "UtilFunctions.h"
-#include "boost/circular_buffer.hpp"
+#include <QCD.h>
+#include <Widget.h>
+#include <AppManager.h>
+#include <Module.h>
+#include <UtilFunctions.h>
 
 
 namespace QCD {

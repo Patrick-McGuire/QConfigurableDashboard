@@ -1,6 +1,7 @@
 #include <iostream>
-#include "../../include/AppManager.h"
-#include "opencv2/opencv.hpp"
+#include <AppManager.h>
+#include <QCD.h>
+#include <opencv2/opencv.hpp>
 
 
 namespace QCD {

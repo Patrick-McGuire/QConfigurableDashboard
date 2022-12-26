@@ -1,5 +1,5 @@
-#include "../../../include/PanelContainer.h"
-#include "QPushButton"
+#include <QPushButton>
+#include <PanelContainer.h>
 
 namespace QCD {
     PanelContainer::PanelContainer() : Container() {

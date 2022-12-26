@@ -1,5 +1,7 @@
-#include "../../../include/TWebCamModule.h"
-#include "../../../include/UtilFunctions.h"
+#include <UtilFunctions.h>
+#include <TWebCamModule.h>
+#include <QCD.h>
+
 
 namespace QCD {
     TWebCamModule::TWebCamModule(double a_rate) : ThreadedModule(a_rate){

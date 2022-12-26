@@ -81,6 +81,7 @@ set(allExecutables examples/QcdExample.cpp examples/Playground.cpp examples/XmlT
 foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_executable(${exeName} ${exe} ${allFiles})
     target_link_libraries(${exeName} ${allLibs})
+    target_include_directories(${exeName} PRIVATE include)
 endforeach(exe ${allExecutables})
 
 

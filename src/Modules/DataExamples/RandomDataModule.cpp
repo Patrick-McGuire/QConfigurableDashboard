@@ -1,5 +1,5 @@
-#include "../../../include/RandomDataModule.h"
-#include "../../../include/UtilFunctions.h"
+#include <UtilFunctions.h>
+#include <RandomDataModule.h>
 
 namespace QCD {
     RandomDataModule::RandomDataModule(double a_rate) : TimerModule(a_rate) {

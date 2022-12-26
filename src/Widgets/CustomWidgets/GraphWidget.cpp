@@ -1,6 +1,6 @@
-#include "../../../include/GraphWidget.h"
-#include "../../../include/UtilFunctions.h"
 #include <boost/algorithm/string/erase.hpp>
+#include <UtilFunctions.h>
+#include <GraphWidget.h>
 
 namespace QCD {
     GraphWidget::GraphWidget(const QString &a_title, const QString &a_yAxisTitle) {

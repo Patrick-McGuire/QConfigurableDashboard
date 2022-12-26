@@ -1,4 +1,4 @@
-#include "../../../include/VBoxContainer.h"
+#include <VBoxContainer.h>
 
 namespace QCD {
     VBoxContainer::VBoxContainer() {

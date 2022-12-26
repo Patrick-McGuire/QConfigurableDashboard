@@ -1,6 +1,7 @@
 #include <QLabel>
-#include "../../../include/WebCamModule.h"
-#include "opencv2/opencv.hpp"
+#include <WebCamModule.h>
+#include <opencv2/opencv.hpp>
+#include <QCD.h>
 
 namespace QCD {
     WebCamModule::WebCamModule(double a_rate) : TimerModule(a_rate) {

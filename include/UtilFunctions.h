@@ -1,5 +1,8 @@
-#include "cstdint"
-#include "cstdlib"
+#include <cstdint>
+#include <cstdlib>
+#include <string>
+#include <chrono>
+#include <QCD.h>
 
 #ifndef QCONFIGURABLEDASHBOARD_UTILFUNTIONS_H
 #define QCONFIGURABLEDASHBOARD_UTILFUNTIONS_H

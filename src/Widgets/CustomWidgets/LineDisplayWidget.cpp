@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../../include/LineDisplayWidget.h"
+#include <LineDisplayWidget.h>
 
 namespace QCD {
     LineDisplayWidget::LineDisplayWidget(const std::string &a_key) {

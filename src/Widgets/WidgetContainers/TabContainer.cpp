@@ -1,6 +1,6 @@
-#include "../../../include/TabContainer.h"
-#include "QTabBar"
-#include "QSizePolicy"
+#include <QSizePolicy>
+#include <QTabBar>
+#include <TabContainer.h>
 
 namespace QCD {
     TabContainer::TabContainer() {
