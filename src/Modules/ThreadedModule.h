@@ -1,26 +1,26 @@
-#ifndef QCONFIGURABLEDASHBOARD_BASETHREADEDINTERFACE_H
-#define QCONFIGURABLEDASHBOARD_BASETHREADEDINTERFACE_H
+#ifndef QCONFIGURABLEDASHBOARD_THREADEDMODULE_H
+#define QCONFIGURABLEDASHBOARD_THREADEDMODULE_H
 
 #include <thread>
-#include "BaseInterface.h"
+#include "Module.h"
 #include "../Core/AppManager.h"
 #include "../Core/CallbackDispatcher.h"
 
 namespace QCD {
     /**
-     * @class BaseThreadedInterface
+     * @class ThreadedModule
      * @brief Base class for all threaded interfaces
-     * @note Comments in this file refer to "this thread". This means the thread spawned by a instance of a BaseThreadedInterface object
+     * @note Comments in this file refer to "this thread". This means the thread spawned by a instance of a ThreadedModule object
      * @note Only lock 1 mutex at a time!!!!
      */
-    class BaseThreadedInterface : public BaseInterface, protected CallbackDispatcher {
+    class ThreadedModule : public Module, protected CallbackDispatcher {
     Q_OBJECT
     public:
         /**
          * @brief Constructor
          * @param a_rate Update rate, Hz. This is a dumb rate, which does not account for execution time
          */
-        explicit BaseThreadedInterface(double a_rate);
+        explicit ThreadedModule(double a_rate);
 
         /**
          * @brief Start this thread going
@@ -114,7 +114,7 @@ namespace QCD {
         bool isThisThread();
 
         // Make private, to avoid derived classes from accessing in thread
-        using BaseInterface::m_appManager;
+        using Module::m_appManager;
         using CallbackDispatcher::triggerCallback;
         using CallbackDispatcher::registerIdCallback;
         int m_interval;                         // Set in constructor from main thread, then only read from this thread
@@ -141,4 +141,4 @@ namespace QCD {
 
 } // QCD
 
-#endif //QCONFIGURABLEDASHBOARD_BASETHREADEDINTERFACE_H
+#endif //QCONFIGURABLEDASHBOARD_THREADEDMODULE_H

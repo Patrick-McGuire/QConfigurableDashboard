@@ -1,12 +1,12 @@
-#include "ThreadedRandomDataInterface.h"
+#include "TRandomDataModule.h"
 #include "../../Util/UtilFunctions.h"
 #include <chrono>
 
 namespace QCD {
-    ThreadedRandomDataInterface::ThreadedRandomDataInterface(double a_rate) : BaseThreadedInterface(a_rate) {
+    TRandomDataModule::TRandomDataModule(double a_rate) : ThreadedModule(a_rate) {
     }
 
-    void ThreadedRandomDataInterface::tick() {
+    void TRandomDataModule::tick() {
         Json value = randomInt(-100, 100);
         setJson("KEY1", value);
         value = randomInt(-10, 10);

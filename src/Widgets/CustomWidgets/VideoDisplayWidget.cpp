@@ -1,7 +1,7 @@
 #include "VideoDisplayWidget.h"
 
 namespace QCD {
-    VideoDisplayWidget::VideoDisplayWidget(const std::string &a_key) : BaseWidget() {
+    VideoDisplayWidget::VideoDisplayWidget(const std::string &a_key) : Widget() {
         m_layout = new QVBoxLayout();
         m_layout->setMargin(0);
         setLayout(m_layout);

@@ -3,7 +3,7 @@
 #include "ButtonWidget.h"
 
 namespace QCD {
-    ButtonWidget::ButtonWidget(const QString &a_text) : BaseWidget() {
+    ButtonWidget::ButtonWidget(const QString &a_text) : Widget() {
         // Configure widget
         disableBorder();
         // Construct members

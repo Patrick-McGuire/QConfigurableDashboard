@@ -4,14 +4,14 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QLabel>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 #include <QComboBox>
 #include "QLineEdit"
 #include "QPushButton"
 #include "../../QCD.h"
 namespace QCD {
 
-    class VideoRecorderWidget : public BaseWidget {
+    class VideoRecorderWidget : public Widget {
         Q_OBJECT
     public:
         VideoRecorderWidget();

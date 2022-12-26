@@ -1,23 +1,23 @@
-#include "BaseThreadedInterface.h"
+#include "ThreadedModule.h"
 
 namespace QCD {
     //// Thread/operational functions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    BaseThreadedInterface::BaseThreadedInterface(double a_rate) {
+    ThreadedModule::ThreadedModule(double a_rate) {
         m_interval = (int) ((1.0 / a_rate) * 1000);
         m_thread = nullptr;
         m_autoClear = false;
         m_active = false;
     }
 
-    void BaseThreadedInterface::run() {
+    void ThreadedModule::run() {
         // Start event tunneling
         m_callbackID = m_appManager->registerIdCallback(QCD_ID_CALLBACK(this, queueCallback));
         // Start the thread
         m_active = true;
-        m_thread = new std::thread(&BaseThreadedInterface::internalRun, this);
+        m_thread = new std::thread(&ThreadedModule::internalRun, this);
     }
 
-    void BaseThreadedInterface::finish() {
+    void ThreadedModule::finish() {
         // Tell the thread to finish
         {
             LockGard gard(m_threadMutex);
@@ -27,7 +27,7 @@ namespace QCD {
         m_thread->join();
     }
 
-    void BaseThreadedInterface::internalRun() {
+    void ThreadedModule::internalRun() {
         setup();
         while (m_active) {
             triggerIncomingCallbacks();
@@ -36,27 +36,27 @@ namespace QCD {
         }
     }
 
-    void BaseThreadedInterface::tick() {}
+    void ThreadedModule::tick() {}
 
-    void BaseThreadedInterface::setup() {}
+    void ThreadedModule::setup() {}
 
-    bool BaseThreadedInterface::isThisThread() {
+    bool ThreadedModule::isThisThread() {
         LockGard gard(m_threadMutex);
         return std::this_thread::get_id() == m_thread->get_id();
     }
 
     //// Data I/O functions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    void BaseThreadedInterface::setJson(const std::string &a_key, Json &a_value) {
+    void ThreadedModule::setJson(const std::string &a_key, Json &a_value) {
         LockGard gard(m_dataMutex);
         m_outgoingData[a_key] = a_value;
     }
 
-    void BaseThreadedInterface::setImage(const std::string &a_key, const Image &a_image) {
+    void ThreadedModule::setImage(const std::string &a_key, const Image &a_image) {
         LockGard gard(m_dataMutex);
         m_outgoingImages[a_key] = a_image;
     }
 
-    void BaseThreadedInterface::update() {
+    void ThreadedModule::update() {
         // This function should only be called from the main thread, but needs to access memory shared with m_thread
         if (!isThisThread()) {
             // Handle incoming and outgoing data
@@ -95,19 +95,19 @@ namespace QCD {
 
     }
 
-    Json &BaseThreadedInterface::getIncomingData() {
+    Json &ThreadedModule::getIncomingData() {
         return m_incomingData;
     }
 
     //// Callback I/O functions /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    void BaseThreadedInterface::queueCallback(const Json &a_json, const std::string &a_name) {
+    void ThreadedModule::queueCallback(const Json &a_json, const std::string &a_name) {
         if (!isThisThread()) {                                                 // This should never run from this thread
             LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
             m_incomingEventQueue.push({a_name, a_json});
         }
     }
 
-    void BaseThreadedInterface::triggerIncomingCallbacks() {
+    void ThreadedModule::triggerIncomingCallbacks() {
         LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
         while (!m_incomingEventQueue.empty()) {
             auto &callback = m_incomingEventQueue.front();
@@ -116,7 +116,7 @@ namespace QCD {
         }
     }
 
-    void BaseThreadedInterface::triggerOutgoingCallback(const std::string &a_name, const Json &a_json) {
+    void ThreadedModule::triggerOutgoingCallback(const std::string &a_name, const Json &a_json) {
         LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
         m_outgoingEventQueue.push({a_name, a_json});
     }

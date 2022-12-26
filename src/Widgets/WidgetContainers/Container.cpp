@@ -1,8 +1,8 @@
-#include "BaseContainer.h"
+#include "Container.h"
 
 namespace QCD {
 
-    BaseContainer::BaseContainer() : BaseWidget() {
+    Container::Container() : Widget() {
         m_layout = new QVBoxLayout();
         m_layout->setMargin(0);
         this->setLayout(m_layout);
@@ -10,7 +10,7 @@ namespace QCD {
         m_layout->addWidget(m_wrapperWidget);
     }
 
-    bool BaseContainer::registerChildWidget(BaseWidget *a_childWidget) {
+    bool Container::registerChildWidget(Widget *a_childWidget) {
         if (a_childWidget != nullptr && std::find(m_childWidgets.begin(), m_childWidgets.end(), a_childWidget) == m_childWidgets.end()) {
             m_childWidgets.push_back(a_childWidget);
             a_childWidget->setParent(m_wrapperWidget);
@@ -19,7 +19,7 @@ namespace QCD {
         return false;
     }
 
-    bool BaseContainer::removeChildWidget(BaseWidget *a_childWidget) {
+    bool Container::removeChildWidget(Widget *a_childWidget) {
         auto it = std::find(m_childWidgets.begin(), m_childWidgets.end(), a_childWidget);
         if (it != m_childWidgets.end()) {
             m_childWidgets.erase(it);
@@ -28,21 +28,21 @@ namespace QCD {
         return false;
     }
 
-    void BaseContainer::onRun() {
+    void Container::onRun() {
         for (auto &childWidget: m_childWidgets) {
             childWidget->setGuiManager(m_appManager);
             childWidget->run();
         }
     }
 
-    void BaseContainer::onUpdate(QCD::WidgetFocus a_focus) {
+    void Container::onUpdate(QCD::WidgetFocus a_focus) {
         bool inFocus = isInFocus(a_focus);
         for (auto &childWidget: m_childWidgets) {
             childWidget->smartUpdate(inFocus);
         }
     }
 
-    bool BaseContainer::addWidget(BaseWidget *a_baseWidget) {
+    bool Container::addWidget(Widget *a_baseWidget) {
         return false;
     }
 

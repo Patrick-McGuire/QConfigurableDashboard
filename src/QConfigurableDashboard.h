@@ -13,14 +13,17 @@
 #include "QTimer"
 // Personal includes
 #include "QCD.h"
-#include "Widgets/BaseWidget.h"
+#include "Widgets/Widget.h"
 #include "Core/AppManager.h"
-#include "Interfaces/BaseInterface.h"
+#include "Modules/Module.h"
 #include "Util/UtilFunctions.h"
 #include "boost/circular_buffer.hpp"
 
 
 namespace QCD {
+    class AppManager;
+    class Module;
+
     class QConfigurableDashboard : QObject {
     Q_OBJECT
     public:
@@ -30,9 +33,9 @@ namespace QCD {
 
         int run();
 
-        bool setCentralWidget(BaseWidget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
+        bool setCentralWidget(Widget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 
-        bool addInterface(BaseInterface *a_baseInterface);
+        bool addInterface(Module *a_baseInterface);
 
         QMenu *addMenu(const QString &a_name, const QString &a_parentName = "none");
 
@@ -79,8 +82,8 @@ namespace QCD {
         std::vector<QMenu *> m_menus;
         // Custom objects
         AppManager *m_appManager;
-        BaseWidget *m_centralWidget;
-        std::vector<BaseInterface *> m_interfaces;
+        Widget *m_centralWidget;
+        std::vector<Module *> m_interfaces;
         boost::circular_buffer<double> m_times = boost::circular_buffer<double>(100);
     };
 

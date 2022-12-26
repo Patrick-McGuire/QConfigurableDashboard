@@ -3,11 +3,11 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 
 namespace QCD {
 
-    class TextListWidget : public BaseWidget {
+    class TextListWidget : public Widget {
     Q_OBJECT
     public:
         explicit TextListWidget(const std::string &a_title = "");

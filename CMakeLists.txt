@@ -23,7 +23,7 @@ set(utilFiles
         src/Util/UtilFunctions.h
         )
 set(widgetFiles
-        src/Widgets/BaseWidget.cpp src/Widgets/BaseWidget.h
+        src/Widgets/Widget.cpp src/Widgets/Widget.h
         src/Widgets/CustomWidgets/ButtonWidget.cpp src/Widgets/CustomWidgets/ButtonWidget.h
         src/Widgets/CustomWidgets/LineDisplayWidget.cpp src/Widgets/CustomWidgets/LineDisplayWidget.h
         src/Widgets/CustomWidgets/TextListWidget.cpp src/Widgets/CustomWidgets/TextListWidget.h
@@ -32,7 +32,7 @@ set(widgetFiles
         src/Widgets/CustomWidgets/VideoRecorderWidget.cpp src/Widgets/CustomWidgets/VideoRecorderWidget.h
         )
 set(widgetContainerFiles
-        src/Widgets/WidgetContainers/BaseContainer.cpp src/Widgets/WidgetContainers/BaseContainer.h
+        src/Widgets/WidgetContainers/Container.cpp src/Widgets/WidgetContainers/Container.h
         src/Widgets/WidgetContainers/PanelContainer.cpp src/Widgets/WidgetContainers/PanelContainer.h
         src/Widgets/WidgetContainers/GridContainer.cpp src/Widgets/WidgetContainers/GridContainer.h
         src/Widgets/WidgetContainers/VBoxContainer.cpp src/Widgets/WidgetContainers/VBoxContainer.h
@@ -40,20 +40,19 @@ set(widgetContainerFiles
         src/Widgets/WidgetContainers/TabContainer.cpp src/Widgets/WidgetContainers/TabContainer.h
         )
 set(interfaceFiles
-        src/Interfaces/BaseInterface.cpp src/Interfaces/BaseInterface.h
-        src/Interfaces/BaseThreadedInterface.cpp src/Interfaces/BaseThreadedInterface.h
-        src/Interfaces/BaseTimerInterface.cpp src/Interfaces/BaseTimerInterface.h
-        src/Interfaces/Examples/RandomDataInterface.cpp src/Interfaces/Examples/RandomDataInterface.h
-        src/Interfaces/Examples/WebCamStreamInterface.cpp src/Interfaces/Examples/WebCamStreamInterface.h
-        src/Interfaces/Examples/ThreadedRandomDataInterface.cpp src/Interfaces/Examples/ThreadedRandomDataInterface.h
-        src/Interfaces/Examples/ThreadedWebCamInterface.cpp src/Interfaces/Examples/ThreadedWebCamInterface.h
+        src/Modules/Module.cpp src/Modules/Module.h
+        src/Modules/ThreadedModule.cpp src/Modules/ThreadedModule.h
+        src/Modules/TimerModule.cpp src/Modules/TimerModule.h
+        src/Modules/Examples/RandomDataModule.cpp src/Modules/Examples/RandomDataModule.h
+        src/Modules/Examples/WebCamModule.cpp src/Modules/Examples/WebCamModule.h
+        src/Modules/Examples/TRandomDataModule.cpp src/Modules/Examples/TRandomDataModule.h
+        src/Modules/Examples/TWebCamModule.cpp src/Modules/Examples/TWebCamModule.h
         )
 set(coreFiles
         src/QConfigurableDashboard.cpp src/QConfigurableDashboard.h
         src/Core/AppManager.cpp src/Core/AppManager.h
         src/Core/CallbackDispatcher.cpp src/Core/CallbackDispatcher.h
         src/Core/ConfigLoader.cpp src/Core/ConfigLoader.h
-        src/Modules/BaseModule.cpp src/Modules/BaseModule.h
         )
 set(allFiles
         ${libFiles}

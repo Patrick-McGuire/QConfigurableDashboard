@@ -1,12 +1,12 @@
-#include "RandomDataInterface.h"
+#include "RandomDataModule.h"
 #include "../../Util/UtilFunctions.h"
 
 namespace QCD {
-    RandomDataInterface::RandomDataInterface(double a_rate) : BaseTimerInterface(a_rate) {
+    RandomDataModule::RandomDataModule(double a_rate) : TimerModule(a_rate) {
 
     }
 
-    void RandomDataInterface::onUpdate() {
+    void RandomDataModule::onUpdate() {
         Json &data = m_appManager->getInputData();
         data["KEY1"] = randomInt(-100, 100);
         data["KEY2"] = randomInt(-10, 10);

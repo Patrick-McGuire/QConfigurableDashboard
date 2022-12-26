@@ -1,21 +1,21 @@
 #include <QPainter>
 #include <iostream>
-#include "BaseWidget.h"
+#include "Widget.h"
 #include "QFrame"
 
 namespace QCD {
 
-    BaseWidget::BaseWidget() : QFrame() {
+    Widget::Widget() : QFrame() {
 
     }
 
-    void BaseWidget::run() {
+    void Widget::run() {
         onRun();
     }
 
-    void BaseWidget::onRun() {}
+    void Widget::onRun() {}
 
-    void BaseWidget::smartUpdate(bool a_inFocus) {
+    void Widget::smartUpdate(bool a_inFocus) {
         // Provide a scalar to the global onUpdate rate (run every nth time)
         m_updateCounter--;
         if (m_updateCounter <= 0) {
@@ -33,15 +33,15 @@ namespace QCD {
         }
     }
 
-    void BaseWidget::onUpdate(WidgetFocus a_focus) {}
+    void Widget::onUpdate(WidgetFocus a_focus) {}
 
-    void BaseWidget::mouseMoveEvent(QMouseEvent *a_event) {
+    void Widget::mouseMoveEvent(QMouseEvent *a_event) {
         if (m_clicked && m_appManager->getDraggingEnabled() && !m_staticPos) {
             move(a_event->globalX() - m_eventDragStartX + m_dragStartX, a_event->globalY() - m_eventDragStartY + m_dragStartY);
         }
     }
 
-    void BaseWidget::mouseReleaseEvent(QMouseEvent *a_event) {
+    void Widget::mouseReleaseEvent(QMouseEvent *a_event) {
         if (!m_staticPos) {
             m_clicked = false;
             m_eventDragStartX = a_event->globalX();
@@ -49,7 +49,7 @@ namespace QCD {
         }
     }
 
-    void BaseWidget::mousePressEvent(QMouseEvent *a_event) {
+    void Widget::mousePressEvent(QMouseEvent *a_event) {
         if (!m_staticPos && m_appManager->getDraggingEnabled()) {
             m_clicked = true;
             m_eventDragStartX = a_event->globalX();
@@ -59,19 +59,19 @@ namespace QCD {
         }
     }
 
-    void BaseWidget::disableFloating() {
+    void Widget::disableFloating() {
         m_staticPos = true;
     }
 
-    void BaseWidget::enableFloating() {
+    void Widget::enableFloating() {
         m_staticPos = false;
     }
 
-    void BaseWidget::disableBorder() {
+    void Widget::disableBorder() {
         m_drawBorder = false;
     }
 
-    bool BaseWidget::setUpdateRateScale(int a_scale) {
+    bool Widget::setUpdateRateScale(int a_scale) {
         if (a_scale >= 1) {
             m_updateRateScale = a_scale;
             m_updateCounter = m_updateRateScale;
@@ -80,11 +80,11 @@ namespace QCD {
         return false;
     }
 
-    void BaseWidget::setGuiManager(AppManager *a_guiManager) {
+    void Widget::setGuiManager(AppManager *a_guiManager) {
         m_appManager = a_guiManager;
     }
 
-    void BaseWidget::registerTheme(QWidget *a_widget, const QString &attribute) {
+    void Widget::registerTheme(QWidget *a_widget, const QString &attribute) {
         QString currentProperties = a_widget->property(THEME_PROPERTY).toString();
         if (currentProperties == "") {
             a_widget->setProperty(THEME_PROPERTY, attribute);
@@ -93,11 +93,11 @@ namespace QCD {
         }
     }
 
-    bool BaseWidget::isInFocus(WidgetFocus a_focus) {
+    bool Widget::isInFocus(WidgetFocus a_focus) {
         return a_focus == WidgetFocus::IN_FOCUS || a_focus == WidgetFocus::ON_IN_FOCUS;
     }
 
-    void BaseWidget::setInLayout(bool a_inLayout) {
+    void Widget::setInLayout(bool a_inLayout) {
         m_inLayout = a_inLayout;
     }
 

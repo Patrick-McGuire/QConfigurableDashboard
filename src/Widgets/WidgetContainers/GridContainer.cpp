@@ -1,18 +1,18 @@
 #include "GridContainer.h"
 
 namespace QCD {
-    GridContainer::GridContainer() : BaseContainer() {
+    GridContainer::GridContainer() : Container() {
         m_layout = new QGridLayout;
         m_layout->setMargin(0);
         m_wrapperWidget->setLayout(m_layout);
         registerTheme(m_wrapperWidget, CONTAINER_BACKGROUND_CLASS);
     }
 
-    bool GridContainer::addWidget(BaseWidget *a_baseWidget) {
+    bool GridContainer::addWidget(Widget *a_baseWidget) {
         return addWidget(a_baseWidget, -1, -1);
     }
 
-    bool GridContainer::addWidget(BaseWidget *a_baseWidget, int a_row, int a_col) {
+    bool GridContainer::addWidget(Widget *a_baseWidget, int a_row, int a_col) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) {
             if(a_row < 0 || a_col < 0) {
@@ -26,7 +26,7 @@ namespace QCD {
     }
 
     void GridContainer::onUpdate(QCD::WidgetFocus a_focus) {
-        BaseContainer::onUpdate(a_focus);
+        Container::onUpdate(a_focus);
         if(!m_inLayout) {
             adjustSize();
         }

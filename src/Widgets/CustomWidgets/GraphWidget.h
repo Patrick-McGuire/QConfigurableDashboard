@@ -3,12 +3,12 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 #include "../../../lib/QCustomPlot/qcustomplot.h"
 
 namespace QCD {
 
-    class GraphWidget : public BaseWidget {
+    class GraphWidget : public Widget {
     Q_OBJECT
     public:
         explicit GraphWidget(const QString &a_title = "", const QString &a_yAxisTitle = "y");

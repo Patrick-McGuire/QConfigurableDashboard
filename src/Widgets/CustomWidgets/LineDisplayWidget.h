@@ -4,11 +4,11 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 
 namespace QCD {
 
-    class LineDisplayWidget : public BaseWidget {
+    class LineDisplayWidget : public Widget {
         Q_OBJECT
     public:
         explicit LineDisplayWidget(const std::string &a_key = "KEY5");

@@ -1,20 +1,20 @@
 #ifndef QCONFIGURABLEDASHBOARD_TABCONTAINER_H
 #define QCONFIGURABLEDASHBOARD_TABCONTAINER_H
 
-#include "BaseContainer.h"
+#include "Container.h"
 #include "QTabWidget"
 #include "QVBoxLayout"
 
 namespace QCD {
 
-    class TabContainer : public BaseContainer {
+    class TabContainer : public Container {
         Q_OBJECT
     public:
         explicit TabContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget) override;
+        bool addWidget(Widget *a_baseWidget) override;
 
-        bool addWidget(BaseWidget *a_baseWidget, const QString &a_name);
+        bool addWidget(Widget *a_baseWidget, const QString &a_name);
 
         QTabWidget *getTabs();
 

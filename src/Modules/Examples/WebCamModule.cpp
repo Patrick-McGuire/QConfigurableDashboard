@@ -1,13 +1,13 @@
 #include <QLabel>
-#include "WebCamStreamInterface.h"
+#include "WebCamModule.h"
 #include "opencv2/opencv.hpp"
 
 namespace QCD {
-    WebCamStreamInterface::WebCamStreamInterface(double a_rate) : BaseTimerInterface(a_rate) {
+    WebCamModule::WebCamModule(double a_rate) : TimerModule(a_rate) {
         m_camera = new cv::VideoCapture(0);
     }
 
-    void WebCamStreamInterface::onUpdate() {
+    void WebCamModule::onUpdate() {
         if(m_camera->isOpened()) {
             Image frame;
             Image frame2;

@@ -4,27 +4,27 @@
 #include <QPainter>
 #include <QVBoxLayout>
 #include "vector"
-#include "../BaseWidget.h"
+#include "../Widget.h"
 #include "../../QCD.h"
-#include "BaseContainer.h"
+#include "Container.h"
 
 namespace QCD {
-    class PanelContainer : public BaseContainer {
+    class PanelContainer : public Container {
     Q_OBJECT
     public:
         explicit PanelContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget) override;
+        bool addWidget(Widget *a_baseWidget) override;
 
-        bool addWidget(BaseWidget *a_baseWidget, int a_x, int a_y);
+        bool addWidget(Widget *a_baseWidget, int a_x, int a_y);
 
-        bool setBackgroundWidget(BaseWidget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
+        bool setBackgroundWidget(Widget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 
     protected:
         // QT Members
         QVBoxLayout *m_layout;
         // Custom members
-        BaseWidget *m_backgroundWidget = nullptr;
+        Widget *m_backgroundWidget = nullptr;
     };
 }
 

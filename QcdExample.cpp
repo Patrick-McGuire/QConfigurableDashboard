@@ -5,9 +5,9 @@
 #include "src/QCD.h"
 #include "iostream"
 #include "src/Util/UtilFunctions.h"
-#include "src/Interfaces/Examples/RandomDataInterface.h"
-#include "src/Interfaces/Examples/ThreadedRandomDataInterface.h"
-#include "src/Interfaces/Examples/WebCamStreamInterface.h"
+#include "src/Modules/Examples/RandomDataModule.h"
+#include "src/Modules/Examples/TRandomDataModule.h"
+#include "src/Modules/Examples/WebCamModule.h"
 #include "src/Widgets/WidgetContainers/GridContainer.h"
 #include "src/Widgets/WidgetContainers/VBoxContainer.h"
 #include "src/Widgets/WidgetContainers/HBoxContainer.h"
@@ -17,7 +17,7 @@
 #include "src/Widgets/CustomWidgets/VideoDisplayWidget.h"
 #include "src/Widgets/CustomWidgets/VideoRecorderWidget.h"
 #include "src/Util/UtilFunctions.h"
-#include "src/Interfaces/Examples/ThreadedWebCamInterface.h"
+#include "src/Modules/Examples/TWebCamModule.h"
 #include "functional"
 #include "src/Util/VideoRecorder.h"
 #include "opencv2/opencv.hpp"
@@ -35,10 +35,10 @@ int main(int argc, char **argv) {
     dashboard.addMenuAction("Bong", "Thing1");
     dashboard.addMenu("Thing2", "Settings");
     dashboard.addMenuAction("Yo", "Settings");
-    // Interfaces
-    QCD::ThreadedRandomDataInterface randomDataInterface(200);
+    // Modules
+    QCD::TRandomDataModule randomDataInterface(200);
     dashboard.addInterface(&randomDataInterface);
-    QCD::ThreadedWebCamInterface webCamStreamInterface(70);
+    QCD::TWebCamModule webCamStreamInterface(70);
     dashboard.addInterface(&webCamStreamInterface);
     // Create the GUI
     auto *whole = new QCD::VBoxContainer();

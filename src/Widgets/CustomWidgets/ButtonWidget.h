@@ -4,10 +4,10 @@
 
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 
 namespace QCD {
-    class ButtonWidget : public BaseWidget {
+    class ButtonWidget : public Widget {
     Q_OBJECT
     public:
         explicit ButtonWidget(const QString &a_text = "");

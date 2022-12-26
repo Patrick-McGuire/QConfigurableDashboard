@@ -83,7 +83,7 @@ namespace QCD {
         return out;
     }
 
-    bool QConfigurableDashboard::setCentralWidget(BaseWidget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment) {
+    bool QConfigurableDashboard::setCentralWidget(Widget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment) {
         if (a_widget != nullptr) {
             m_layout->removeWidget(m_centralWidget);
             delete m_centralWidget;
@@ -96,10 +96,10 @@ namespace QCD {
         return false;
     }
 
-    bool QConfigurableDashboard::addInterface(BaseInterface *a_baseInterface) {
+    bool QConfigurableDashboard::addInterface(Module *a_baseInterface) {
         if (a_baseInterface != nullptr && std::find(m_interfaces.begin(), m_interfaces.end(), a_baseInterface) == m_interfaces.end()) {
             m_interfaces.push_back(a_baseInterface);
-            a_baseInterface->setGuiManager(m_appManager);
+            a_baseInterface->setAppManager(m_appManager);
             return true;
         }
         return false;

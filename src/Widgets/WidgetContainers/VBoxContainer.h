@@ -1,17 +1,17 @@
 #ifndef QCONFIGURABLEDASHBOARD_VBOXCONTAINER_H
 #define QCONFIGURABLEDASHBOARD_VBOXCONTAINER_H
 
-#include "BaseContainer.h"
+#include "Container.h"
 #include "QVBoxLayout"
 
 namespace QCD {
 
-    class VBoxContainer : public BaseContainer {
+    class VBoxContainer : public Container {
     Q_OBJECT
     public:
         explicit VBoxContainer();
 
-        bool addWidget(BaseWidget *a_baseWidget) override;
+        bool addWidget(Widget *a_baseWidget) override;
 
         QVBoxLayout *getLayout();
 

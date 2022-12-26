@@ -2,7 +2,7 @@
 #include "QPushButton"
 
 namespace QCD {
-    PanelContainer::PanelContainer() : BaseContainer() {
+    PanelContainer::PanelContainer() : Container() {
         // Configure widget
         disableBorder();
         // Construct members
@@ -12,11 +12,11 @@ namespace QCD {
         registerTheme(m_wrapperWidget, CONTAINER_BACKGROUND_CLASS);
     }
 
-    bool PanelContainer::addWidget(BaseWidget *a_baseWidget) {
+    bool PanelContainer::addWidget(Widget *a_baseWidget) {
         return addWidget(a_baseWidget, 0, 0);
     }
 
-    bool PanelContainer::addWidget(BaseWidget *a_baseWidget, int a_x, int a_y) {
+    bool PanelContainer::addWidget(Widget *a_baseWidget, int a_x, int a_y) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) {
             a_baseWidget->setInLayout(false);
@@ -25,7 +25,7 @@ namespace QCD {
         return added;
     }
 
-    bool PanelContainer::setBackgroundWidget(BaseWidget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment) {
+    bool PanelContainer::setBackgroundWidget(Widget *a_baseWidget, QFlags<Qt::AlignmentFlag> a_alignment) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) {
             removeChildWidget(m_backgroundWidget);

@@ -4,11 +4,11 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QLabel>
-#include "../BaseWidget.h"
+#include "../Widget.h"
 
 namespace QCD {
 
-    class VideoDisplayWidget : public BaseWidget {
+    class VideoDisplayWidget : public Widget {
     Q_OBJECT
     public:
         explicit VideoDisplayWidget(const std::string &a_key = "");

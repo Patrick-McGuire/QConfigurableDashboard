@@ -10,6 +10,8 @@
 #include "CallbackDispatcher.h"
 
 namespace QCD {
+    class QConfigurableDashboard;
+
     class AppManager : public QObject, public CallbackDispatcher {
     Q_OBJECT
     public:

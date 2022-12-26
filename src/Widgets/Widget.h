@@ -8,10 +8,10 @@
 #include "QFrame"
 
 namespace QCD {
-    class BaseWidget : public QFrame {
+    class Widget : public QFrame {
     Q_OBJECT
     public:
-        explicit BaseWidget();
+        explicit Widget();
 
         virtual void run();
 

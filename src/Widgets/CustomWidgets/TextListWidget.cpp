@@ -2,7 +2,7 @@
 #include "algorithm"
 
 namespace QCD {
-    TextListWidget::TextListWidget(const std::string &a_title) : BaseWidget() {
+    TextListWidget::TextListWidget(const std::string &a_title) : Widget() {
         m_layout = new QVBoxLayout();
         m_layout->setMargin(5);
         setLayout(m_layout);

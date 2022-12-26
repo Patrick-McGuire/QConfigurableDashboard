@@ -13,11 +13,11 @@ namespace QCD {
         registerTheme(m_wrapperWidget, CONTAINER_BACKGROUND_CLASS);
     }
 
-    bool TabContainer::addWidget(BaseWidget *a_baseWidget) {
+    bool TabContainer::addWidget(Widget *a_baseWidget) {
         return addWidget(a_baseWidget, "No name");
     }
 
-    bool TabContainer::addWidget(BaseWidget *a_baseWidget, const QString &a_name) {
+    bool TabContainer::addWidget(Widget *a_baseWidget, const QString &a_name) {
         bool added = registerChildWidget(a_baseWidget);
         if (added) {
             m_tabs->addTab(a_baseWidget, a_name);
