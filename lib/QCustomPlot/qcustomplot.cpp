@@ -8699,7 +8699,7 @@ void QCPAxis::setTickLabelSide(LabelSide side)
   be set to 'c'. The inserted multiplication signs are the UTF-8 characters 215 (0xD7) for the
   cross and 183 (0xB7) for the dot.
   
-  Examples for \a formatCode:
+  DataExamples for \a formatCode:
   \li \c g normal format code behaviour. If number is small, fixed format is used, if number is large,
   normal scientific format is used
   \li \c gb If number is small, fixed format is used, if number is large, scientific format is used with
@@ -29738,7 +29738,7 @@ void QCPItemText::setText(const QString &text)
 /*!
   Sets which point of the text rect shall be aligned with \a position.
   
-  Examples:
+  DataExamples:
   \li If \a alignment is <tt>Qt::AlignHCenter | Qt::AlignTop</tt>, the text will be positioned such
   that the top of the text rect will be horizontally centered on \a position.
   \li If \a alignment is <tt>Qt::AlignLeft | Qt::AlignBottom</tt>, \a position will indicate the
@@ -31570,7 +31570,7 @@ void QCPPolarAxisRadial::setTickLabelMode(LabelMode mode)
   be set to 'c'. The inserted multiplication signs are the UTF-8 characters 215 (0xD7) for the
   cross and 183 (0xB7) for the dot.
   
-  Examples for \a formatCode:
+  DataExamples for \a formatCode:
   \li \c g normal format code behaviour. If number is small, fixed format is used, if number is large,
   normal scientific format is used
   \li \c gb If number is small, fixed format is used, if number is large, scientific format is used with
@@ -33484,7 +33484,7 @@ void QCPPolarAxisAngular::setTickLabelMode(LabelMode mode)
   be set to 'c'. The inserted multiplication signs are the UTF-8 characters 215 (0xD7) for the
   cross and 183 (0xB7) for the dot.
   
-  Examples for \a formatCode:
+  DataExamples for \a formatCode:
   \li \c g normal format code behaviour. If number is small, fixed format is used, if number is large,
   normal scientific format is used
   \li \c gb If number is small, fixed format is used, if number is large, scientific format is used with

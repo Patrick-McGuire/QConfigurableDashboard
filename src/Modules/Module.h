@@ -16,10 +16,6 @@ namespace QCD {
 
         AppManager *getAppManager();
 
-        void setApp(QConfigurableDashboard *a_app);
-
-        QConfigurableDashboard *getApp();
-
         virtual void run();
 
         virtual void update();
@@ -28,7 +24,6 @@ namespace QCD {
 
     protected:
         AppManager *m_appManager;
-        QConfigurableDashboard *m_app;
     };
 
 } // QCD

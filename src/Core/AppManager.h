@@ -15,7 +15,7 @@ namespace QCD {
     class AppManager : public QObject, public CallbackDispatcher {
     Q_OBJECT
     public:
-        AppManager();
+        AppManager(QConfigurableDashboard *a_app);
 
         Json &getInputData();
 
@@ -37,6 +37,8 @@ namespace QCD {
 
         std::string &getTheme();
 
+        QConfigurableDashboard *getApp();
+
     signals:
 
         void themeChanged();
@@ -50,6 +52,8 @@ namespace QCD {
         Json m_themeData = Json::object();
         std::map<std::string, Image> m_images;
         std::string m_theme;
+
+        QConfigurableDashboard *m_app;
     };
 }
 

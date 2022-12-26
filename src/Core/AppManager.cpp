@@ -5,7 +5,8 @@
 
 namespace QCD {
 
-    AppManager::AppManager() {
+    AppManager::AppManager(QConfigurableDashboard *a_app) {
+        m_app = a_app;
         m_themeData = Json::parse(R"delim({
             "Dark" : {
                 "widgetBackground" : "background-color: rgb(23, 23, 23)",
@@ -80,6 +81,10 @@ namespace QCD {
 
     void AppManager::setTheme(const std::string &a_theme) {
         m_theme = a_theme;
+    }
+
+    QConfigurableDashboard *AppManager::getApp() {
+        return m_app;
     }
 
 

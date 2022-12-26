@@ -43,10 +43,10 @@ set(interfaceFiles
         src/Modules/Module.cpp src/Modules/Module.h
         src/Modules/ThreadedModule.cpp src/Modules/ThreadedModule.h
         src/Modules/TimerModule.cpp src/Modules/TimerModule.h
-        src/Modules/Examples/RandomDataModule.cpp src/Modules/Examples/RandomDataModule.h
-        src/Modules/Examples/WebCamModule.cpp src/Modules/Examples/WebCamModule.h
-        src/Modules/Examples/TRandomDataModule.cpp src/Modules/Examples/TRandomDataModule.h
-        src/Modules/Examples/TWebCamModule.cpp src/Modules/Examples/TWebCamModule.h
+        src/Modules/DataExamples/RandomDataModule.cpp src/Modules/DataExamples/RandomDataModule.h
+        src/Modules/DataExamples/WebCamModule.cpp src/Modules/DataExamples/WebCamModule.h
+        src/Modules/DataExamples/TRandomDataModule.cpp src/Modules/DataExamples/TRandomDataModule.h
+        src/Modules/DataExamples/TWebCamModule.cpp src/Modules/DataExamples/TWebCamModule.h
         )
 set(coreFiles
         src/QConfigurableDashboard.cpp src/QConfigurableDashboard.h

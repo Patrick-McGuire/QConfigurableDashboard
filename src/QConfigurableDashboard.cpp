@@ -28,7 +28,7 @@ namespace QCD {
         m_window->show();
         m_timer = new QTimer(this);
         connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-        m_appManager = new AppManager();
+        m_appManager = new AppManager(this);
 
         addMenu("Settings");
         addMenu("Tools");
