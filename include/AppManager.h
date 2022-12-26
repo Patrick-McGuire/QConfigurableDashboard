@@ -11,7 +11,10 @@
 
 namespace QCD {
     class QConfigurableDashboard;
-
+    /**
+     * @class AppManager
+     * @brief Handles coordination and data tunneling across application
+     */
     class AppManager : public QObject, public CallbackDispatcher {
     Q_OBJECT
     public:

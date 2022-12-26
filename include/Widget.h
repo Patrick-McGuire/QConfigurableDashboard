@@ -8,6 +8,10 @@
 #include "QFrame"
 
 namespace QCD {
+    /**
+     * @class Widget
+     * @brief Base class for all widgets
+     */
     class Widget : public QFrame {
     Q_OBJECT
     public:
