@@ -1,0 +1,164 @@
+\hypertarget{namespaceQCD}{}\doxysection{Q\+CD Namespace Reference}
+\label{namespaceQCD}\index{QCD@{QCD}}
+
+
+Main class that runs the Q\+Application.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classQCD_1_1AppManager}{App\+Manager}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1ButtonWidget}{Button\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{Callback\+Dispatcher}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1ConfigLoader}{Config\+Loader}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1Container}{Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1GraphWidget}{Graph\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1GridContainer}{Grid\+Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1HBoxContainer}{H\+Box\+Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1LineDisplayWidget}{Line\+Display\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1Module}{Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1PanelContainer}{Panel\+Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{Q\+Configurable\+Dashboard}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1RandomDataModule}{Random\+Data\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1TabContainer}{Tab\+Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1TabModule}{Tab\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1TextListWidget}{Text\+List\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1ThreadedModule}{Threaded\+Module}}
+\begin{DoxyCompactList}\small\item\em Base class for all threaded interfaces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classQCD_1_1TimerModule}{Timer\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1TRandomDataModule}{T\+Random\+Data\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1TWebCamModule}{T\+Web\+Cam\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1VBoxContainer}{V\+Box\+Container}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1VideoDisplayWidget}{Video\+Display\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1VideoRecorder}{Video\+Recorder}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1VideoRecorderWidget}{Video\+Recorder\+Widget}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1WebCamModule}{Web\+Cam\+Module}}
+\item 
+class \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}\label{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}} 
+typedef nlohmann\+::json {\bfseries Json}
+\item 
+\mbox{\Hypertarget{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}\label{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}} 
+typedef cv\+::\+Mat {\bfseries Image}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}\label{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}} 
+typedef std\+::function$<$ void(Json)$>$ {\bfseries Callback}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ae5c981b5e7691163c86a7b3386ed0969}\label{namespaceQCD_ae5c981b5e7691163c86a7b3386ed0969}} 
+typedef std\+::function$<$ void(Json, std\+::string)$>$ {\bfseries Id\+Callback}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}\label{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}} 
+enum {\bfseries Widget\+Focus} \{ {\bfseries N\+O\+\_\+\+F\+O\+C\+US}, 
+{\bfseries I\+N\+\_\+\+F\+O\+C\+US}, 
+{\bfseries O\+N\+\_\+\+I\+N\+\_\+\+F\+O\+C\+US}, 
+{\bfseries O\+N\+\_\+\+N\+O\+\_\+\+F\+O\+C\+US}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a0023b70e0622cd34a4603287374ab237}\label{namespaceQCD_a0023b70e0622cd34a4603287374ab237}} 
+int {\bfseries random\+Int} (int a\+\_\+min, int a\+\_\+max)
+\item 
+\mbox{\Hypertarget{namespaceQCD_a68eaadc1805102e40bf04035a8846314}\label{namespaceQCD_a68eaadc1805102e40bf04035a8846314}} 
+double {\bfseries random\+Double} (double a\+\_\+min, double a\+\_\+max)
+\item 
+\mbox{\Hypertarget{namespaceQCD_a28daf23c0f7a8e8587e76ec5bdf115cb}\label{namespaceQCD_a28daf23c0f7a8e8587e76ec5bdf115cb}} 
+std\+::string {\bfseries random\+String} (int len)
+\item 
+\mbox{\Hypertarget{namespaceQCD_ab1e5fdabc5d103ad62b5a0a9748b8ed8}\label{namespaceQCD_ab1e5fdabc5d103ad62b5a0a9748b8ed8}} 
+double {\bfseries get\+Epoch\+Time} ()
+\item 
+\mbox{\Hypertarget{namespaceQCD_acc76bc9cd09fdb3498d7fba2c9c694ce}\label{namespaceQCD_acc76bc9cd09fdb3498d7fba2c9c694ce}} 
+Json {\bfseries q\+Variant\+To\+Json} (Q\+Variant \&a\+\_\+variant)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ad6ad19deb8f8f7c9fcf548b2aa48b40e}\label{namespaceQCD_ad6ad19deb8f8f7c9fcf548b2aa48b40e}} 
+const char $\ast$const {\bfseries T\+H\+E\+M\+E\+\_\+\+P\+R\+O\+P\+E\+R\+TY} = \char`\"{}theme\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a847a3882d9002168fb14280cf3a9a576}\label{namespaceQCD_a847a3882d9002168fb14280cf3a9a576}} 
+const char $\ast$const {\bfseries W\+I\+D\+G\+E\+T\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D\+\_\+\+C\+L\+A\+SS} = \char`\"{}widget\+Background\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a8cd1c23024dc3e89a8c48b778ca5b840}\label{namespaceQCD_a8cd1c23024dc3e89a8c48b778ca5b840}} 
+const char $\ast$const {\bfseries C\+O\+N\+T\+A\+I\+N\+E\+R\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D\+\_\+\+C\+L\+A\+SS} = \char`\"{}container\+Background\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a86b3a7405c57e4828b65c3444e9d86ed}\label{namespaceQCD_a86b3a7405c57e4828b65c3444e9d86ed}} 
+const char $\ast$const {\bfseries H\+I\+G\+H\+L\+I\+G\+H\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+L\+A\+SS} = \char`\"{}highlight\+Color\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_afc70e1e4ed5e291429828decb35d1cfa}\label{namespaceQCD_afc70e1e4ed5e291429828decb35d1cfa}} 
+const char $\ast$const {\bfseries T\+I\+T\+L\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+L\+A\+SS} = \char`\"{}title\+Text\+Color\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a0720653573ffcb71a30ed617f19821c8}\label{namespaceQCD_a0720653573ffcb71a30ed617f19821c8}} 
+const char $\ast$const {\bfseries T\+E\+X\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+L\+A\+SS} = \char`\"{}text\+Color\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a1728aaccb660ecfdb10b377c9370e7e0}\label{namespaceQCD_a1728aaccb660ecfdb10b377c9370e7e0}} 
+const char $\ast$const {\bfseries B\+O\+R\+D\+E\+R\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+L\+A\+SS} = \char`\"{}border\+Color\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a68d765d8524dc092b6ac36eda221cb7e}\label{namespaceQCD_a68d765d8524dc092b6ac36eda221cb7e}} 
+const char $\ast$const {\bfseries T\+I\+C\+K\+\_\+\+T\+I\+M\+E\+\_\+\+K\+EY} = \char`\"{}tick\+Time\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_aed6e82d9cbfbac5ee44fe97b91c69ee8}\label{namespaceQCD_aed6e82d9cbfbac5ee44fe97b91c69ee8}} 
+const char $\ast$const {\bfseries T\+I\+C\+K\+\_\+\+R\+A\+T\+E\+\_\+\+K\+EY} = \char`\"{}tick\+Rate\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ae14b5850a2d9b429781fa969334e96a2}\label{namespaceQCD_ae14b5850a2d9b429781fa969334e96a2}} 
+const char $\ast$const {\bfseries T\+I\+C\+K\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+R\+A\+T\+E\+\_\+\+K\+EY} = \char`\"{}tick\+Des\+Rate\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a129f2f672817cbcba514005602c9ae2d}\label{namespaceQCD_a129f2f672817cbcba514005602c9ae2d}} 
+const char $\ast$const {\bfseries V\+I\+D\+E\+O\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+K\+EY} = \char`\"{}record\+Video\+Event\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a57248bec7d8cf53c1eaa38f9548f3156}\label{namespaceQCD_a57248bec7d8cf53c1eaa38f9548f3156}} 
+const char $\ast$const {\bfseries V\+I\+D\+E\+O\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+P\+A\+T\+H\+\_\+\+K\+EY} = \char`\"{}path\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_add7d941d23cdaadcabc406adca76c193}\label{namespaceQCD_add7d941d23cdaadcabc406adca76c193}} 
+const char $\ast$const {\bfseries V\+I\+D\+E\+O\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+I\+D\+\_\+\+K\+EY} = \char`\"{}key\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a3639d898bb07e672a572aa003f71a3c2}\label{namespaceQCD_a3639d898bb07e672a572aa003f71a3c2}} 
+const char $\ast$const {\bfseries V\+I\+D\+E\+O\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+T\+Y\+P\+E\+\_\+\+K\+EY} = \char`\"{}type\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceQCD_a9212e9c0046a6d683575d608d3b86e6c}\label{namespaceQCD_a9212e9c0046a6d683575d608d3b86e6c}} 
+const int {\bfseries N\+U\+L\+L\+\_\+\+W\+I\+D\+G\+E\+T\+\_\+\+ID} = -\/1
+\item 
+\mbox{\Hypertarget{namespaceQCD_a41f9cd18d334746e45a00c52c4e63541}\label{namespaceQCD_a41f9cd18d334746e45a00c52c4e63541}} 
+const int {\bfseries C\+E\+N\+T\+R\+A\+L\+\_\+\+W\+I\+D\+G\+E\+T\+\_\+\+ID} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class that runs the Q\+Application. 
+
+\begin{DoxyAuthor}{Author}
+Patrick-\/\+Mc\+Guire 
+\end{DoxyAuthor}
