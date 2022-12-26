@@ -49,7 +49,7 @@ set(interfaceFiles
         src/Modules/DataExamples/TWebCamModule.cpp src/Modules/DataExamples/TWebCamModule.h
         )
 set(coreFiles
-        src/QConfigurableDashboard.cpp src/QConfigurableDashboard.h
+        src/Core/QConfigurableDashboard.cpp src/Core/QConfigurableDashboard.h
         src/Core/AppManager.cpp src/Core/AppManager.h
         src/Core/CallbackDispatcher.cpp src/Core/CallbackDispatcher.h
         src/Core/ConfigLoader.cpp src/Core/ConfigLoader.h
@@ -75,11 +75,12 @@ find_package(OpenCV REQUIRED)
 find_package(Qt5 REQUIRED COMPONENTS Gui)
 set(allLibs Qt5::Core Qt5::Widgets Qt5::Network Qt5::Charts Qt5::Multimedia Qt5::PrintSupport Qt5::Gui stdc++fs ${OpenCV_LIBS})
 
-# Configure all source files as a library
-set(allExecutables QcdExample.cpp Playground.cpp XmlTcp.cpp)
-foreach(exe ${allExecutables})
-    add_executable(${exe} ${exe} ${allFiles})
-    target_link_libraries(${exe} ${allLibs})
+## Configure all source files as a library
+set(allExecutablesNames QcdExample Playground XmlTcp)
+set(allExecutables src/QcdExample.cpp src/Playground.cpp src/XmlTcp.cpp)
+foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
+    add_executable(${exeName} ${exe} ${allFiles})
+    target_link_libraries(${exeName} ${allLibs})
 endforeach(exe ${allExecutables})
 
 

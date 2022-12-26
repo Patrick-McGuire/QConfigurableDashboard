@@ -8,7 +8,7 @@
 #include <QComboBox>
 #include "QLineEdit"
 #include "QPushButton"
-#include "../../QCD.h"
+#include "../../Core/QCD.h"
 namespace QCD {
 
     class VideoRecorderWidget : public Widget {

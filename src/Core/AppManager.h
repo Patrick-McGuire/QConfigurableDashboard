@@ -1,7 +1,7 @@
 #ifndef QCONFIGURABLEDASHBOARD_APPMANAGER_H
 #define QCONFIGURABLEDASHBOARD_APPMANAGER_H
 
-#include "../QCD.h"
+#include "QCD.h"
 #include "../../lib/NlohmannJson/json.hpp"
 #include "map"
 #include "memory"

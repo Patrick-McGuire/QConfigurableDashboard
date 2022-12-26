@@ -1,8 +1,0 @@
-<map id="QCD::ThreadedModule" name="QCD::ThreadedModule">
-<area shape="rect" id="node1" title="Base class for all threaded interfaces." alt="" coords="127,155,295,181"/>
-<area shape="rect" id="node5" href="$classQCD_1_1TRandomDataModule.html" title=" " alt="" coords="5,229,205,256"/>
-<area shape="rect" id="node6" href="$classQCD_1_1TWebCamModule.html" title=" " alt="" coords="230,229,405,256"/>
-<area shape="rect" id="node2" href="$classQCD_1_1Module.html" title=" " alt="" coords="72,80,179,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="88,5,163,32"/>
-<area shape="rect" id="node4" href="$classQCD_1_1CallbackDispatcher.html" title=" " alt="" coords="203,80,389,107"/>
-</map>

@@ -2,7 +2,7 @@
 #define QCONFIGURABLEDASHBOARD_VIDEORECORDER_H
 
 #include "opencv2/opencv.hpp"
-#include "../QCD.h"
+#include "../Core/QCD.h"
 namespace QCD {
 
     class VideoRecorder {

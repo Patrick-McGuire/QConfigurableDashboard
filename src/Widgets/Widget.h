@@ -2,7 +2,7 @@
 #define ROBOT_GUI_V3_BASEWIDGET_H
 
 #include "QWidget"
-#include "../QCD.h"
+#include "../Core/QCD.h"
 #include "../Core/AppManager.h"
 #include "QMouseEvent"
 #include "QFrame"

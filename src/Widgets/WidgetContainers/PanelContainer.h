@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 #include "vector"
 #include "../Widget.h"
-#include "../../QCD.h"
+#include "../../Core/QCD.h"
 #include "Container.h"
 
 namespace QCD {

@@ -3,7 +3,7 @@
 
 #include <map>
 #include <vector>
-#include "../QCD.h"
+#include "QCD.h"
 
 namespace QCD {
 
