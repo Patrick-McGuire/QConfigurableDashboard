@@ -1,4 +1,4 @@
-#include "VideoDisplayWidget.h"
+#include "../../../include/VideoDisplayWidget.h"
 
 namespace QCD {
     VideoDisplayWidget::VideoDisplayWidget(const std::string &a_key) : Widget() {

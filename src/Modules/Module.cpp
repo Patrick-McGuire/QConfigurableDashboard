@@ -1,5 +1,5 @@
-#include "Module.h"
-#include "../Core/QConfigurableDashboard.h"
+#include "../../include/Module.h"
+#include "../../include/QConfigurableDashboard.h"
 
 namespace QCD {
     Module::Module() : QObject() {

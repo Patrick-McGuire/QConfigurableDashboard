@@ -1,4 +1,4 @@
-#include "PanelContainer.h"
+#include "../../../include/PanelContainer.h"
 #include "QPushButton"
 
 namespace QCD {

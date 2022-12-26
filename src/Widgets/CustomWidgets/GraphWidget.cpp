@@ -1,5 +1,5 @@
-#include "GraphWidget.h"
-#include "../../Util/UtilFunctions.h"
+#include "../../../include/GraphWidget.h"
+#include "../../../include/UtilFunctions.h"
 #include <boost/algorithm/string/erase.hpp>
 
 namespace QCD {

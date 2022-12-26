@@ -1,9 +1,0 @@
-<map id="QCD::PanelContainer" name="QCD::PanelContainer">
-<area shape="rect" id="node1" title=" " alt="" coords="5,323,164,349"/>
-<area shape="rect" id="node2" href="$classQCD_1_1Container.html" title=" " alt="" coords="239,247,362,273"/>
-<area shape="rect" id="node3" href="$classQCD_1_1Widget.html" title=" " alt="" coords="32,171,137,197"/>
-<area shape="rect" id="node4" title=" " alt="" coords="27,81,100,108"/>
-<area shape="rect" id="node5" href="$classQCD_1_1AppManager.html" title=" " alt="" coords="125,81,266,108"/>
-<area shape="rect" id="node6" title=" " alt="" coords="81,5,155,32"/>
-<area shape="rect" id="node7" href="$classQCD_1_1CallbackDispatcher.html" title=" " alt="" coords="180,5,365,32"/>
-</map>

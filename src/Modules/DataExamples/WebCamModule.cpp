@@ -1,5 +1,5 @@
 #include <QLabel>
-#include "WebCamModule.h"
+#include "../../../include/WebCamModule.h"
 #include "opencv2/opencv.hpp"
 
 namespace QCD {

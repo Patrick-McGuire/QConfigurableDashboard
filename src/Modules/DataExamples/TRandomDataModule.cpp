@@ -1,5 +1,5 @@
-#include "TRandomDataModule.h"
-#include "../../Util/UtilFunctions.h"
+#include "../../../include/TRandomDataModule.h"
+#include "../../../include/UtilFunctions.h"
 #include <chrono>
 
 namespace QCD {

@@ -1,6 +1,6 @@
 
-#include "VideoRecorder.h"
-#include "UtilFunctions.h"
+#include "../../include/VideoRecorder.h"
+#include "../../include/UtilFunctions.h"
 
 namespace QCD {
     VideoRecorder::VideoRecorder(int a_fps, const std::string &a_key) {

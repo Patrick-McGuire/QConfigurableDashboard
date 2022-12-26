@@ -19,40 +19,40 @@ set(libFiles
         lib/QCustomPlot/qcustomplot.cpp
         )
 set(utilFiles
-        src/Util/VideoRecorder.cpp src/Util/VideoRecorder.h
-        src/Util/UtilFunctions.h
+        src/Util/VideoRecorder.cpp include/VideoRecorder.h
+        include/UtilFunctions.h
         )
 set(widgetFiles
-        src/Widgets/Widget.cpp src/Widgets/Widget.h
-        src/Widgets/CustomWidgets/ButtonWidget.cpp src/Widgets/CustomWidgets/ButtonWidget.h
-        src/Widgets/CustomWidgets/LineDisplayWidget.cpp src/Widgets/CustomWidgets/LineDisplayWidget.h
-        src/Widgets/CustomWidgets/TextListWidget.cpp src/Widgets/CustomWidgets/TextListWidget.h
-        src/Widgets/CustomWidgets/VideoDisplayWidget.cpp src/Widgets/CustomWidgets/VideoDisplayWidget.h
-        src/Widgets/CustomWidgets/GraphWidget.cpp src/Widgets/CustomWidgets/GraphWidget.h
-        src/Widgets/CustomWidgets/VideoRecorderWidget.cpp src/Widgets/CustomWidgets/VideoRecorderWidget.h
+        src/Widgets/Widget.cpp include/Widget.h
+        src/Widgets/CustomWidgets/ButtonWidget.cpp include/ButtonWidget.h
+        src/Widgets/CustomWidgets/LineDisplayWidget.cpp include/LineDisplayWidget.h
+        src/Widgets/CustomWidgets/TextListWidget.cpp include/TextListWidget.h
+        src/Widgets/CustomWidgets/VideoDisplayWidget.cpp include/VideoDisplayWidget.h
+        src/Widgets/CustomWidgets/GraphWidget.cpp include/GraphWidget.h
+        src/Widgets/CustomWidgets/VideoRecorderWidget.cpp include/VideoRecorderWidget.h
         )
 set(widgetContainerFiles
-        src/Widgets/WidgetContainers/Container.cpp src/Widgets/WidgetContainers/Container.h
-        src/Widgets/WidgetContainers/PanelContainer.cpp src/Widgets/WidgetContainers/PanelContainer.h
-        src/Widgets/WidgetContainers/GridContainer.cpp src/Widgets/WidgetContainers/GridContainer.h
-        src/Widgets/WidgetContainers/VBoxContainer.cpp src/Widgets/WidgetContainers/VBoxContainer.h
-        src/Widgets/WidgetContainers/HBoxContainer.cpp src/Widgets/WidgetContainers/HBoxContainer.h
-        src/Widgets/WidgetContainers/TabContainer.cpp src/Widgets/WidgetContainers/TabContainer.h
+        src/Widgets/WidgetContainers/Container.cpp include/Container.h
+        src/Widgets/WidgetContainers/PanelContainer.cpp include/PanelContainer.h
+        src/Widgets/WidgetContainers/GridContainer.cpp include/GridContainer.h
+        src/Widgets/WidgetContainers/VBoxContainer.cpp include/VBoxContainer.h
+        src/Widgets/WidgetContainers/HBoxContainer.cpp include/HBoxContainer.h
+        src/Widgets/WidgetContainers/TabContainer.cpp include/TabContainer.h
         )
 set(interfaceFiles
-        src/Modules/Module.cpp src/Modules/Module.h
-        src/Modules/ThreadedModule.cpp src/Modules/ThreadedModule.h
-        src/Modules/TimerModule.cpp src/Modules/TimerModule.h
-        src/Modules/DataExamples/RandomDataModule.cpp src/Modules/DataExamples/RandomDataModule.h
-        src/Modules/DataExamples/WebCamModule.cpp src/Modules/DataExamples/WebCamModule.h
-        src/Modules/DataExamples/TRandomDataModule.cpp src/Modules/DataExamples/TRandomDataModule.h
-        src/Modules/DataExamples/TWebCamModule.cpp src/Modules/DataExamples/TWebCamModule.h
+        src/Modules/Module.cpp include/Module.h
+        src/Modules/ThreadedModule.cpp include/ThreadedModule.h
+        src/Modules/TimerModule.cpp include/TimerModule.h
+        src/Modules/DataExamples/RandomDataModule.cpp include/RandomDataModule.h
+        src/Modules/DataExamples/WebCamModule.cpp include/WebCamModule.h
+        src/Modules/DataExamples/TRandomDataModule.cpp include/TRandomDataModule.h
+        src/Modules/DataExamples/TWebCamModule.cpp include/TWebCamModule.h
         )
 set(coreFiles
-        src/Core/QConfigurableDashboard.cpp src/Core/QConfigurableDashboard.h
-        src/Core/AppManager.cpp src/Core/AppManager.h
-        src/Core/CallbackDispatcher.cpp src/Core/CallbackDispatcher.h
-        src/Core/ConfigLoader.cpp src/Core/ConfigLoader.h
+        src/Core/QConfigurableDashboard.cpp include/QConfigurableDashboard.h
+        src/Core/AppManager.cpp include/AppManager.h
+        src/Core/CallbackDispatcher.cpp include/CallbackDispatcher.h
+        src/Core/ConfigLoader.cpp include/ConfigLoader.h
         )
 set(allFiles
         ${libFiles}
@@ -77,7 +77,7 @@ set(allLibs Qt5::Core Qt5::Widgets Qt5::Network Qt5::Charts Qt5::Multimedia Qt5:
 
 ## Configure all source files as a library
 set(allExecutablesNames QcdExample Playground XmlTcp)
-set(allExecutables src/QcdExample.cpp src/Playground.cpp src/XmlTcp.cpp)
+set(allExecutables examples/QcdExample.cpp examples/Playground.cpp examples/XmlTcp.cpp)
 foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_executable(${exeName} ${exe} ${allFiles})
     target_link_libraries(${exeName} ${allLibs})

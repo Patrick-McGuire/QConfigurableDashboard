@@ -1,4 +1,4 @@
-#include "CallbackDispatcher.h"
+#include "../../include/CallbackDispatcher.h"
 
 namespace QCD {
     CallbackDispatcher::CallbackDispatcher() = default;

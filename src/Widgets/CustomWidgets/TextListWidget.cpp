@@ -1,4 +1,4 @@
-#include "TextListWidget.h"
+#include "../../../include/TextListWidget.h"
 #include "algorithm"
 
 namespace QCD {

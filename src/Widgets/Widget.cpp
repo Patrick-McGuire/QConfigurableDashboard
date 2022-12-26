@@ -1,6 +1,6 @@
 #include <QPainter>
 #include <iostream>
-#include "Widget.h"
+#include "../../include/Widget.h"
 #include "QFrame"
 
 namespace QCD {

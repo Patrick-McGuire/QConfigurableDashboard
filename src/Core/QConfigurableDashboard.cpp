@@ -1,9 +1,9 @@
 #include <QWidgetAction>
 #include <iostream>
-#include "QConfigurableDashboard.h"
+#include "../../include/QConfigurableDashboard.h"
 #include "QMenuBar"
 #include "QMenu"
-#include "QCD.h"
+#include "../../include/QCD.h"
 
 // @todo remove macro
 #define RATE_TO_INTERVAL(rateV) ((int) ((1.0 / rateV) * 1000))

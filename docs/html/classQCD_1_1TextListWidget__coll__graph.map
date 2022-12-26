@@ -1,8 +1,0 @@
-<map id="QCD::TextListWidget" name="QCD::TextListWidget">
-<area shape="rect" id="node1" title=" " alt="" coords="5,247,160,273"/>
-<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title=" " alt="" coords="30,171,135,197"/>
-<area shape="rect" id="node3" title=" " alt="" coords="25,81,98,108"/>
-<area shape="rect" id="node4" href="$classQCD_1_1AppManager.html" title=" " alt="" coords="123,81,264,108"/>
-<area shape="rect" id="node5" title=" " alt="" coords="79,5,153,32"/>
-<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title=" " alt="" coords="178,5,363,32"/>
-</map>

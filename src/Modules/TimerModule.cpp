@@ -1,4 +1,4 @@
-#include "TimerModule.h"
+#include "../../include/TimerModule.h"
 
 namespace QCD {
     TimerModule::TimerModule(double a_rate) {

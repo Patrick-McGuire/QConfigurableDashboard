@@ -1,5 +1,5 @@
 #include <QFileDialog>
-#include "VideoRecorderWidget.h"
+#include "../../../include/VideoRecorderWidget.h"
 
 namespace QCD {
     VideoRecorderWidget::VideoRecorderWidget() {

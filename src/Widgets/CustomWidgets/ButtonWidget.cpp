@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "ButtonWidget.h"
+#include "../../../include/ButtonWidget.h"
 
 namespace QCD {
     ButtonWidget::ButtonWidget(const QString &a_text) : Widget() {

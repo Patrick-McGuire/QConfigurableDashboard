@@ -1,4 +1,4 @@
-#include "TabContainer.h"
+#include "../../../include/TabContainer.h"
 #include "QTabBar"
 #include "QSizePolicy"
 
