@@ -37,9 +37,9 @@ int main(int argc, char **argv) {
     dashboard.addMenuAction("Yo", "Settings");
     // Modules
     QCD::TRandomDataModule randomDataInterface(200);
-    dashboard.addInterface(&randomDataInterface);
+    dashboard.addModule(&randomDataInterface);
     QCD::TWebCamModule webCamStreamInterface(70);
-    dashboard.addInterface(&webCamStreamInterface);
+    dashboard.addModule(&webCamStreamInterface);
     // Create the GUI
     auto *whole = new QCD::VBoxContainer();
     dashboard.setCentralWidget(whole);

@@ -54,9 +54,9 @@ namespace QCD {
 
         // Start all the widgets
         m_centralWidget->run();
-        // Start all the interfaces
-        for (auto &interface: m_interfaces) {
-            interface->run();
+        // Start all the modules
+        for (auto &module: m_modules) {
+            module->run();
         }
         qDebug("Widgets initialized");
 
@@ -72,10 +72,10 @@ namespace QCD {
         int out = QApplication::exec();
         qDebug("GUI Closed");
 
-        // end all the interfaces
-        qDebug("Ending interfaces");
-        for (auto &interface: m_interfaces) {
-            interface->finish();
+        // end all the modules
+        qDebug("Ending modules");
+        for (auto &module: m_modules) {
+            module->finish();
         }
 
         qDebug("Done!");
@@ -95,10 +95,10 @@ namespace QCD {
         return false;
     }
 
-    bool QConfigurableDashboard::addInterface(Module *a_baseInterface) {
-        if (a_baseInterface != nullptr && std::find(m_interfaces.begin(), m_interfaces.end(), a_baseInterface) == m_interfaces.end()) {
-            m_interfaces.push_back(a_baseInterface);
-            a_baseInterface->setAppManager(m_appManager);
+    bool QConfigurableDashboard::addModule(Module *a_baseModule) {
+        if (a_baseModule != nullptr && std::find(m_modules.begin(), m_modules.end(), a_baseModule) == m_modules.end()) {
+            m_modules.push_back(a_baseModule);
+            a_baseModule->setAppManager(m_appManager);
             return true;
         }
         return false;
@@ -114,7 +114,7 @@ namespace QCD {
         m_times.push_back(tickRate);
         m_lastTime = time;
         // Calc stuff todo: abstract to function
-        if(m_autoScale) {
+        if (m_autoScale) {
             double av;
             for (auto el: m_times) {
                 av += el;
@@ -129,12 +129,12 @@ namespace QCD {
             }
             m_appManager->getInputData()[TICK_DESIRED_RATE_KEY] = m_currentRate;
         }
-        // Update all interfaces
-        for (auto &interface: m_interfaces) {
-            interface->update();
+        // Update all modules
+        for (auto &module: m_modules) {
+            module->update();
         }
         // Update all widgets
-        m_centralWidget->smartUpdate(m_mainWindow->isActiveWindow() || m_updateAlways);
+        m_centralWidget->smartUpdate(m_updateAlways || m_mainWindow->isActiveWindow());
     }
 
     QMenu *QConfigurableDashboard::addMenu(const QString &a_name, const QString &a_parentName) {
