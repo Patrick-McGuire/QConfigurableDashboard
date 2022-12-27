@@ -80,8 +80,8 @@ namespace QCD {
         return m_theme;
     }
 
-    void AppManager::setTheme(const std::string &a_theme) {
-        m_theme = a_theme;
+    void AppManager::setTheme(const std::string &a_name) {
+        m_theme = a_name;
     }
 
     QConfigurableDashboard *AppManager::getApp() {

@@ -67,10 +67,6 @@ namespace QCD {
         m_staticPos = false;
     }
 
-    void Widget::disableBorder() {
-        m_drawBorder = false;
-    }
-
     bool Widget::setUpdateRateScale(int a_scale) {
         if (a_scale >= 1) {
             m_updateRateScale = a_scale;

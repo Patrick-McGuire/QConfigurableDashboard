@@ -8,7 +8,7 @@
 namespace QCD {
     /**
      * @class TextListWidget
-     * @brief Displays a selection of lines
+     * @brief QCD Widget that displays a selection of lines of data
      * @todo Change std strings to QStrings
      */
     class TextListWidget : public Widget {

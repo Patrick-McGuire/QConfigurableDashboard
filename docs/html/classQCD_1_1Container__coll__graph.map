@@ -1,8 +1,0 @@
-<map id="QCD::Container" name="QCD::Container">
-<area shape="rect" id="node1" title=" " alt="" coords="5,247,128,273"/>
-<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all widgets." alt="" coords="14,171,119,197"/>
-<area shape="rect" id="node3" title=" " alt="" coords="9,81,82,108"/>
-<area shape="rect" id="node4" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="107,81,248,108"/>
-<area shape="rect" id="node5" title=" " alt="" coords="63,5,137,32"/>
-<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title=" " alt="" coords="162,5,347,32"/>
-</map>

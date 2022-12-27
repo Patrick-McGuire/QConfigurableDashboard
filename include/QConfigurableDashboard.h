@@ -2,13 +2,11 @@
 #define ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 
 #include <boost/circular_buffer.hpp>
-// QT Includes
 #include <QObject>
 #include <QVBoxLayout>
 #include "QApplication"
 #include <QMainWindow>
 #include <QTimer>
-// Personal includes
 #include <QCD.h>
 #include <Widget.h>
 #include <AppManager.h>
@@ -17,13 +15,14 @@
 
 
 namespace QCD {
-    class AppManager;
+    class AppManager;   // Forward decl
 
-    class Module;
+    class Module;       // Forward decl
 
     /**
-     * @brief Main class that runs the Application
-     * @author Patrick-McGuire
+     * @brief Core class for running a QCD dashboard application
+     * @details Handles updating data, menus, adding widgets, adding modules
+     * @authors Patrick-McGuire
      */
     class QConfigurableDashboard : QObject {
     Q_OBJECT

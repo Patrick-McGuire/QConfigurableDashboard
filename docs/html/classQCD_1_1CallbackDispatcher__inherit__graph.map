@@ -1,7 +1,0 @@
-<map id="QCD::CallbackDispatcher" name="QCD::CallbackDispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="73,5,258,32"/>
-<area shape="rect" id="node2" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="5,80,147,107"/>
-<area shape="rect" id="node3" href="$classQCD_1_1ThreadedModule.html" title="Base class for all threaded interfaces." alt="" coords="171,80,339,107"/>
-<area shape="rect" id="node4" href="$classQCD_1_1TRandomDataModule.html" title=" " alt="" coords="48,155,248,181"/>
-<area shape="rect" id="node5" href="$classQCD_1_1TWebCamModule.html" title=" " alt="" coords="273,155,447,181"/>
-</map>

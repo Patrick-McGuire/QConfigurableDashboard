@@ -39,7 +39,7 @@ set(widgetContainerFiles
         src/Widgets/WidgetContainers/HBoxContainer.cpp include/HBoxContainer.h
         src/Widgets/WidgetContainers/TabContainer.cpp include/TabContainer.h
         )
-set(interfaceFiles
+set(moduleFiles
         src/Modules/Module.cpp include/Module.h
         src/Modules/ThreadedModule.cpp include/ThreadedModule.h
         src/Modules/TimerModule.cpp include/TimerModule.h
@@ -59,7 +59,7 @@ set(allFiles
         ${utilFiles}
         ${widgetFiles}
         ${widgetContainerFiles}
-        ${interfaceFiles}
+        ${moduleFiles}
         ${coreFiles}
         )
 
@@ -85,7 +85,7 @@ foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_custom_command(
             TARGET ${exeName}
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMAND build/createDoxygen.bash ${CMAKE_SOURCE_DIR}
+            COMMAND docs/createDoxygen.bash ${CMAKE_SOURCE_DIR}
             USES_TERMINAL
     )
 endforeach(exe ${allExecutables})

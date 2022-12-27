@@ -3,8 +3,6 @@
 
 namespace QCD {
     ButtonWidget::ButtonWidget(const QString &a_text) : Widget() {
-        // Configure widget
-        disableBorder();
         // Construct members
         m_layout = new QVBoxLayout();
         m_layout->setMargin(2);

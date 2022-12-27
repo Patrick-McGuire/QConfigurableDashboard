@@ -9,7 +9,7 @@
 namespace QCD {
     /**
      * @class ThreadedModule
-     * @brief Base class for all threaded interfaces
+     * @brief Base class for all threaded modules
      * @note Comments in this file refer to "this thread". This means the thread spawned by a instance of a ThreadedModule object
      * @note Only lock 1 mutex at a time!!!!
      */

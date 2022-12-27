@@ -3,8 +3,6 @@
 
 namespace QCD {
     PanelContainer::PanelContainer() : Container() {
-        // Configure widget
-        disableBorder();
         // Construct members
         m_layout = new QVBoxLayout();
         m_layout->setMargin(0);

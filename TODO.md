@@ -9,6 +9,12 @@
 * Look into subscriber/publisher direct connection
 * Connect menus to internal event structure (base menu & base action class?)
 * Module system
+## Docs
+* Doxygen comments
+* Examples
+* Installing
+* Look into more Doxygen features
+* ~~Setup Doxygen~~
 ## Hard/separate
 * Python and C++ libs for communicating over TCP
 * Map vis
@@ -22,7 +28,6 @@
 * Finish event based video recording architecture, add timer to recorder widget 
 * Finish update rate scaling
 * Add get/set methods to all widgets
-* Doxygen comments
 * Change updateTheme signal to use internal event format
 ## Implementations
 * Modules: (XML, ROS, FRC dash, Example)
