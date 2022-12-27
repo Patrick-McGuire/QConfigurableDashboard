@@ -14,6 +14,30 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -no-pie")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
+option(BUILD_DOC "Build documentation" ON)
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    add_custom_target(CreateDoxygen ALL
+            COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/docs/
+            COMMENT "Generating API documentation with Doxygen"
+            VERBATIM)
+else (DOXYGEN_FOUND)
+    message("Doxygen need to be installed to generate the doxygen documentation")
+endif (DOXYGEN_FOUND)
+
+# Set up everything to find libs/include
+include_directories(/usr/include/)
+include_directories(${OpenCV_INCLUDE_DIRS})
+find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
+find_package(Qt5Network REQUIRED)
+find_package(Qt5Charts REQUIRED)
+find_package(Qt5PrintSupport REQUIRED)
+find_package(Qt5Multimedia REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(Qt5 REQUIRED COMPONENTS Gui)
+set(allLibs Qt5::Core Qt5::Widgets Qt5::Network Qt5::Charts Qt5::Multimedia Qt5::PrintSupport Qt5::Gui stdc++fs ${OpenCV_LIBS})
+
 # Define all the files needed to build
 set(libFiles
         lib/QCustomPlot/qcustomplot.cpp
@@ -63,18 +87,6 @@ set(allFiles
         ${coreFiles}
         )
 
-# Set up everything to find libs/include
-include_directories(/usr/include/)
-include_directories(${OpenCV_INCLUDE_DIRS})
-find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
-find_package(Qt5Network REQUIRED)
-find_package(Qt5Charts REQUIRED)
-find_package(Qt5PrintSupport REQUIRED)
-find_package(Qt5Multimedia REQUIRED)
-find_package(OpenCV REQUIRED)
-find_package(Qt5 REQUIRED COMPONENTS Gui)
-set(allLibs Qt5::Core Qt5::Widgets Qt5::Network Qt5::Charts Qt5::Multimedia Qt5::PrintSupport Qt5::Gui stdc++fs ${OpenCV_LIBS})
-
 ## Configure all source files as a library
 set(allExecutablesNames QcdExample Playground XmlTcp)
 set(allExecutables examples/QcdExample.cpp examples/Playground.cpp examples/XmlTcp.cpp)
@@ -82,11 +94,11 @@ foreach(exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_executable(${exeName} ${exe} ${allFiles})
     target_link_libraries(${exeName} ${allLibs})
     target_include_directories(${exeName} PRIVATE include)
-    add_custom_command(
-            TARGET ${exeName}
-            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMAND docs/createDoxygen.bash ${CMAKE_SOURCE_DIR}
-            USES_TERMINAL
-    )
+#    add_custom_command(
+#            TARGET ${exeName}
+#            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+#            COMMAND docs/createDoxygen.bash ${CMAKE_SOURCE_DIR}
+#            USES_TERMINAL
+#    )
 endforeach(exe ${allExecutables})
 

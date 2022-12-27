@@ -20,11 +20,11 @@ namespace QCD {
     class Module;       // Forward decl
 
     /**
-     * @brief Core class for running a QCD dashboard application
+     * @brief Core class for running a QCD dashboard application.
      * @details Handles updating data, menus, adding widgets, adding modules, changing themes and running the entire application.
      * This only has the ability to set 1 core widget. In most cases where many widgets are desired, set a QCD::Container as the central widget.
      * Then you can add as many widgets to the container as you like. Setting the central widget and creating widgets is best done from modules
-     * but can also be done from the main funtion. Calling QCD::QConfigurableDashboard::run() runs the entire dashboard
+     * but can also be done from the main function. Calling QCD::QConfigurableDashboard::run() runs the entire dashboard
      * application. This needs to be called in the main thread, and is blocking. Updating of widgets is handled on a periodic basis based
      * by the update rated specified in the constructor. There is an option to dynamically scale down the update rate based on program performance.
      * It is advisable to enable this option by setting QCD::QConfigurableDashboard::setAutoScale() to true because some features like file dialogs become
