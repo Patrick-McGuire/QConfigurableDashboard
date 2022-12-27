@@ -1,0 +1,8 @@
+<map id="QCD::TextListWidget" name="QCD::TextListWidget">
+<area shape="rect" id="node1" title="QCD Widget that displays a selection of lines of data." alt="" coords="5,247,160,273"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="30,171,135,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="25,81,98,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="123,81,264,108"/>
+<area shape="rect" id="node5" title=" " alt="" coords="79,5,153,32"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="178,5,363,32"/>
+</map>

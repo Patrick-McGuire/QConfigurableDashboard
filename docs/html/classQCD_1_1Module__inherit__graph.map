@@ -1,0 +1,10 @@
+<map id="QCD::Module" name="QCD::Module">
+<area shape="rect" id="node1" title=" " alt="" coords="368,80,475,107"/>
+<area shape="rect" id="node3" href="$classQCD_1_1ThreadedModule.html" title="Base class for all threaded modules." alt="" coords="233,155,401,181"/>
+<area shape="rect" id="node6" href="$classQCD_1_1TimerModule.html" title=" " alt="" coords="453,155,597,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="384,5,459,32"/>
+<area shape="rect" id="node4" href="$classQCD_1_1TRandomDataModule.html" title=" " alt="" coords="5,229,205,256"/>
+<area shape="rect" id="node5" href="$classQCD_1_1TWebCamModule.html" title=" " alt="" coords="230,229,405,256"/>
+<area shape="rect" id="node7" href="$classQCD_1_1RandomDataModule.html" title=" " alt="" coords="429,229,621,256"/>
+<area shape="rect" id="node8" href="$classQCD_1_1WebCamModule.html" title=" " alt="" coords="646,229,813,256"/>
+</map>
