@@ -1,0 +1,17 @@
+digraph "C:/Users/patri/Documents/QConfigurableDashboard/src/Widgets"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_006bfb25df2a3165009e1fd283f5fb39 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="src", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_006bfb25df2a3165009e1fd283f5fb39.html",tooltip=""]
+  subgraph clusterdir_f496ee0beab09f0a3344d9aae38213f1 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_f496ee0beab09f0a3344d9aae38213f1.html",tooltip=""]
+    dir_f496ee0beab09f0a3344d9aae38213f1 [shape=plaintext, label="Widgets"];
+  dir_ae8c483e2ad1240a1c6c39b8628474a7 [label="CustomWidgets", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_ae8c483e2ad1240a1c6c39b8628474a7.html",tooltip=""];
+  dir_7aa168ab20f125fb7a80fcac7fb01cde [label="WidgetContainers", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_7aa168ab20f125fb7a80fcac7fb01cde.html",tooltip=""];
+  }
+  }
+}

@@ -110,7 +110,7 @@ namespace QCD {
         double tickRate = 1 / (time - m_lastTime);
         m_appManager->getInputData()[TICK_TIME_KEY] = time - m_lastTime;
         m_appManager->getInputData()[TICK_RATE_KEY] = tickRate;
-        if (m_times.full()) m_times.pop_front();
+        if (m_times.size() > 100) m_times.pop_front();
         m_times.push_back(tickRate);
         m_lastTime = time;
         // Calc stuff todo: abstract to function

@@ -6,7 +6,6 @@
 #ifndef ROBOT_GUI_V3_QCD_H
 #define ROBOT_GUI_V3_QCD_H
 
-#include "boost/type_traits.hpp"
 #include "../lib/NlohmannJson/json.hpp"
 #include "QMenuBar"
 #include "QMenu"
@@ -26,7 +25,7 @@
  * @pre func is a member of ptr
  * @pre func takes 1 argument of type QCD::Json
  */
-#define QCD_CALLBACK(ptr, func) std::bind(&boost::remove_reference_t<decltype(*ptr)>::func, ptr, std::placeholders::_1)
+#define QCD_CALLBACK(ptr, func) std::bind(&std::remove_pointer<decltype(ptr)>::type::func, ptr, std::placeholders::_1)
 /**
  * @brief Create callback for use with QCD's custom event structure
  * @details This creates a standard function with 2 arguments (must be of types QCD::Json, std::string) from a pointer and a method.
@@ -39,7 +38,7 @@
  * @pre func is a member of ptr
  * @pre func takes 2 arguments of types QCD::Json, std::string
  */
-#define QCD_ID_CALLBACK(ptr, func) std::bind(&boost::remove_reference_t<decltype(*ptr)>::func, ptr, std::placeholders::_1, std::placeholders::_2)
+#define QCD_ID_CALLBACK(ptr, func) std::bind(&std::remove_pointer<decltype(ptr)>::type::func, ptr, std::placeholders::_1, std::placeholders::_2)
 
 /**
  * @namespace QCD

@@ -102,7 +102,8 @@ namespace QCD {
     //// Callback I/O functions /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void ThreadedModule::queueCallback(const Json &a_json, const std::string &a_name) {
         if (!isThisThread()) {                                                 // This should never run from this thread
-            LockGard gard(m_eventMutex);                                        // Establish a lock on the event variables
+            LockGard gard(
+                    m_eventMutex);                                        // Establish a lock on the event variables
             m_incomingEventQueue.push({a_name, a_json});
         }
     }

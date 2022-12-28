@@ -1,7 +1,6 @@
 #ifndef ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 #define ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 
-#include <boost/circular_buffer.hpp>
 #include <QObject>
 #include <QVBoxLayout>
 #include "QApplication"
@@ -145,6 +144,7 @@ namespace QCD {
         AppManager *getAppManager();
 
     public slots:
+
         /**
          * @brief Slot for updating theme
          * @details Runs when user selects a new theme
@@ -153,6 +153,7 @@ namespace QCD {
         void updateTheme(QAction *a_action);
 
     private slots:
+
         void updateDragging(QAction *a_action);
 
         void updateGUI();
@@ -183,7 +184,7 @@ namespace QCD {
         AppManager *m_appManager;
         Widget *m_centralWidget;
         std::vector<Module *> m_modules;
-        boost::circular_buffer<double> m_times = boost::circular_buffer<double>(100);
+        std::deque<double> m_times = std::deque<double>();
     };
 
 }

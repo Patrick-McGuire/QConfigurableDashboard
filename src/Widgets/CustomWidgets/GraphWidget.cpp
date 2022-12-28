@@ -1,4 +1,3 @@
-#include <boost/algorithm/string/erase.hpp>
 #include <UtilFunctions.h>
 #include <GraphWidget.h>
 
@@ -172,7 +171,6 @@ namespace QCD {
     QColor GraphWidget::getThemeData(const QString &a_attribute) {
         std::string str = m_appManager->getThemeData()[m_appManager->getTheme()][a_attribute.toStdString()].get<std::string>();
         str = str.substr(str.find("rgb(") + 4);
-        boost::algorithm::erase_all(str, " ");
         std::string r, g, b;
         r = str.substr(0, str.find(','));
         g = str.substr(0, str.find(',', str.find(',')));

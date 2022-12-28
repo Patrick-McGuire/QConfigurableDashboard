@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
     QCD::QConfigurableDashboard dashboard(argc, argv, 90);
     dashboard.setUpdateAlways(true);
-    dashboard.setAutoScale(true);
+    dashboard.setAutoScale(false);
     // Menus
     dashboard.addMenu("Test");
     dashboard.addMenu("Thing1", "Settings");
