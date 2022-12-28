@@ -28,16 +28,15 @@ namespace QCD {
         /**
          * @brief Finish initializing this widget
          * @details This is called when QCD::QConfigurableDashboard::run() is called, and this calls QCD::Widget::onRun().
-         * This is the first place that m_appManager can be accessed.
          */
         void run();
 
         /**
          * @brief Setter for the QCD::AppManager member
          * @note This is handled internally, and should never be called outside of QCD's core classes.
-         * @param a_guiManager AppManager object to pass
+         * @param a_appManager AppManager object to pass
          */
-        void setGuiManager(AppManager *a_guiManager);
+        static void setAppManager(AppManager *a_appManager);
 
         /**
          * @brief Updates this widget
@@ -109,7 +108,7 @@ namespace QCD {
          */
         static bool isInFocus(QCD::WidgetFocus a_focus);
 
-        AppManager *m_appManager;                               ///< QCD::AppManager object used to pass data and events around the application
+        static AppManager *m_appManager;                        ///< QCD::AppManager object used to pass data and events around the application
         bool m_inLayout = true;                                 ///< Boolean that tracks if the widget is stored in a layout
 
 

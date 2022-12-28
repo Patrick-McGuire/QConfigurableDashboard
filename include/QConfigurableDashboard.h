@@ -141,7 +141,7 @@ namespace QCD {
          * @brief Get the AppManager object
          * @return QCD::AppManager object
          */
-        AppManager *getAppManager();
+        static AppManager *getAppManager();
 
     public slots:
 
@@ -181,7 +181,7 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-        AppManager *m_appManager;
+        static AppManager *m_appManager;
         Widget *m_centralWidget;
         std::vector<Module *> m_modules;
         std::deque<double> m_times = std::deque<double>();

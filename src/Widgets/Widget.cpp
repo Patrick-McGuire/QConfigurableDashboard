@@ -4,9 +4,12 @@
 #include <Widget.h>
 
 namespace QCD {
+    AppManager *Widget::m_appManager = nullptr;
 
     Widget::Widget() : QFrame() {
-        m_appManager = nullptr;
+        if(m_appManager == nullptr) {
+            throw std::runtime_error("Construct instance of QCD::ConfigurableDashboard before QCD::Module");
+        }
     }
 
     void Widget::run() {
@@ -76,8 +79,8 @@ namespace QCD {
         return false;
     }
 
-    void Widget::setGuiManager(AppManager *a_guiManager) {
-        m_appManager = a_guiManager;
+    void Widget::setAppManager(AppManager *a_appManager) {
+        m_appManager = a_appManager;
     }
 
     void Widget::registerTheme(QWidget *a_widget, const QString &attribute) {

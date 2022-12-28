@@ -1,0 +1,8 @@
+<map id="QCD::GraphWidget" name="QCD::GraphWidget">
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,149,273"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="25,171,130,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="19,81,93,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="117,81,259,108"/>
+<area shape="rect" id="node5" title=" " alt="" coords="73,5,148,32"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="173,5,358,32"/>
+</map>

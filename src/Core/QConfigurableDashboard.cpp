@@ -9,6 +9,7 @@
 #define RATE_TO_INTERVAL(rateV) ((int) ((1.0 / rateV) * 1000))
 
 namespace QCD {
+    AppManager *QConfigurableDashboard::m_appManager = nullptr;
 
     QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv, double a_rate) {
         m_desiredRate = a_rate;
@@ -30,7 +31,14 @@ namespace QCD {
         m_window->show();
         m_timer = new QTimer(this);
         connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-        m_appManager = new AppManager(this);
+
+        if(m_appManager == nullptr) {
+            m_appManager = new AppManager(this);
+            QCD::Widget::setAppManager(m_appManager);
+            QCD::Module::setAppManager(m_appManager);
+        } else {
+            throw std::runtime_error("Please only construct 1 instance of QCD::ConfigurableDashboard");
+        }
 
         addMenu("Settings");
         addMenu("Tools");
@@ -92,7 +100,6 @@ namespace QCD {
             m_layout->addWidget(a_widget, 0, a_alignment);
             m_centralWidget = a_widget;
             m_centralWidget->disableFloating();
-            m_centralWidget->setGuiManager(m_appManager);
             return true;
         }
         return false;
@@ -101,7 +108,6 @@ namespace QCD {
     bool QConfigurableDashboard::addModule(Module *a_baseModule) {
         if (a_baseModule != nullptr && std::find(m_modules.begin(), m_modules.end(), a_baseModule) == m_modules.end()) {
             m_modules.push_back(a_baseModule);
-            a_baseModule->setAppManager(m_appManager);
             return true;
         }
         return false;

@@ -9,6 +9,8 @@
 * Look into subscriber/publisher direct connection
 * Connect menus to internal event structure (base menu & base action class?)
 * Module system
+* App manager -> base QCD object, make members static
+  * Will have to not extend QObject to allow for multiple inheritance 
 ## Docs
 * Doxygen comments
 * Examples
@@ -19,11 +21,11 @@
 * Python and C++ libs for communicating over TCP
 * Map vis
 * 3D vis
-* Windows compatibility
+* ~~Windows compatibility~~
 * Mac compatibility
 * ~~Figure out how to do multiple build configurations within same project~~
 * Creating dynamic lib?
-* Auto-assembling files to 1 header
+* Auto-assembling files to 1 header?
 ## Maintenance
 * Finish event based video recording architecture, add timer to recorder widget 
 * Finish update rate scaling

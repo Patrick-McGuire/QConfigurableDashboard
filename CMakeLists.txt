@@ -77,6 +77,7 @@ set(coreFiles
         src/Core/AppManager.cpp include/AppManager.h
         src/Core/CallbackDispatcher.cpp include/CallbackDispatcher.h
         src/Core/ConfigLoader.cpp include/ConfigLoader.h
+        src/Core/Object.cpp include/Object.h
         )
 set(allFiles
         ${libFiles}

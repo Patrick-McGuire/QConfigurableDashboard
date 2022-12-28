@@ -1,0 +1,8 @@
+<map id="QCD::RandomDataModule" name="QCD::RandomDataModule">
+<area shape="rect" id="node1" title=" " alt="" coords="5,323,197,349"/>
+<area shape="rect" id="node2" href="$classQCD_1_1TimerModule.html" title=" " alt="" coords="29,247,173,273"/>
+<area shape="rect" id="node3" href="$classQCD_1_1Module.html" title=" " alt="" coords="48,171,155,197"/>
+<area shape="rect" id="node4" title=" " alt="" coords="43,5,117,32"/>
+<area shape="rect" id="node5" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="117,81,259,108"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="142,5,327,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="QCD::LineDisplayWidget" name="QCD::LineDisplayWidget">
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,187,273"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="43,171,149,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="38,81,111,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="136,81,277,108"/>
+<area shape="rect" id="node5" title=" " alt="" coords="92,5,167,32"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="191,5,377,32"/>
+</map>
