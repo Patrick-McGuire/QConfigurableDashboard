@@ -10,5 +10,5 @@ digraph "C:/Users/patri/Documents/QConfigurableDashboard/src/Core"
   dir_26a5d888d4322444b1ea16e96a01be33 [label="Core", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_26a5d888d4322444b1ea16e96a01be33.html",tooltip=""];
   }
   dir_3967dfc770ebe5a70b79fb09fd1592d8 [label="include", fillcolor="#edf0f7", color="grey50", style="filled", URL="dir_3967dfc770ebe5a70b79fb09fd1592d8.html",tooltip=""];
-  dir_26a5d888d4322444b1ea16e96a01be33->dir_3967dfc770ebe5a70b79fb09fd1592d8 [headlabel="2", labeldistance=1.5 headhref="dir_000001_000006.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_26a5d888d4322444b1ea16e96a01be33->dir_3967dfc770ebe5a70b79fb09fd1592d8 [headlabel="2", labeldistance=1.5 headhref="dir_000001_000009.html" color="steelblue1" fontcolor="steelblue1"];
 }

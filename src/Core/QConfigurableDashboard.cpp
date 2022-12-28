@@ -3,6 +3,7 @@
 #include <QConfigurableDashboard.h>
 #include "QMenu"
 #include <QCD.h>
+#include <QStyleFactory>
 
 // @todo remove macro
 #define RATE_TO_INTERVAL(rateV) ((int) ((1.0 / rateV) * 1000))
@@ -17,6 +18,8 @@ namespace QCD {
         m_argc = a_argc;
         // Construct core objects
         m_qApplication = new QApplication(m_argc, m_argv);
+        QApplication::setStyle(QStyleFactory::create("Fusion"));
+
         m_mainWindow = new QMainWindow();
         m_window = new QWidget();
         m_layout = new QVBoxLayout();

@@ -105,7 +105,8 @@ namespace QCD {
             QRectF rect = m_plot->axisRect()->insetLayout()->insetRect(0);
             // since insetRect is in axisRect coordinates (0..1), we transform the mouse position:
             QPointF mousePoint((a_event->pos().x() - m_plot->axisRect()->left()) / (double) m_plot->axisRect()->width(),
-                               (a_event->pos().y() - m_plot->axisRect()->top()) / (double) m_plot->axisRect()->height());
+                               (a_event->pos().y() - m_plot->axisRect()->top()) /
+                               (double) m_plot->axisRect()->height());
             rect.moveTopLeft(mousePoint - dragLegendOrigin);
             // Clip pos
             rect.setX(std::min(1.0, std::max(0.0, rect.x())));
@@ -128,7 +129,8 @@ namespace QCD {
             m_clicked = true;
             // since insetRect is in axisRect coordinates (0..1), we transform the mouse position:
             QPointF mousePoint((a_event->pos().x() - m_plot->axisRect()->left()) / (double) m_plot->axisRect()->width(),
-                               (a_event->pos().y() - m_plot->axisRect()->top()) / (double) m_plot->axisRect()->height());
+                               (a_event->pos().y() - m_plot->axisRect()->top()) /
+                               (double) m_plot->axisRect()->height());
             dragLegendOrigin = mousePoint - m_plot->axisRect()->insetLayout()->insetRect(0).topLeft();
         }
     }
@@ -178,9 +180,9 @@ namespace QCD {
         return {std::stoi(r), std::stoi(g), std::stoi(b)};
     }
 
-    void GraphWidget::reset(const Json& value) {
+    void GraphWidget::reset(const Json &value) {
         m_xValues.clear();
-        for(auto &el : m_seriesList) {
+        for (auto &el: m_seriesList) {
             el.values.clear();
         }
     }

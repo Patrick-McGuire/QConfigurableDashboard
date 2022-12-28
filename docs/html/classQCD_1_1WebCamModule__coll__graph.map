@@ -1,8 +1,0 @@
-<map id="QCD::WebCamModule" name="QCD::WebCamModule">
-<area shape="rect" id="node1" title=" " alt="" coords="5,323,172,349"/>
-<area shape="rect" id="node2" href="$classQCD_1_1TimerModule.html" title=" " alt="" coords="17,247,161,273"/>
-<area shape="rect" id="node3" href="$classQCD_1_1Module.html" title=" " alt="" coords="35,171,142,197"/>
-<area shape="rect" id="node4" title=" " alt="" coords="30,5,105,32"/>
-<area shape="rect" id="node5" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="105,81,246,108"/>
-<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="129,5,315,32"/>
-</map>
