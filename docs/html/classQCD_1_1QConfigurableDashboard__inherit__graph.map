@@ -1,0 +1,6 @@
+<map id="QCD::QConfigurableDashboard" name="QCD::QConfigurableDashboard">
+<area shape="rect" id="node1" title="Core class for running a QCD dashboard application." alt="" coords="5,155,228,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="17,80,91,107"/>
+<area shape="rect" id="node3" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="115,80,246,107"/>
+<area shape="rect" id="node4" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="59,5,302,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="QCD::TWebCamModule" name="QCD::TWebCamModule">
+<area shape="rect" id="node1" title=" " alt="" coords="5,399,180,425"/>
+<area shape="rect" id="node2" href="$classQCD_1_1ThreadedModule.html" title="Base class for all threaded modules." alt="" coords="9,323,177,349"/>
+<area shape="rect" id="node3" href="$classQCD_1_1Module.html" title="Base class for all modules." alt="" coords="39,247,146,273"/>
+<area shape="rect" id="node4" title=" " alt="" coords="55,5,130,32"/>
+<area shape="rect" id="node7" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="113,81,336,108"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="137,171,267,197"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="361,81,603,108"/>
+</map>

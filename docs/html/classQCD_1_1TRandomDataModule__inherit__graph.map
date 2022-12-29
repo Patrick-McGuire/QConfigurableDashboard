@@ -1,0 +1,8 @@
+<map id="QCD::TRandomDataModule" name="QCD::TRandomDataModule">
+<area shape="rect" id="node1" title=" " alt="" coords="5,304,205,331"/>
+<area shape="rect" id="node2" href="$classQCD_1_1ThreadedModule.html" title="Base class for all threaded modules." alt="" coords="21,229,189,256"/>
+<area shape="rect" id="node3" href="$classQCD_1_1Module.html" title="Base class for all modules." alt="" coords="52,155,159,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="104,80,235,107"/>
+<area shape="rect" id="node6" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="48,5,291,32"/>
+</map>

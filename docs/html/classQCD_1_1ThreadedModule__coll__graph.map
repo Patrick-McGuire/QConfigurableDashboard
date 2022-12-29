@@ -1,0 +1,8 @@
+<map id="QCD::ThreadedModule" name="QCD::ThreadedModule">
+<area shape="rect" id="node1" title="Base class for all threaded modules." alt="" coords="5,323,173,349"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Module.html" title="Base class for all modules." alt="" coords="36,247,143,273"/>
+<area shape="rect" id="node3" title=" " alt="" coords="52,5,127,32"/>
+<area shape="rect" id="node6" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="110,81,333,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="133,171,264,197"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="357,81,600,108"/>
+</map>

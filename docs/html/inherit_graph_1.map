@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="5,183,248,209"/>
+<area shape="rect" id="node2" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="296,157,481,184"/>
+<area shape="rect" id="node3" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="323,208,454,235"/>
+<area shape="rect" id="node4" href="$classQCD_1_1Module.html" title="Base class for all modules." alt="" coords="529,107,636,133"/>
+<area shape="rect" id="node11" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="1180,132,1403,159"/>
+<area shape="rect" id="node12" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="530,411,635,437"/>
+<area shape="rect" id="node5" href="$classQCD_1_1ThreadedModule.html" title="Base class for all threaded modules." alt="" coords="700,31,868,57"/>
+<area shape="rect" id="node8" href="$classQCD_1_1TimerModule.html" title=" " alt="" coords="712,132,856,159"/>
+<area shape="rect" id="node6" href="$classQCD_1_1TRandomDataModule.html" title=" " alt="" coords="932,5,1132,32"/>
+<area shape="rect" id="node7" href="$classQCD_1_1TWebCamModule.html" title=" " alt="" coords="995,56,1069,83"/>
+<area shape="rect" id="node9" href="$classQCD_1_1RandomDataModule.html" title=" " alt="" coords="936,107,1128,133"/>
+<area shape="rect" id="node10" href="$classQCD_1_1WebCamModule.html" title=" " alt="" coords="949,157,1115,184"/>
+<area shape="rect" id="node13" href="$classQCD_1_1ButtonWidget.html" title=" " alt="" coords="710,284,858,311"/>
+<area shape="rect" id="node14" href="$classQCD_1_1Container.html" title=" " alt="" coords="723,335,845,361"/>
+<area shape="rect" id="node20" href="$classQCD_1_1GraphWidget.html" title=" " alt="" coords="712,385,856,412"/>
+<area shape="rect" id="node21" href="$classQCD_1_1LineDisplayWidget.html" title=" " alt="" coords="693,436,875,463"/>
+<area shape="rect" id="node22" href="$classQCD_1_1TextListWidget.html" title="QCD Widget that displays a selection of lines of data." alt="" coords="707,487,861,513"/>
+<area shape="rect" id="node23" href="$classQCD_1_1VideoDisplayWidget.html" title=" " alt="" coords="689,537,879,564"/>
+<area shape="rect" id="node24" href="$classQCD_1_1VideoRecorderWidget.html" title=" " alt="" coords="684,588,884,615"/>
+<area shape="rect" id="node15" href="$classQCD_1_1GridContainer.html" title=" " alt="" coords="957,259,1107,285"/>
+<area shape="rect" id="node16" href="$classQCD_1_1HBoxContainer.html" title=" " alt="" coords="953,309,1111,336"/>
+<area shape="rect" id="node17" href="$classQCD_1_1PanelContainer.html" title=" " alt="" coords="953,360,1111,387"/>
+<area shape="rect" id="node18" href="$classQCD_1_1TabContainer.html" title=" " alt="" coords="960,411,1104,437"/>
+<area shape="rect" id="node19" href="$classQCD_1_1VBoxContainer.html" title=" " alt="" coords="954,461,1110,488"/>
+<area shape="rect" id="node25" title=" " alt="" coords="352,411,425,437"/>
+</map>

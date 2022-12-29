@@ -1,0 +1,9 @@
+<map id="QCD::VideoRecorderWidget" name="QCD::VideoRecorderWidget">
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,205,273"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="53,171,158,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="69,81,142,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="168,81,299,108"/>
+<area shape="rect" id="node6" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="182,171,405,197"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="112,5,355,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="323,81,397,108"/>
+</map>

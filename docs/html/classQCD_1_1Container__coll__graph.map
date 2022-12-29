@@ -1,0 +1,9 @@
+<map id="QCD::Container" name="QCD::Container">
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,128,273"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Widget.html" title="Base class for all QCD custom widget." alt="" coords="14,171,119,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="30,81,103,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="129,81,260,108"/>
+<area shape="rect" id="node6" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="143,171,366,197"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="73,5,316,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="284,81,359,108"/>
+</map>

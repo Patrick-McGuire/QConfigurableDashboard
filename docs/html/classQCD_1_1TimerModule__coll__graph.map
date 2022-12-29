@@ -1,0 +1,8 @@
+<map id="QCD::TimerModule" name="QCD::TimerModule">
+<area shape="rect" id="node1" title=" " alt="" coords="5,323,149,349"/>
+<area shape="rect" id="node2" href="$classQCD_1_1Module.html" title="Base class for all modules." alt="" coords="24,247,131,273"/>
+<area shape="rect" id="node3" title=" " alt="" coords="40,5,115,32"/>
+<area shape="rect" id="node6" href="$classQCD_1_1QConfigurableDashboard.html" title="Core class for running a QCD dashboard application." alt="" coords="98,81,321,108"/>
+<area shape="rect" id="node4" href="$classQCD_1_1CoreObject.html" title="Core object extended by all QCD classes." alt="" coords="121,171,252,197"/>
+<area shape="rect" id="node5" href="$classQCD_1_1CallbackDispatcherInterface.html" title="Interface definition for callback dispatchers." alt="" coords="345,81,588,108"/>
+</map>
