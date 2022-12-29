@@ -58,7 +58,7 @@ namespace QCD {
         for (auto &module: m_modules) {
             module->run();
         }
-        qDebug("Widgets initialized");
+        qDebug("widgets initialized");
 
         updateTheme("Dark");
         qDebug("Theme set");

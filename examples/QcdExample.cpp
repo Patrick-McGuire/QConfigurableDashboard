@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     dashboard.addMenuAction("Bong", "Thing1");
     dashboard.addMenu("Thing2", "Settings");
     dashboard.addMenuAction("Yo", "Settings");
-    // Modules
+    // modules
     QCD::TRandomDataModule randomDataInterface(200);
     dashboard.addModule(&randomDataInterface);
     QCD::TWebCamModule webCamStreamInterface(70);

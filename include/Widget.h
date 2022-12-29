@@ -13,7 +13,6 @@ namespace QCD {
      * @brief Base class for all QCD custom widget.
      * @details This class handles all root functionality for QCD's custom widgets.
      * This includes dragging, themes and periodically being updated. This class should be the parent class for all custom widgets used in a QCD application.
-     * @note m_appManager is not guaranteed to be populated before QCD::Widget::run() is called
      * @see QCD::Container These are QCD's re-implementations of QLayouts
      * @authors Patrick-McGuire
      */

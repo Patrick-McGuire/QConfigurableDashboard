@@ -63,7 +63,7 @@ namespace QCD {
             // Handle incoming and outgoing data
             {
                 LockGard gard2(m_dataMutex);
-                // Iterate though all updated json values, and copy them into the main thread's AppManager
+                // Iterate though all updated json values, and copy them into the main thread's CallbackDispatcher
                 for (const auto &el: m_outgoingData.items()) {
                     m_inputData[el.key()] = el.value();
                 }

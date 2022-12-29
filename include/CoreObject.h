@@ -9,7 +9,7 @@ namespace QCD {
     class QConfigurableDashboard;       // Forward decl
 
     /**
-     * @brief Core object extended by all QCD classes
+     * @brief core object extended by all QCD classes
      * @details Provides a callback and data interface to all QCD classes.
      * @see QCD::CallbackDispatcher
      */

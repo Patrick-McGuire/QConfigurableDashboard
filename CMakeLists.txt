@@ -43,40 +43,40 @@ set(libFiles
         lib/QCustomPlot/qcustomplot.cpp
         )
 set(utilFiles
-        src/Util/VideoRecorder.cpp include/VideoRecorder.h
+        src/util/VideoRecorder.cpp include/VideoRecorder.h
         include/UtilFunctions.h
         )
 set(widgetFiles
-        src/Widgets/Widget.cpp include/Widget.h
-        src/Widgets/CustomWidgets/ButtonWidget.cpp include/ButtonWidget.h
-        src/Widgets/CustomWidgets/LineDisplayWidget.cpp include/LineDisplayWidget.h
-        src/Widgets/CustomWidgets/TextListWidget.cpp include/TextListWidget.h
-        src/Widgets/CustomWidgets/VideoDisplayWidget.cpp include/VideoDisplayWidget.h
-        src/Widgets/CustomWidgets/GraphWidget.cpp include/GraphWidget.h
-        src/Widgets/CustomWidgets/VideoRecorderWidget.cpp include/VideoRecorderWidget.h
+        src/widgets/Widget.cpp include/Widget.h
+        src/widgets/CustomWidgets/ButtonWidget.cpp include/ButtonWidget.h
+        src/widgets/CustomWidgets/LineDisplayWidget.cpp include/LineDisplayWidget.h
+        src/widgets/CustomWidgets/TextListWidget.cpp include/TextListWidget.h
+        src/widgets/CustomWidgets/VideoDisplayWidget.cpp include/VideoDisplayWidget.h
+        src/widgets/CustomWidgets/GraphWidget.cpp include/GraphWidget.h
+        src/widgets/CustomWidgets/VideoRecorderWidget.cpp include/VideoRecorderWidget.h
         )
 set(widgetContainerFiles
-        src/Widgets/WidgetContainers/Container.cpp include/Container.h
-        src/Widgets/WidgetContainers/PanelContainer.cpp include/PanelContainer.h
-        src/Widgets/WidgetContainers/GridContainer.cpp include/GridContainer.h
-        src/Widgets/WidgetContainers/VBoxContainer.cpp include/VBoxContainer.h
-        src/Widgets/WidgetContainers/HBoxContainer.cpp include/HBoxContainer.h
-        src/Widgets/WidgetContainers/TabContainer.cpp include/TabContainer.h
+        src/widgets/WidgetContainers/Container.cpp include/Container.h
+        src/widgets/WidgetContainers/PanelContainer.cpp include/PanelContainer.h
+        src/widgets/WidgetContainers/GridContainer.cpp include/GridContainer.h
+        src/widgets/WidgetContainers/VBoxContainer.cpp include/VBoxContainer.h
+        src/widgets/WidgetContainers/HBoxContainer.cpp include/HBoxContainer.h
+        src/widgets/WidgetContainers/TabContainer.cpp include/TabContainer.h
         )
 set(moduleFiles
-        src/Modules/Module.cpp include/Module.h
-        src/Modules/ThreadedModule.cpp include/ThreadedModule.h
-        src/Modules/TimerModule.cpp include/TimerModule.h
-        src/Modules/DataExamples/RandomDataModule.cpp include/RandomDataModule.h
-        src/Modules/DataExamples/WebCamModule.cpp include/WebCamModule.h
-        src/Modules/DataExamples/TRandomDataModule.cpp include/TRandomDataModule.h
-        src/Modules/DataExamples/TWebCamModule.cpp include/TWebCamModule.h
+        src/modules/Module.cpp include/Module.h
+        src/modules/ThreadedModule.cpp include/ThreadedModule.h
+        src/modules/TimerModule.cpp include/TimerModule.h
+        src/modules/DataExamples/RandomDataModule.cpp include/RandomDataModule.h
+        src/modules/DataExamples/WebCamModule.cpp include/WebCamModule.h
+        src/modules/DataExamples/TRandomDataModule.cpp include/TRandomDataModule.h
+        src/modules/DataExamples/TWebCamModule.cpp include/TWebCamModule.h
         )
 set(coreFiles
-        src/Core/QConfigurableDashboard.cpp include/QConfigurableDashboard.h
-        src/Core/CallbackDispatcher.cpp include/CallbackDispatcher.h
-        src/Core/ConfigLoader.cpp include/ConfigLoader.h
-        src/Core/CoreObject.cpp include/CoreObject.h
+        src/core/QConfigurableDashboard.cpp include/QConfigurableDashboard.h
+        src/core/CallbackDispatcher.cpp include/CallbackDispatcher.h
+        src/core/ConfigLoader.cpp include/ConfigLoader.h
+        src/core/CoreObject.cpp include/CoreObject.h
         include/CallbackDispatcherInterface.h
         )
 set(allFiles

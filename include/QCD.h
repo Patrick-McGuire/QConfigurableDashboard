@@ -17,7 +17,7 @@
  * @brief Create callback for use with QCD's custom event structure
  * @details This creates a standard function with 1 argument (must be of type QCD::Json) from a pointer and a method.
  * This can be used with QCD::CallbackDispatcher::registerCallback()
- * @see QCD::AppManager
+ * @see QCD::CoreObject
  * @see QCD::ThreadedModule
  * @see QCD::CallbackDispatcher
  * @param ptr pointer to object to call function on
@@ -30,7 +30,7 @@
  * @brief Create callback for use with QCD's custom event structure
  * @details This creates a standard function with 2 arguments (must be of types QCD::Json, std::string) from a pointer and a method.
  * This can be used with QCD::CallbackDispatcher::registerTunnelCallback()
- * @see QCD::AppManager
+ * @see QCD::CoreObject
  * @see QCD::ThreadedModule
  * @see QCD::CallbackDispatcher
  * @param ptr pointer to object to call function on

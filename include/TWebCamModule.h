@@ -21,6 +21,7 @@ namespace QCD {
         cv::VideoCapture *m_camera;
         bool m_squareColor = false;
         VideoRecorder *m_recorder;
+        VideoRecorder *m_recorder2;
     };
 
 } // QCD

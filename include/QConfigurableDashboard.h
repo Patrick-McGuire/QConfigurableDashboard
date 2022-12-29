@@ -19,7 +19,7 @@ namespace QCD {
     class CoreObject;
 
     /**
-     * @brief Core class for running a QCD dashboard application.
+     * @brief core class for running a QCD dashboard application.
      * @details Handles updating data, menus, adding widgets, adding modules, changing themes and running the entire application.
      * This only has the ability to set 1 core widget. In most cases where many widgets are desired, set a QCD::Container as the central widget.
      * Then you can add as many widgets to the container as you like. Setting the central widget and creating widgets is best done from modules
@@ -27,7 +27,7 @@ namespace QCD {
      * application. This needs to be called in the main thread, and is blocking. Updating of widgets is handled on a periodic basis based
      * by the update rated specified in the constructor. There is an option to dynamically scale down the runUpdate rate based on program performance.
      * It is advisable to enable this option by setting QCD::QConfigurableDashboard::setAutoScale() to true because some features like file dialogs become
-     * unusably slow when the cpu is saturated. Widgets can be told they are not visible (increasing performance) when the application
+     * unusably slow when the cpu is saturated. widgets can be told they are not visible (increasing performance) when the application
      * is not the active window on the computer by setting QCD::QConfigurableDashboard::setUpdateAlways() to false. A standard main function for a application
      * could be as follows:
      * ~~~ {.cpp}
@@ -87,7 +87,7 @@ namespace QCD {
 
         /**
          * @brief Adds a module to the application
-         * @details This registers the module internally, and sets the QCD::AppManager object in the module
+         * @details Registers the module internally.
          * @param a_baseModule QCD::Module to add
          * @return if added successfully
          */
@@ -117,14 +117,14 @@ namespace QCD {
 
         /**
          * @brief Sets the current theme
-         * @details Sets the current theme. The name should be the key of the theme in the QCD::AppManager theme json object.
+         * @details Sets the current theme. The name should be the key of the theme in the QCD::CoreObject theme json object.
          * @param a_activeTheme name of theme
          */
         void updateTheme(const std::string &a_activeTheme);
 
         /**
          * @brief Sets if the application checks whether it is the active application on the computer
-         * @details Widgets can be told they are not visible (increasing performance) when the application
+         * @details widgets can be told they are not visible (increasing performance) when the application
          * is not the active window on the computer by setting this to false
          * @param a_updateAlways if disabled
          */
@@ -169,7 +169,7 @@ namespace QCD {
         double m_lastTime = 0;
         double m_desiredRate;
         double m_currentRate;
-        // Core objects
+        // core objects
         QApplication *m_qApplication;
         QMainWindow *m_mainWindow;
         QWidget *m_window;
@@ -177,7 +177,6 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-//        static AppManager *m_appManager;
         Widget *m_centralWidget;
         std::vector<Module *> m_modules;
         std::deque<double> m_times = std::deque<double>();
