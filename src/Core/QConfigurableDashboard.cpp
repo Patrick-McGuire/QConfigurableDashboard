@@ -9,9 +9,7 @@
 #define RATE_TO_INTERVAL(rateV) ((int) ((1.0 / rateV) * 1000))
 
 namespace QCD {
-    AppManager *QConfigurableDashboard::m_appManager = nullptr;
-
-    QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv, double a_rate) {
+    QConfigurableDashboard::QConfigurableDashboard(int a_argc, char **a_argv, double a_rate) : QObject(), CoreObject(this) {
         m_desiredRate = a_rate;
         m_currentRate = a_rate;
         // Save these because why not
@@ -32,24 +30,16 @@ namespace QCD {
         m_timer = new QTimer(this);
         connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGUI()));
 
-        if(m_appManager == nullptr) {
-            m_appManager = new AppManager(this);
-            QCD::Widget::setAppManager(m_appManager);
-            QCD::Module::setAppManager(m_appManager);
-        } else {
-            throw std::runtime_error("Please only construct 1 instance of QCD::ConfigurableDashboard");
-        }
-
         addMenu("Settings");
         addMenu("Tools");
         addMenuAction("Enable Dragging", "Tools")->setData(true);
         addMenuAction("Disable Dragging", "Tools")->setData(false);
         connect(findMenu("Tools"), SIGNAL(triggered(QAction * )), this, SLOT(updateDragging(QAction * )));
         addMenu("Theme");
-        for (const auto &el: m_appManager->getThemeData().items()) {
-            addMenuAction(el.key().c_str(), "Theme")->setData(QString(el.key().c_str()));
+        for (const auto &el: m_themeData.items()) {
+            addMenuAction(el.key().c_str(), "Theme");
+            registerCallback(std::string(MENU_BASE_CALLBACK) + el.key(), QCD_CALLBACK(this, updateThemeCallback));
         }
-        connect(findMenu("Theme"), SIGNAL(triggered(QAction * )), this, SLOT(updateTheme(QAction * )));
 
         // Leave null for now;
         m_centralWidget = nullptr;
@@ -57,7 +47,6 @@ namespace QCD {
 
     QConfigurableDashboard::~QConfigurableDashboard() {
         delete m_qApplication;
-        delete m_appManager;
     }
 
     int QConfigurableDashboard::run() {
@@ -117,8 +106,8 @@ namespace QCD {
         // Track tick time
         double time = getEpochTime();
         double tickRate = 1 / (time - m_lastTime);
-        m_appManager->getInputData()[TICK_TIME_KEY] = time - m_lastTime;
-        m_appManager->getInputData()[TICK_RATE_KEY] = tickRate;
+        m_inputData[TICK_TIME_KEY] = time - m_lastTime;
+        m_inputData[TICK_RATE_KEY] = tickRate;
         if (m_times.size() > 100) m_times.pop_front();
         m_times.push_back(tickRate);
         m_lastTime = time;
@@ -136,14 +125,14 @@ namespace QCD {
                 m_currentRate += .2;
                 m_timer->setInterval(RATE_TO_INTERVAL(m_currentRate));
             }
-            m_appManager->getInputData()[TICK_DESIRED_RATE_KEY] = m_currentRate;
+            m_inputData[TICK_DESIRED_RATE_KEY] = m_currentRate;
         }
         // Update all modules
         for (auto &module: m_modules) {
-            module->update();
+            module->runUpdate(false);
         }
         // Update all widgets
-        m_centralWidget->smartUpdate(m_updateAlways || m_mainWindow->isActiveWindow());
+        m_centralWidget->runUpdate(m_updateAlways || m_mainWindow->isActiveWindow());
     }
 
     QMenu *QConfigurableDashboard::addMenu(const QString &a_name, const QString &a_parentName) {
@@ -154,14 +143,19 @@ namespace QCD {
             newMenu = findMenu(a_parentName)->addMenu(a_name);
         }
         m_menus.push_back(newMenu);
+        connect(newMenu, SIGNAL(triggered(QAction * )), this, SLOT(forwardEvent(QAction * )));
         return newMenu;
     }
 
     QAction *QConfigurableDashboard::addMenuAction(const QString &a_name, const QString &a_parentName) {
         if (a_parentName == "none") {
-            return m_mainWindow->menuBar()->addAction(a_name);
+            auto *act = m_mainWindow->menuBar()->addAction(a_name);
+            act->setData(QString(MENU_BASE_CALLBACK) + a_name);
+            return act;
         }
-        return findMenu(a_parentName)->addAction(a_name);
+        auto *act = findMenu(a_parentName)->addAction(a_name);
+        act->setData(QString(MENU_BASE_CALLBACK) + a_name);
+        return act;
     }
 
     QMenu *QConfigurableDashboard::findMenu(const QString &a_name) {
@@ -174,43 +168,46 @@ namespace QCD {
     }
 
 
-    void QConfigurableDashboard::updateTheme(QAction *a_action) {
-        updateTheme(a_action->data().toString());
+    void QConfigurableDashboard::updateThemeCallback(const Json &a_data) {
+        if (a_data.is_string()) {
+            std::string themeName = a_data.get<std::string>();
+            themeName = themeName.substr(strlen(MENU_BASE_CALLBACK));
+            updateTheme(themeName);
+        }
     }
 
-    void QConfigurableDashboard::updateTheme(const QString &a_activeTheme) {
-        m_appManager->setTheme(a_activeTheme.toStdString());
+    void QConfigurableDashboard::updateTheme(const std::string &a_activeTheme) {
+        setTheme(a_activeTheme);
 
-        QString backgroundColor = getThemeData(a_activeTheme, CONTAINER_BACKGROUND_CLASS);
-        QString highlightBackgroundColor = getThemeData(a_activeTheme, HIGHLIGHT_COLOR_CLASS);
-        QString textColor = getThemeData(a_activeTheme, TITLE_TEXT_COLOR_CLASS);
+        QString backgroundColor = getThemeDataString(QString(a_activeTheme.c_str()), CONTAINER_BACKGROUND_CLASS);
+        QString highlightBackgroundColor = getThemeDataString(QString(a_activeTheme.c_str()), HIGHLIGHT_COLOR_CLASS);
+        QString textColor = getThemeDataString(QString(a_activeTheme.c_str()), TITLE_TEXT_COLOR_CLASS);
 
         QString style;
         style += "QMenuBar, QMenuBar::item, QMenu, QMenu::item { " + backgroundColor + " ; " + textColor + ";}";
         style += "QMenuBar::item:selected, QMenu::item:selected { " + highlightBackgroundColor + ";}";
         style += "QTabBar, QTabBar::tab { " + backgroundColor + " ; " + textColor + ";}";
         style += "QTabBar::tab:selected, QTabBar::tab:hover { " + highlightBackgroundColor + ";}";
-        for (const auto &el: m_appManager->getThemeData()[a_activeTheme.toStdString()].items()) {
-            style += getClassStylesheet(el.key().c_str(), getThemeData(a_activeTheme, el.key().c_str()));
+        for (const auto &el: m_themeData[a_activeTheme].items()) {
+            style += getClassStylesheet(el.key().c_str(), getThemeDataString(QString(a_activeTheme.c_str()), el.key().c_str()));
         }
         m_mainWindow->setStyleSheet(style);
-
-        emit m_appManager->themeChanged();
+        triggerCallback(THEME_CHANGED_CALLBACK);
     }
 
     QString QConfigurableDashboard::getClassStylesheet(const QString &a_class, const QString &a_style) {
         return QString("*[") + THEME_PROPERTY + "~=\"" + a_class + "\"]{" + a_style + "}";
     }
 
-    QString QConfigurableDashboard::getThemeData(const QString &a_themeName, const QString &a_attribute) {
-        return m_appManager->getThemeData()[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string &>().c_str();
+    QString QConfigurableDashboard::getThemeDataString(const QString &a_themeName, const QString &a_attribute) {
+        return m_themeData[a_themeName.toStdString()][a_attribute.toStdString()].get_ref<std::string &>().c_str();
     }
 
     void QConfigurableDashboard::updateDragging(QAction *a_action) {
         if (a_action->data().toBool()) {
-            m_appManager->enableDragging();
+            m_draggingEnabled = true;
         } else {
-            m_appManager->disableDragging();
+            m_draggingEnabled = false;
         }
     }
 
@@ -218,12 +215,15 @@ namespace QCD {
         m_updateAlways = a_updateAlways;
     }
 
-    AppManager *QConfigurableDashboard::getAppManager() {
-        return m_appManager;
-    }
-
     void QConfigurableDashboard::setAutoScale(bool a_autoScale) {
         m_autoScale = a_autoScale;
+    }
+
+    void QConfigurableDashboard::forwardEvent(QAction *a_action) {
+        if (a_action->data().type() == QVariant::Type::String) {
+            Json arg = a_action->data().toString().toStdString();
+            triggerCallback(a_action->data().toString().toStdString(), arg);
+        }
     }
 
 }

@@ -1,10 +1,9 @@
 #ifndef QCONFIGURABLEDASHBOARD_THREADEDMODULE_H
 #define QCONFIGURABLEDASHBOARD_THREADEDMODULE_H
 
+#include <CallbackDispatcherInterface.h>
+#include <Module.h>
 #include <thread>
-#include "Module.h"
-#include "AppManager.h"
-#include "CallbackDispatcher.h"
 
 namespace QCD {
     /**
@@ -13,7 +12,7 @@ namespace QCD {
      * @note Comments in this file refer to "this thread". This means the thread spawned by a instance of a ThreadedModule object
      * @note Only lock 1 mutex at a time!!!!
      */
-    class ThreadedModule : public Module, protected CallbackDispatcher {
+    class ThreadedModule : public Module {
     Q_OBJECT
     public:
         /**
@@ -26,13 +25,13 @@ namespace QCD {
          * @brief Start this thread going
          * @pre Run in main thread only, handled internally
          */
-        void run() override;
+        int run() override;
 
         /**
          * @brief Pass relevant data from main thread into shared memory
          * @pre Run in main thread only
          */
-        void update() override;
+        void runUpdate(bool a_focus) override;
 
         /**
          * @brief Tell this thread to end
@@ -93,13 +92,10 @@ namespace QCD {
          */
         void triggerIncomingCallbacks();
 
-        /**
-         * @brief Queues a callback to be tunneled into main thread
-         * @pre Run in this thread only
-         * @param a_name name of event to call
-         * @param a_json data to tunnel
-         */
-        void triggerOutgoingCallback(const std::string &a_name, const Json &a_json = Json::object());
+
+        void registerCallback(const std::string &a_identifier, const Callback &a_callback) override;
+
+        void triggerCallback(const std::string &a_identifier, const Json &a_json = Json::object(), int a_excludeIdIndex = -1) override;
 
     private:
         /**
@@ -114,9 +110,9 @@ namespace QCD {
         bool isThisThread();
 
         // Make private, to avoid derived classes from accessing in thread
-        using Module::m_appManager;
-        using CallbackDispatcher::triggerCallback;
-        using CallbackDispatcher::registerIdCallback;
+        using Module::triggerCallback;
+        using Module::registerTunnelCallback;
+        using Module::registerCallback;
         int m_interval;                         // Set in constructor from main thread, then only read from this thread
 
         //////// These variables should be locked with the mutex in their section before accessing
@@ -133,10 +129,9 @@ namespace QCD {
         //// All event tunnel object
         std::queue<std::pair<std::string, Json>> m_outgoingEventQueue;
         std::queue<std::pair<std::string, Json>> m_incomingEventQueue;
+        CallbackDispatcher m_dispatcher;
         int m_callbackID = -1;
         std::mutex m_eventMutex;
-//        #define m_eventMutex m_dataMutex
-//#define m_threadMutex m_dataMutex
     };
 
 } // QCD

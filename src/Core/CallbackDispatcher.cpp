@@ -3,14 +3,13 @@
 namespace QCD {
     CallbackDispatcher::CallbackDispatcher() = default;
 
-    int CallbackDispatcher::registerCallback(const std::string &a_identifier, const Callback &a_callback) {
+    void CallbackDispatcher::registerCallback(const std::string &a_identifier, const Callback &a_callback) {
         m_callbacks[a_identifier].push_back(a_callback);
-        return (int) m_callbacks[a_identifier].size() - 1;
     }
 
-    int CallbackDispatcher::registerIdCallback(const IdCallback &a_callback) {
-        m_idCallbacks.push_back(a_callback);
-        return (int) m_idCallbacks.size() - 1;
+    int CallbackDispatcher::registerTunnelCallback(const TunnelCallback &a_callback) {
+        m_tunnelCallbacks.push_back(a_callback);
+        return (int) m_tunnelCallbacks.size() - 1;
     }
 
     void CallbackDispatcher::triggerCallback(const std::string &a_identifier, const Json &a_json, int a_excludeIdIndex) {
@@ -22,10 +21,10 @@ namespace QCD {
                 func(a_json);
             }
         }
-        // Trigger all id callbacks
-        for (int i = 0; i < m_idCallbacks.size(); i++) {
+        // Trigger all tunnel Callbacks
+        for (int i = 0; i < m_tunnelCallbacks.size(); i++) {
             if (i != a_excludeIdIndex) {
-                m_idCallbacks[i](a_json, a_identifier);
+                m_tunnelCallbacks[i](a_json, a_identifier);
             }
         }
 

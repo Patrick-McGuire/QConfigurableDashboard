@@ -7,13 +7,12 @@ namespace QCD {
     }
 
     void RandomDataModule::onUpdate() {
-        Json &data = m_appManager->getInputData();
-        data["KEY1"] = randomInt(-100, 100);
-        data["KEY2"] = randomInt(-10, 10);
-        data["KEY3"] = randomDouble(-100, 100);
-        data["KEY4"] = randomDouble(0, 1);;
-        data["KEY5"] = randomString(randomInt(5, 15));
-        data["KEY6"] = randomString(10);
+        m_inputData["KEY1"] = randomInt(-100, 100);
+        m_inputData["KEY2"] = randomInt(-10, 10);
+        m_inputData["KEY3"] = randomDouble(-100, 100);
+        m_inputData["KEY4"] = randomDouble(0, 1);;
+        m_inputData["KEY5"] = randomString(randomInt(5, 15));
+        m_inputData["KEY6"] = randomString(10);
     }
 
 } // QCD

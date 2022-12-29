@@ -4,7 +4,7 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
-#include "Widget.h"
+#include <Widget.h>
 
 namespace QCD {
 

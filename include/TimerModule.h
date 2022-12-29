@@ -11,7 +11,7 @@ namespace QCD {
     public:
         explicit TimerModule(double a_rate);
 
-        void run() override;
+        int run() override;
 
     protected slots:
         virtual void onUpdate();

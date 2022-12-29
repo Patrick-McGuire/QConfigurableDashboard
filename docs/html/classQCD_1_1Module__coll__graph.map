@@ -1,6 +1,0 @@
-<map id="QCD::Module" name="QCD::Module">
-<area shape="rect" id="node1" title=" " alt="" coords="11,171,117,197"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node3" href="$classQCD_1_1AppManager.html" title="Handles coordination and data tunneling across application." alt="" coords="80,81,221,108"/>
-<area shape="rect" id="node4" href="$classQCD_1_1CallbackDispatcher.html" title="CallbackDispatcher provides a module to register and trigger callbacks based on string identifiers." alt="" coords="105,5,290,32"/>
-</map>

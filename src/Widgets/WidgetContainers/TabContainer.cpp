@@ -30,7 +30,7 @@ namespace QCD {
         bool inFocus;
         for (auto &childWidget: m_childWidgets) {
             inFocus = isInFocus(a_focus) && childWidget == m_tabs->currentWidget();
-            childWidget->smartUpdate(inFocus);
+            childWidget->runUpdate(inFocus);
         }
         if(!m_inLayout) {
             adjustSize();

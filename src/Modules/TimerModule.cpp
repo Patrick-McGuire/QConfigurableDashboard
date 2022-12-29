@@ -7,8 +7,9 @@ namespace QCD {
         connect(m_timer, SIGNAL(timeout()), this, SLOT(onUpdate()));
     }
 
-    void TimerModule::run() {
+    int TimerModule::run() {
         m_timer->start(m_interval);
+        return 0;
     }
 
     void TimerModule::onUpdate() {}

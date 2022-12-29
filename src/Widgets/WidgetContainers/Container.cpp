@@ -37,7 +37,7 @@ namespace QCD {
     void Container::onUpdate(QCD::WidgetFocus a_focus) {
         bool inFocus = isInFocus(a_focus);
         for (auto &childWidget: m_childWidgets) {
-            childWidget->smartUpdate(inFocus);
+            childWidget->runUpdate(inFocus);
         }
     }
 

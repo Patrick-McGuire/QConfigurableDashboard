@@ -35,6 +35,7 @@ namespace QCD {
         connect(m_plot, SIGNAL(beforeReplot()), this, SLOT(beforeReplot()));
 
         m_plot->legend->setVisible(true);
+//        registerCallback(THEME_CHANGED_CALLBACK, QCD_CALLBACK(this, onUpdate));
     }
 
     void GraphWidget::onUpdate(QCD::WidgetFocus a_focus) {
@@ -57,7 +58,6 @@ namespace QCD {
 
     void GraphWidget::updateSeriesData() {
         // Get the data we need
-        auto &json = m_appManager->getInputData();
         double time = getEpochTime();
         // Add new x value to list
         m_xValues.push_back(time - m_lastTime);
@@ -65,7 +65,7 @@ namespace QCD {
         // Iterate though the series list
         for (auto &series: m_seriesList) {
             // Check if the key is valid
-            auto &value = json[series.key];
+            auto &value = m_inputData[series.key];
             if (value.is_number()) {
                 series.values.push_back(value.get<double>());
             } else if (!series.values.empty()) {
@@ -145,7 +145,7 @@ namespace QCD {
         m_plot->legend->setMaximumSize(m_plot->legend->minimumOuterSizeHint());
     }
 
-    void GraphWidget::onThemeChange() {
+    void GraphWidget::onThemeChange(const Json &a_data) {
         m_plot->setBackground(QBrush(getThemeData(WIDGET_BACKGROUND_CLASS)));
         m_plot->legend->setTextColor(getThemeData(TEXT_COLOR_CLASS));
         m_plot->legend->setBrush(getThemeData(CONTAINER_BACKGROUND_CLASS));
@@ -167,11 +167,11 @@ namespace QCD {
     }
 
     void GraphWidget::onRun() {
-        connect(m_appManager, SIGNAL(themeChanged()), this, SLOT(onThemeChange()));
+        registerCallback(THEME_CHANGED_CALLBACK, QCD_CALLBACK(this, onThemeChange));
     }
 
     QColor GraphWidget::getThemeData(const QString &a_attribute) {
-        std::string str = m_appManager->getThemeData()[m_appManager->getTheme()][a_attribute.toStdString()].get<std::string>();
+        std::string str = m_themeData[getTheme()][a_attribute.toStdString()].get<std::string>();
         str = str.substr(str.find("rgb(") + 4);
         std::string r, g, b;
         r = str.substr(0, str.find(','));

@@ -22,12 +22,12 @@ namespace QCD {
 
     void ButtonWidget::onClick() {
         m_state = true;
-        m_appManager->triggerCallback(m_outputKey);
+        triggerCallback(m_outputKey);
     }
 
     void ButtonWidget::onRelease() {
         m_state = false;
-        m_appManager->triggerCallback(m_outputKey2);
+        triggerCallback(m_outputKey2);
     }
 
     void ButtonWidget::publishTo(const std::string &a_key, bool onClick) {

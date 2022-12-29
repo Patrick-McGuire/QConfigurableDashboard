@@ -74,10 +74,10 @@ set(moduleFiles
         )
 set(coreFiles
         src/Core/QConfigurableDashboard.cpp include/QConfigurableDashboard.h
-        src/Core/AppManager.cpp include/AppManager.h
         src/Core/CallbackDispatcher.cpp include/CallbackDispatcher.h
         src/Core/ConfigLoader.cpp include/ConfigLoader.h
-        src/Core/Object.cpp include/Object.h
+        src/Core/CoreObject.cpp include/CoreObject.h
+        include/CallbackDispatcherInterface.h
         )
 set(allFiles
         ${libFiles}
@@ -96,4 +96,3 @@ foreach (exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     target_link_libraries(${exeName} ${allLibs})
     target_include_directories(${exeName} PRIVATE include)
 endforeach (exe ${allExecutables})
-

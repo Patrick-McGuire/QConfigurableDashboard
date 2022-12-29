@@ -22,13 +22,13 @@ namespace QCD {
             setImage("CAM2", frame2);
         }
         if(randomInt(0, 40 * 3) < 3) {
-            triggerOutgoingCallback("random1");
+            triggerCallback("random1");
         }
     }
 
     void TWebCamModule::setup() {
         registerCallback("b1", QCD_CALLBACK(this, toggleColor));
-        registerCallback(VIDEO_RECORD_KEY, QCD_CALLBACK(m_recorder, toggleRecording));
+        registerCallback(VIDEO_RECORD_CALLBACK, QCD_CALLBACK(m_recorder, toggleRecording));
     }
 
     void TWebCamModule::toggleColor(const Json &value) {

@@ -7,10 +7,11 @@
 ## Back end
 * Config Loading, and OS specific config stuff
 * Look into subscriber/publisher direct connection
-* Connect menus to internal event structure (base menu & base action class?)
-* Module system
-* App manager -> base QCD object, make members static
-  * Will have to not extend QObject to allow for multiple inheritance 
+* ~~Connect menus to internal event structure (base menu & base action class?)~~
+* Module system test
+* Finish adding CoreObject functionality to Widget 
+* ~~App manager -> base QCD object, make members static~~
+  * ~~Will have to not extend QObject to allow for multiple inheritance~~
 ## Docs
 * Doxygen comments
 * Examples
@@ -28,9 +29,9 @@
 * Auto-assembling files to 1 header?
 ## Maintenance
 * Finish event based video recording architecture, add timer to recorder widget 
-* Finish update rate scaling
+* Finish runUpdate rate scaling
 * Add get/set methods to all widgets
-* Change updateTheme signal to use internal event format
+* ~~Change updateThemeCallback signal to use internal event format~~
 ## Implementations
 * Modules: (XML, ROS, FRC dash, Example)
 * Port widgets: (Basic charts, annunciator, compas, nav ball, ros/dropdown)

@@ -10,7 +10,7 @@ namespace QCD {
         setLayout(m_layout);
         m_title = new QLabel("Video Recorder");
         m_layout->addWidget(m_title, 0, Qt::AlignHCenter);
-//        m_layout->setAlignment(Qt::All)
+
         m_topWidget = new QWidget();
         m_layout->addWidget(m_topWidget);
         m_topLayout = new QHBoxLayout();
@@ -24,14 +24,13 @@ namespace QCD {
 
 
         m_comboBox = new QComboBox();
-        m_comboBox->addItem("Op1");
-        m_comboBox->addItem("Op2");
+        m_comboBox->addItem("None available");
         m_startButton = new QPushButton("Start recording");
         m_topLayout->addWidget(m_comboBox);
         m_topLayout->addWidget(m_startButton);
 
         m_filePathWidget = new QLineEdit();
-        m_filePathWidget->setText("test12345678");
+        m_filePathWidget->setText(QDir().absolutePath());
         m_fileSelect = new QPushButton("Select Directory");
         m_bottomLayout->addWidget(m_filePathWidget);
         m_bottomLayout->addWidget(m_fileSelect);
@@ -77,12 +76,12 @@ namespace QCD {
             m_startButton->setText("Stop recording");
             eventData[VIDEO_RECORD_TYPE_KEY] = true;
         }
-        m_appManager->triggerCallback(VIDEO_RECORD_KEY, eventData);
+        triggerCallback(VIDEO_RECORD_CALLBACK, eventData);
     }
 
     void VideoRecorderWidget::onUpdate(QCD::WidgetFocus a_focus) {
         int i = 0;
-        for (auto &el: m_appManager->getImageMap()) {
+        for (auto &el: m_images) {
             if (i < m_comboBox->count()) {
                 if(m_comboBox->itemText(i) != el.first.c_str()) {
                     m_comboBox->setItemText(i, el.first.c_str());

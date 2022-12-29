@@ -1,9 +1,9 @@
 #ifndef ROBOT_GUI_V3_BASEWIDGET_H
 #define ROBOT_GUI_V3_BASEWIDGET_H
 
+#include <CoreObject.h>
 #include <QWidget>
 #include <QCD.h>
-#include <AppManager.h>
 #include <QMouseEvent>
 #include <QFrame>
 
@@ -17,7 +17,7 @@ namespace QCD {
      * @see QCD::Container These are QCD's re-implementations of QLayouts
      * @authors Patrick-McGuire
      */
-    class Widget : public QFrame {
+    class Widget : public QFrame, public CoreObject {
     Q_OBJECT
     public:
         /**
@@ -29,22 +29,16 @@ namespace QCD {
          * @brief Finish initializing this widget
          * @details This is called when QCD::QConfigurableDashboard::run() is called, and this calls QCD::Widget::onRun().
          */
-        void run();
-
-        /**
-         * @brief Setter for the QCD::AppManager member
-         * @note This is handled internally, and should never be called outside of QCD's core classes.
-         * @param a_appManager AppManager object to pass
-         */
-        static void setAppManager(AppManager *a_appManager);
+        int run() override;
 
         /**
          * @brief Updates this widget
-         * @details Calls QCD::Widget::onUpdate() with the correct QCD::WidgetFocus, and provides proper update rate scaling as set by QCD::Widget::setUpdateRateScale().
+         * @details Calls QCD::Widget::onUpdate() with the correct QCD::WidgetFocus, and provides proper runUpdate rate scaling as set by QCD::Widget::setUpdateRateScale().
+         * @param a_inFocus if visible
          * @note This is handled internally, and should never be called outside of QCD's core classes.
          * @param a_inFocus if this widget is currently visible
          */
-        void smartUpdate(bool a_inFocus);
+        void runUpdate(bool a_inFocus) override;
 
         /**
          * @brief Disables dragging for this widget
@@ -59,8 +53,8 @@ namespace QCD {
         void enableFloating();
 
         /**
-         * @brief Sets a multiplier on the application update rate specific to this widget
-         * @details This will update this widget every nth QCD::Widget::smartUpdate() call.
+         * @brief Sets a multiplier on the application runUpdate rate specific to this widget
+         * @details This will runUpdate this widget every nth QCD::Widget::runUpdate() call.
          * This can be used to improve performance on widgets that don't need to be updated frequently.
          * This may be re-implemented by derived classes, so it's behavior is not guaranteed on all derivations of QCD::Widget.
          * @param a_scale scale to set
@@ -96,7 +90,7 @@ namespace QCD {
          * @brief Runs when the Application updates
          * @details implemented in derived
          * @param a_focus if the widget is visible
-         * @see QCD::Widget::smartUpdate()
+         * @see QCD::Widget::runUpdate()
          * @see QCD::WidgetFocus
          */
         virtual void onUpdate(WidgetFocus a_focus);
@@ -108,11 +102,12 @@ namespace QCD {
          */
         static bool isInFocus(QCD::WidgetFocus a_focus);
 
-        static AppManager *m_appManager;                        ///< QCD::AppManager object used to pass data and events around the application
         bool m_inLayout = true;                                 ///< Boolean that tracks if the widget is stored in a layout
 
 
     private:
+        using CoreObject::m_app;                                // Don't let widgets mess with this
+
         void mousePressEvent(QMouseEvent *a_event) override;
 
         void mouseReleaseEvent(QMouseEvent *a_event) override;

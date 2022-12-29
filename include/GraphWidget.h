@@ -29,7 +29,7 @@ namespace QCD {
 
         void beforeReplot();
 
-        void onThemeChange();
+        void onThemeChange(const Json &a_data);
 
     private:
         struct Series {

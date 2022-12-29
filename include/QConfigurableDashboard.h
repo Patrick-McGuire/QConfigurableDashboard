@@ -1,6 +1,8 @@
 #ifndef ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 #define ROBOT_GUI_V3_QCONFIGURABLEDASHBOARD_H
 
+#include <CoreObject.h>
+#include <Module.h>
 #include <QObject>
 #include <QVBoxLayout>
 #include "QApplication"
@@ -8,15 +10,13 @@
 #include <QTimer>
 #include <QCD.h>
 #include <Widget.h>
-#include <AppManager.h>
-#include <Module.h>
 #include <UtilFunctions.h>
 
 // @todo fix menu events
 namespace QCD {
-    class AppManager;   // Forward decl
-
     class Module;       // Forward decl
+
+    class CoreObject;
 
     /**
      * @brief Core class for running a QCD dashboard application.
@@ -25,14 +25,14 @@ namespace QCD {
      * Then you can add as many widgets to the container as you like. Setting the central widget and creating widgets is best done from modules
      * but can also be done from the main function. Calling QCD::QConfigurableDashboard::run() runs the entire dashboard
      * application. This needs to be called in the main thread, and is blocking. Updating of widgets is handled on a periodic basis based
-     * by the update rated specified in the constructor. There is an option to dynamically scale down the update rate based on program performance.
+     * by the update rated specified in the constructor. There is an option to dynamically scale down the runUpdate rate based on program performance.
      * It is advisable to enable this option by setting QCD::QConfigurableDashboard::setAutoScale() to true because some features like file dialogs become
      * unusably slow when the cpu is saturated. Widgets can be told they are not visible (increasing performance) when the application
      * is not the active window on the computer by setting QCD::QConfigurableDashboard::setUpdateAlways() to false. A standard main function for a application
      * could be as follows:
      * ~~~ {.cpp}
      * int main(int argc, char **argv) {
-     *  QCD::QConfigurableDashboard dashboard(argc, argv, 90);      // 90 Hz update rate
+     *  QCD::QConfigurableDashboard dashboard(argc, argv, 90);      // 90 Hz runUpdate rate
      *  dashboard.setUpdateAlways(true);
      *  dashboard.setAutoScale(false);
      *
@@ -52,7 +52,7 @@ namespace QCD {
      * @see QCD::Widget Base class for all widgets that can be used in a QConfigurableDashboard application
      * @authors Patrick-McGuire
      */
-    class QConfigurableDashboard : QObject {
+    class QConfigurableDashboard : public QObject, public CoreObject {
     Q_OBJECT
     public:
         /**
@@ -120,7 +120,7 @@ namespace QCD {
          * @details Sets the current theme. The name should be the key of the theme in the QCD::AppManager theme json object.
          * @param a_activeTheme name of theme
          */
-        void updateTheme(const QString &a_activeTheme);
+        void updateTheme(const std::string &a_activeTheme);
 
         /**
          * @brief Sets if the application checks whether it is the active application on the computer
@@ -131,26 +131,20 @@ namespace QCD {
         void setUpdateAlways(bool a_updateAlways);
 
         /**
-         * @brief Sets if the application preforms autoscaling on it's update rate
-         * @details Dynamically scale down the update rate based on program performance.
+         * @brief Sets if the application preforms autoscaling on it's runUpdate rate
+         * @details Dynamically scale down the runUpdate rate based on program performance.
          * @param a_autoScale if enabled
          */
         void setAutoScale(bool a_autoScale);
-
-        /**
-         * @brief Get the AppManager object
-         * @return QCD::AppManager object
-         */
-        static AppManager *getAppManager();
 
     public slots:
 
         /**
          * @brief Slot for updating theme
          * @details Runs when user selects a new theme
-         * @param a_action Action data
+         * @param a_data Action data
          */
-        void updateTheme(QAction *a_action);
+        void updateThemeCallback(const Json& a_data);
 
     private slots:
 
@@ -158,10 +152,12 @@ namespace QCD {
 
         void updateGUI();
 
+        void forwardEvent(QAction *a_action);
+
     private:
         static QString getClassStylesheet(const QString &a_class, const QString &a_style);
 
-        QString getThemeData(const QString &a_themeName, const QString &a_attribute);
+        static QString getThemeDataString(const QString &a_themeName, const QString &a_attribute);
 
         QMenu *findMenu(const QString &a_name);
 
@@ -181,7 +177,7 @@ namespace QCD {
         QTimer *m_timer;
         std::vector<QMenu *> m_menus;
         // Custom objects
-        static AppManager *m_appManager;
+//        static AppManager *m_appManager;
         Widget *m_centralWidget;
         std::vector<Module *> m_modules;
         std::deque<double> m_times = std::deque<double>();

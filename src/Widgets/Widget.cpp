@@ -4,21 +4,18 @@
 #include <Widget.h>
 
 namespace QCD {
-    AppManager *Widget::m_appManager = nullptr;
+    Widget::Widget() : QFrame(), CoreObject() {
 
-    Widget::Widget() : QFrame() {
-        if(m_appManager == nullptr) {
-            throw std::runtime_error("Construct instance of QCD::ConfigurableDashboard before QCD::Module");
-        }
     }
 
-    void Widget::run() {
+    int Widget::run() {
         onRun();
+        return 0;
     }
 
     void Widget::onRun() {}
 
-    void Widget::smartUpdate(bool a_inFocus) {
+    void Widget::runUpdate(bool a_inFocus) {
         // Provide a scalar to the global onUpdate rate (run every nth time)
         m_updateCounter--;
         if (m_updateCounter <= 0) {
@@ -39,7 +36,7 @@ namespace QCD {
     void Widget::onUpdate(WidgetFocus a_focus) {}
 
     void Widget::mouseMoveEvent(QMouseEvent *a_event) {
-        if (m_clicked && m_appManager->getDraggingEnabled() && !m_staticPos) {
+        if (m_clicked && m_draggingEnabled && !m_staticPos) {
             move(a_event->globalX() - m_eventDragStartX + m_dragStartX, a_event->globalY() - m_eventDragStartY + m_dragStartY);
         }
     }
@@ -53,7 +50,7 @@ namespace QCD {
     }
 
     void Widget::mousePressEvent(QMouseEvent *a_event) {
-        if (!m_staticPos && m_appManager->getDraggingEnabled()) {
+        if (!m_staticPos && m_draggingEnabled) {
             m_clicked = true;
             m_eventDragStartX = a_event->globalX();
             m_eventDragStartY = a_event->globalY();
@@ -77,10 +74,6 @@ namespace QCD {
             return true;
         }
         return false;
-    }
-
-    void Widget::setAppManager(AppManager *a_appManager) {
-        m_appManager = a_appManager;
     }
 
     void Widget::registerTheme(QWidget *a_widget, const QString &attribute) {
