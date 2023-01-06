@@ -10,6 +10,7 @@
 * ~~Connect menus to internal event structure (base menu & base action class?)~~
 * Module system test
 * Finish adding CoreObject functionality to Widget 
+  * run/other method integration
 * ~~App manager -> base QCD object, make members static~~
   * ~~Will have to not extend QObject to allow for multiple inheritance~~
 ## Docs
