@@ -63,14 +63,18 @@ set(widgetContainerFiles
         src/widgets/WidgetContainers/HBoxContainer.cpp include/HBoxContainer.h
         src/widgets/WidgetContainers/TabContainer.cpp include/TabContainer.h
         )
-set(moduleFiles
+set(coreModuleFiles
         src/modules/Module.cpp include/Module.h
         src/modules/ThreadedModule.cpp include/ThreadedModule.h
         src/modules/TimerModule.cpp include/TimerModule.h
+        )
+set(moduleFiles
         src/modules/DataExamples/RandomDataModule.cpp include/RandomDataModule.h
         src/modules/DataExamples/WebCamModule.cpp include/WebCamModule.h
         src/modules/DataExamples/TRandomDataModule.cpp include/TRandomDataModule.h
         src/modules/DataExamples/TWebCamModule.cpp include/TWebCamModule.h
+        src/modules/GuiExamples/TabModule.cpp include/TabModule.h
+        src/modules/GuiExamples/MainPageExample.cpp include/MainPageExample.h
         )
 set(coreFiles
         src/core/QConfigurableDashboard.cpp include/QConfigurableDashboard.h
@@ -85,12 +89,13 @@ set(allFiles
         ${widgetFiles}
         ${widgetContainerFiles}
         ${moduleFiles}
+        ${coreModuleFiles}
         ${coreFiles}
         )
 
 ## Configure all source files as a library
-set(allExecutablesNames QcdExample Playground XmlTcp)
-set(allExecutables examples/QcdExample.cpp examples/Playground.cpp examples/XmlTcp.cpp)
+set(allExecutablesNames QcdExample TabModuleExample XmlTcp)
+set(allExecutables examples/QcdExample.cpp examples/TabModuleExample.cpp examples/XmlTcp.cpp)
 foreach (exe exeName IN ZIP_LISTS allExecutables allExecutablesNames)
     add_executable(${exeName} ${exe} ${allFiles})
     target_link_libraries(${exeName} ${allLibs})

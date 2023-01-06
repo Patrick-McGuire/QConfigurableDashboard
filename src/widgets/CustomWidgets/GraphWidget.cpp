@@ -89,6 +89,14 @@ namespace QCD {
         for (auto &el: m_xValues) {
             el -= dt;
         }
+        for(int i = 0; i < m_xValues.size(); i++) {
+            if(m_xValues[i] < -m_maxTime) {
+                m_xValues.remove(i);
+                for(auto &el : m_seriesList) {
+                    el.values.remove(i);
+                }
+            }
+        }
     }
 
     bool GraphWidget::setUpdateRateScale(int a_scale) {

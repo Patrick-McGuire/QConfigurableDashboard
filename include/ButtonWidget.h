@@ -10,7 +10,7 @@ namespace QCD {
     class ButtonWidget : public Widget {
     Q_OBJECT
     public:
-        explicit ButtonWidget(const QString &a_text = "");
+        explicit ButtonWidget(const QString &a_text = "", const QString &a_pub = "");
 
         void publishTo(const std::string &a_key, bool onClick = true);
 

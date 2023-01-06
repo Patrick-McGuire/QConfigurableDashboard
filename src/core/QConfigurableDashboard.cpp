@@ -226,4 +226,8 @@ namespace QCD {
         }
     }
 
+    Widget *QConfigurableDashboard::getCentralWidget() {
+        return m_centralWidget;
+    }
+
 }

@@ -60,6 +60,7 @@ namespace QCD {
         double m_lastTime = -1;
         int m_updateRateScale = 1;
         int m_updateCounter = 0;
+        double m_maxTime = 10;
 
         QPointF dragLegendOrigin;
         bool m_clicked = false;

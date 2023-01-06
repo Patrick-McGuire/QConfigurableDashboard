@@ -86,6 +86,12 @@ namespace QCD {
         bool setCentralWidget(Widget *a_widget, QFlags<Qt::AlignmentFlag> a_alignment = Qt::Alignment());
 
         /**
+         * @brief Gets the current central widget
+         * @return Central widget
+         */
+        Widget *getCentralWidget();
+
+        /**
          * @brief Adds a module to the application
          * @details Registers the module internally.
          * @param a_baseModule QCD::Module to add

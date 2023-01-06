@@ -2,8 +2,9 @@
 #include <ButtonWidget.h>
 
 namespace QCD {
-    ButtonWidget::ButtonWidget(const QString &a_text) : Widget() {
+    ButtonWidget::ButtonWidget(const QString &a_text, const QString &a_pub) : Widget() {
         // Construct members
+        m_outputKey = a_pub.toStdString();
         m_layout = new QVBoxLayout();
         m_layout->setMargin(2);
         setLayout(m_layout);

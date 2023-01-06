@@ -7,7 +7,7 @@
 ## Back end
 * Config Loading, and OS specific config stuff
 * Look into subscriber/publisher direct connection
-* ~~Connect menus to internal event structure (base menu & base action class?)~~
+* Connect menus to internal event structure (base menu & base action class?)
 * Module system test
 * Finish adding CoreObject functionality to Widget 
 * ~~App manager -> base QCD object, make members static~~
@@ -27,6 +27,7 @@
 * ~~Figure out how to do multiple build configurations within same project~~
 * Creating dynamic lib?
 * Auto-assembling files to 1 header?
+* Ringbuffer implementation 
 ## Maintenance
 * Finish event based video recording architecture, add timer to recorder widget 
 * Finish runUpdate rate scaling
