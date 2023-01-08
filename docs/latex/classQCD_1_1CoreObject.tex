@@ -26,11 +26,11 @@ Collaboration diagram for QCD\+::Core\+Object\+:
 \mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called at start of application. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
-\item 
+\begin{DoxyCompactList}\small\item\em Called every loop of the application. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called at the end of the application. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
 \begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
@@ -105,6 +105,10 @@ This constructor should only be called once per application, inside \mbox{\hyper
 
 
 
+Called at the end of the application. 
+
+
+
 Reimplemented in \mbox{\hyperlink{classQCD_1_1ThreadedModule_a747da024d9d8c3eca218e63deed85503}{QCD\+::\+Threaded\+Module}}.
 
 \mbox{\Hypertarget{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}\label{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}} 
@@ -175,6 +179,13 @@ Implements \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{QCD\+::\+Ca
 
 
 
+Called at start of application. 
+
+\begin{DoxyReturn}{Returns}
+exit status 
+\end{DoxyReturn}
+
+
 Reimplemented in \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}{QCD\+::\+QConfigurable\+Dashboard}}, \mbox{\hyperlink{classQCD_1_1ThreadedModule_a4ef5c2c97fdf1fd342a3a4bc0295246a}{QCD\+::\+Threaded\+Module}}, \mbox{\hyperlink{classQCD_1_1TimerModule_aa35612ed2a66756e2b55544d2816f855}{QCD\+::\+Timer\+Module}}, and \mbox{\hyperlink{classQCD_1_1Widget_a9ed60700f044ee59c113c348bb8a7d35}{QCD\+::\+Widget}}.
 
 \mbox{\Hypertarget{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}\label{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}} 
@@ -183,6 +194,15 @@ Reimplemented in \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a72da3171c2
 \doxysubsubsection{\texorpdfstring{runUpdate()}{runUpdate()}}
 {\footnotesize\ttfamily void QCD\+::\+Core\+Object\+::run\+Update (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+focus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Called every loop of the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+focus} & Used by widgets\+: if visible \\
+\hline
+\end{DoxyParams}
 
 
 Reimplemented in \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa379a7540b2dafeb4f1bb17ed802f7e5}{QCD\+::\+Threaded\+Module}}, and \mbox{\hyperlink{classQCD_1_1Widget_aec0c912a7292819474a19ea2d8933857}{QCD\+::\+Widget}}.

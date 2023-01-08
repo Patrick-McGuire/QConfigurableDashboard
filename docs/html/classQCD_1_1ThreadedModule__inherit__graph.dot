@@ -14,7 +14,7 @@ digraph "QCD::ThreadedModule"
   Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="QCD::CallbackDispatcherInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CallbackDispatcherInterface.html",tooltip="Interface definition for callback dispatchers."];
   Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="QCD::TRandomDataModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1TRandomDataModule.html",tooltip=" "];
+  Node6 [label="QCD::TRandomDataModule",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1TRandomDataModule.html",tooltip="Populates the incoming data structure with random numbers and strings."];
   Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="QCD::TWebCamModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1TWebCamModule.html",tooltip=" "];
+  Node7 [label="QCD::TWebCamModule",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1TWebCamModule.html",tooltip="Populates the image data structure with the webcam."];
 }

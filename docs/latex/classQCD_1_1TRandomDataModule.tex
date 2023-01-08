@@ -2,6 +2,15 @@
 \label{classQCD_1_1TRandomDataModule}\index{QCD::TRandomDataModule@{QCD::TRandomDataModule}}
 
 
+Populates the incoming data structure with random numbers and strings.  
+
+
+
+
+{\ttfamily \#include $<$TRandom\+Data\+Module.\+h$>$}
+
+
+
 Inheritance diagram for QCD\+::TRandom\+Data\+Module\+:
 % FIG 0
 
@@ -11,9 +20,8 @@ Collaboration diagram for QCD\+::TRandom\+Data\+Module\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classQCD_1_1TRandomDataModule_a619376dbd485b2f5dc0b1ea751b32273}\label{classQCD_1_1TRandomDataModule_a619376dbd485b2f5dc0b1ea751b32273}} 
-{\bfseries TRandom\+Data\+Module} (double a\+\_\+rate)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classQCD_1_1TRandomDataModule_a619376dbd485b2f5dc0b1ea751b32273}{TRandom\+Data\+Module}} (double a\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,11 +49,11 @@ void \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa535290c0df3d92409abec42084c85
 \mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called at start of application. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
-\item 
+\begin{DoxyCompactList}\small\item\em Called every loop of the application. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called at the end of the application. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
 \begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
@@ -111,6 +119,29 @@ static \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{Image\+M
 \mbox{\Hypertarget{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}\label{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}} 
 static \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$ {\bfseries m\+\_\+app}
 \begin{DoxyCompactList}\small\item\em Pointer to app for everyone to access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Populates the incoming data structure with random numbers and strings. 
+
+Populates KEY1 through KEY6 where 1\&2 are ints, 3\&4 are doubles, and 5\&6 are strings KEY7 and KEY8 are sin/cos functions 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCD_1_1TRandomDataModule_a619376dbd485b2f5dc0b1ea751b32273}\label{classQCD_1_1TRandomDataModule_a619376dbd485b2f5dc0b1ea751b32273}} 
+\index{QCD::TRandomDataModule@{QCD::TRandomDataModule}!TRandomDataModule@{TRandomDataModule}}
+\index{TRandomDataModule@{TRandomDataModule}!QCD::TRandomDataModule@{QCD::TRandomDataModule}}
+\doxysubsubsection{\texorpdfstring{TRandomDataModule()}{TRandomDataModule()}}
+{\footnotesize\ttfamily QCD\+::\+TRandom\+Data\+Module\+::\+TRandom\+Data\+Module (\begin{DoxyParamCaption}\item[{double}]{a\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+rate} & Update rate \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

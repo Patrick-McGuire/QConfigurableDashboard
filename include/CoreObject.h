@@ -27,10 +27,21 @@ namespace QCD {
          */
         explicit CoreObject(QConfigurableDashboard *a_app);
 
+        /**
+         * @brief Called at start of application
+         * @return exit status
+         */
         virtual int run();
 
+        /**
+         * @brief Called every loop of the application
+         * @param a_focus Used by widgets: if visible
+         */
         virtual void runUpdate(bool a_focus);
 
+        /**
+         * @brief Called at the end of the application
+         */
         virtual void finish();
 
         /**

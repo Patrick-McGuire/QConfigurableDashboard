@@ -14,9 +14,10 @@ var searchData=
   ['timermodule_11',['TimerModule',['../classQCD_1_1TimerModule.html',1,'QCD::TimerModule'],['../classQCD_1_1TimerModule.html#a09e71b8792e9d426a93157e672f8c7db',1,'QCD::TimerModule::TimerModule()']]],
   ['title_5ftext_5fcolor_5fclass_12',['TITLE_TEXT_COLOR_CLASS',['../namespaceQCD.html#afc70e1e4ed5e291429828decb35d1cfa',1,'QCD']]],
   ['todo_20list_13',['Todo List',['../todo.html',1,'']]],
-  ['trandomdatamodule_14',['TRandomDataModule',['../classQCD_1_1TRandomDataModule.html',1,'QCD']]],
-  ['triggercallback_15',['triggerCallback',['../classQCD_1_1CallbackDispatcher.html#a359a1106f329f4dbb9569ecdbc66a2e9',1,'QCD::CallbackDispatcher::triggerCallback()'],['../classQCD_1_1CoreObject.html#a3c059dbd82bdb2ed65f0e5698363a284',1,'QCD::CoreObject::triggerCallback()'],['../classQCD_1_1ThreadedModule.html#a816ed44dce3bba3ae5cd73688fe05d3b',1,'QCD::ThreadedModule::triggerCallback(const std::string &amp;a_identifier, const Json &amp;a_json=Json::object(), int a_excludeIdIndex=-1) override']]],
-  ['triggerincomingcallbacks_16',['triggerIncomingCallbacks',['../classQCD_1_1ThreadedModule.html#abccd677486ccd63d514b0430076541c7',1,'QCD::ThreadedModule']]],
-  ['tunnelcallback_17',['TunnelCallback',['../namespaceQCD.html#acda96bf30f35933a39a69810f97facf0',1,'QCD']]],
-  ['twebcammodule_18',['TWebCamModule',['../classQCD_1_1TWebCamModule.html',1,'QCD']]]
+  ['togglecolor_14',['toggleColor',['../classQCD_1_1TWebCamModule.html#a190b020d1a7814fe7bceaee494e25ab3',1,'QCD::TWebCamModule']]],
+  ['trandomdatamodule_15',['TRandomDataModule',['../classQCD_1_1TRandomDataModule.html',1,'QCD::TRandomDataModule'],['../classQCD_1_1TRandomDataModule.html#a619376dbd485b2f5dc0b1ea751b32273',1,'QCD::TRandomDataModule::TRandomDataModule()']]],
+  ['triggercallback_16',['triggerCallback',['../classQCD_1_1CallbackDispatcher.html#a359a1106f329f4dbb9569ecdbc66a2e9',1,'QCD::CallbackDispatcher::triggerCallback()'],['../classQCD_1_1CoreObject.html#a3c059dbd82bdb2ed65f0e5698363a284',1,'QCD::CoreObject::triggerCallback()'],['../classQCD_1_1ThreadedModule.html#a816ed44dce3bba3ae5cd73688fe05d3b',1,'QCD::ThreadedModule::triggerCallback(const std::string &amp;a_identifier, const Json &amp;a_json=Json::object(), int a_excludeIdIndex=-1) override']]],
+  ['triggerincomingcallbacks_17',['triggerIncomingCallbacks',['../classQCD_1_1ThreadedModule.html#abccd677486ccd63d514b0430076541c7',1,'QCD::ThreadedModule']]],
+  ['tunnelcallback_18',['TunnelCallback',['../namespaceQCD.html#acda96bf30f35933a39a69810f97facf0',1,'QCD']]],
+  ['twebcammodule_19',['TWebCamModule',['../classQCD_1_1TWebCamModule.html',1,'QCD::TWebCamModule'],['../classQCD_1_1TWebCamModule.html#ad01e6c6cfe2d4973db3f93460db02eaf',1,'QCD::TWebCamModule::TWebCamModule()']]]
 ];
