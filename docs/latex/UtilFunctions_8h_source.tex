@@ -1,0 +1,64 @@
+\hypertarget{UtilFunctions_8h_source}{}\doxysection{Util\+Functions.\+h}
+\label{UtilFunctions_8h_source}\index{QConfigurableDashboard/include/UtilFunctions.h@{QConfigurableDashboard/include/UtilFunctions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{QCD_8h}{QCD.h}}>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_UTILFUNTIONS\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_UTILFUNTIONS\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ randomInt(\textcolor{keywordtype}{int}\ a\_min,\ \textcolor{keywordtype}{int}\ a\_max)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rand()\ \%\ (a\_max\ -\/\ a\_min\ +\ 1)\ +\ a\_min;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ randomDouble(\textcolor{keywordtype}{double}\ a\_min,\ \textcolor{keywordtype}{double}\ a\_max)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_min\ +\ ((double)\ rand()\ /\ RAND\_MAX)\ *\ (a\_max\ -\/\ a\_min);}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ randomString(\textcolor{keywordtype}{int}\ len)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ output;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ output.reserve(len);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ len;\ i++)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ (char)\ randomInt(\textcolor{charliteral}{'A'},\ \textcolor{charliteral}{'z'});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ getEpochTime()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{double})\ std::chrono::duration\_cast<std::chrono::milliseconds>\ (std::chrono::system\_clock::now().time\_since\_epoch()).count()\ /\ 1000;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ qVariantToJson(QVariant\ \&a\_variant)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(a\_variant.type()\ ==\ QVariant::String)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_variant.toString().toStdString();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a\_variant.type()\ ==\ QVariant::Int)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_variant.toInt();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a\_variant.type()\ ==\ QVariant::Double)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_variant.toDouble();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a\_variant.type()\ ==\ QVariant::Map)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ output;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ map\ =\ a\_variant.toMap();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mapKeys\ =\ map.keys();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&el\ :\ mapKeys)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[el.toStdString()]\ =\ qVariantToJson(map[el]);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a\_variant.type()\ ==\ QVariant::List)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ output\ =\ Json::array();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ map\ =\ a\_variant.toList();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&el\ :\ map)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.push\_back(qVariantToJson(el));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_UTILFUNTIONS\_H}}
+
+\end{DoxyCode}

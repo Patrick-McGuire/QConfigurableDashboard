@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linedisplaywidget_108',['LineDisplayWidget',['../classQCD_1_1LineDisplayWidget.html',1,'QCD']]]
+  ['hboxcontainer_0',['HBoxContainer',['../classQCD_1_1HBoxContainer.html',1,'QCD']]]
 ];

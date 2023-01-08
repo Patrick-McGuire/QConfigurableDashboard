@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['module_139',['Module',['../classQCD_1_1Module.html#a6a110df311f28e1d7924ce06618d6a54',1,'QCD::Module']]]
+  ['isinfocus_0',['isInFocus',['../classQCD_1_1Widget.html#ae9dc62e950bf3da58f04133c6b3f9488',1,'QCD::Widget']]]
 ];

@@ -1,0 +1,33 @@
+\hypertarget{CallbackDispatcher_8h_source}{}\doxysection{Callback\+Dispatcher.\+h}
+\label{CallbackDispatcher_8h_source}\index{QConfigurableDashboard/include/CallbackDispatcher.h@{QConfigurableDashboard/include/CallbackDispatcher.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{QCD_8h}{QCD.h}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <CallbackDispatcherInterface.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{CallbackDispatcher}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{CallbackDispatcherInterface}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_ad0b6ca03393111fdcfd5653399f6f883}{CallbackDispatcher}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}{registerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}}\ \&a\_callback)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_ad8213c241dfc36674f7f1ffc652f06c1}{registerTunnelCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{TunnelCallback}}\ \&a\_callback)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}{triggerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_json\ =\ Json::object(),\ \textcolor{keywordtype}{int}\ a\_excludeIdIndex\ =\ -\/1)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::map<std::string,\ std::vector<Callback>>\ m\_callbacks;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<TunnelCallback>\ m\_tunnelCallbacks;}
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,79 @@
+\hypertarget{ThreadedModule_8h_source}{}\doxysection{Threaded\+Module.\+h}
+\label{ThreadedModule_8h_source}\index{QConfigurableDashboard/include/ThreadedModule.h@{QConfigurableDashboard/include/ThreadedModule.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_THREADEDMODULE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_THREADEDMODULE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <CallbackDispatcherInterface.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Module.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1ThreadedModule}{ThreadedModule}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1Module}{Module}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule}{ThreadedModule}}(\textcolor{keywordtype}{double}\ a\_rate);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a4ef5c2c97fdf1fd342a3a4bc0295246a}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa379a7540b2dafeb4f1bb17ed802f7e5}{runUpdate}}(\textcolor{keywordtype}{bool}\ a\_focus)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a747da024d9d8c3eca218e63deed85503}{finish}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa535290c0df3d92409abec42084c8523}{queueCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_json,\ \textcolor{keyword}{const}\ std::string\ \&a\_name);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a961f2632ec08d334123a911381111c8a}{tick}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a77a1435b0b11b1c29698131700c867b2}{setup}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_autoClear;\ \ \ \ \ \ \ \textcolor{comment}{//\ If\ true\ all\ json\ data\ and\ images\ will\ be\ reset\ after\ being\ copied\ to\ main\ thread}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_afa66c9160db694af0ed155e42918dafa}{setJson}}(\textcolor{keyword}{const}\ std::string\ \&a\_key,\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_value);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_ae4e92457b073cf31d1e8acf0d90299d3}{setImage}}(\textcolor{keyword}{const}\ std::string\ \&a\_key,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}{Image}}\ \&a\_image);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&\mbox{\hyperlink{classQCD_1_1ThreadedModule_a0cc84b77bde0c494904efe9255a76793}{getIncomingData}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_abccd677486ccd63d514b0430076541c7}{triggerIncomingCallbacks}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a93058aee7eb95e386350641b64f44831}{registerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}}\ \&a\_callback)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1ThreadedModule_a816ed44dce3bba3ae5cd73688fe05d3b}{triggerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_json\ =\ Json::object(),\ \textcolor{keywordtype}{int}\ a\_excludeIdIndex\ =\ -\/1)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ internalRun();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isThisThread();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ private,\ to\ avoid\ derived\ classes\ from\ accessing\ in\ thread}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Module::triggerCallback;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Module::registerTunnelCallback;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Module::registerCallback;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_interval;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ in\ constructor\ from\ main\ thread,\ then\ only\ read\ from\ this\ thread}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::lock\_guard<std::mutex>\ LockGard;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ std::thread\ *m\_thread;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_active;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ std::mutex\ m\_threadMutex;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ m\_outgoingData\ =\ Json::object();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ m\_incomingData\ =\ Json::object();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::map<std::string,\ Image>\ m\_outgoingImages;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::mutex\ m\_dataMutex;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::queue<std::pair<std::string,\ Json>>\ m\_outgoingEventQueue;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ std::queue<std::pair<std::string,\ Json>>\ m\_incomingEventQueue;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{CallbackDispatcher}}\ m\_dispatcher;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_callbackID\ =\ -\/1;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::mutex\ m\_eventMutex;}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_THREADEDMODULE\_H}}
+
+\end{DoxyCode}

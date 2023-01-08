@@ -1,0 +1,100 @@
+\hypertarget{classQCD_1_1RandomDataModule}{}\doxysection{QCD\+::Random\+Data\+Module Class Reference}
+\label{classQCD_1_1RandomDataModule}\index{QCD::RandomDataModule@{QCD::RandomDataModule}}
+
+
+Inheritance diagram for QCD\+::Random\+Data\+Module\+:
+% FIG 0
+
+
+Collaboration diagram for QCD\+::Random\+Data\+Module\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1RandomDataModule_a0545240c73064fcae47503382eb7401b}\label{classQCD_1_1RandomDataModule_a0545240c73064fcae47503382eb7401b}} 
+{\bfseries Random\+Data\+Module} (double a\+\_\+rate)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1TimerModule}{QCD\+::\+Timer\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCD_1_1TimerModule_a09e71b8792e9d426a93157e672f8c7db}{Timer\+Module}} (double a\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1TimerModule_aa35612ed2a66756e2b55544d2816f855}{run}} () override
+\begin{DoxyCompactList}\small\item\em Starts the updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Module}{QCD\+::\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCD_1_1Module_a6a110df311f28e1d7924ce06618d6a54}{Module}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}\label{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}} 
+{\bfseries Core\+Object} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
+\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a tunnel callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_a3c059dbd82bdb2ed65f0e5698363a284}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}{get\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classQCD_1_1CoreObject_a51c39be9d5c9472765afb12d2f81fd00}{set\+Theme}} (const std\+::string \&a\+\_\+theme)
+\begin{DoxyCompactList}\small\item\em Sets the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Slots inherited from \mbox{\hyperlink{classQCD_1_1TimerModule}{QCD\+::\+Timer\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1TimerModule_a97a5c94dc2d54ac58509e3fccb702435}{on\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Called at specified rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1TimerModule}{QCD\+::\+Timer\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1TimerModule_ada3e05cbadcaad8aee9cea4d919cbeb7}\label{classQCD_1_1TimerModule_ada3e05cbadcaad8aee9cea4d919cbeb7}} 
+int {\bfseries m\+\_\+interval}
+\begin{DoxyCompactList}\small\item\em Time (ms) between updates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1TimerModule_a73ab4f2276b62a5953e0ad8288b16579}\label{classQCD_1_1TimerModule_a73ab4f2276b62a5953e0ad8288b16579}} 
+QTimer $\ast$ {\bfseries m\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em QT timer object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}\label{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}} 
+static bool {\bfseries m\+\_\+dragging\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em If the application allows dragging of widgets currently (only applicable to widgets in panel containers) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}\label{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+input\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from modules and read by widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}\label{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+output\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from widgets to modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}\label{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+config\+Data}
+\begin{DoxyCompactList}\small\item\em App wide config info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}\label{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+theme\+Data}
+\begin{DoxyCompactList}\small\item\em Theme stuff (redoing?) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}\label{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}} 
+static \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{Image\+Map}} {\bfseries m\+\_\+images}
+\begin{DoxyCompactList}\small\item\em Images sent from modules to widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}\label{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}} 
+static \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$ {\bfseries m\+\_\+app}
+\begin{DoxyCompactList}\small\item\em Pointer to app for everyone to access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+QConfigurable\+Dashboard/include/Random\+Data\+Module.\+h\item 
+QConfigurable\+Dashboard/src/modules/\+Data\+Examples/Random\+Data\+Module.\+cpp\end{DoxyCompactItemize}

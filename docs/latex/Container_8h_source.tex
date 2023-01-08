@@ -1,0 +1,40 @@
+\hypertarget{Container_8h_source}{}\doxysection{Container.\+h}
+\label{Container_8h_source}\index{QConfigurableDashboard/include/Container.h@{QConfigurableDashboard/include/Container.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_CONTAINER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_CONTAINER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Widget.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}vector"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1Container}{Container}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1Container_addfe8b8d3b5c6cd566df59428365d545}{Container}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1Container_aff13b9f48fcdff33dbe3916862df3430}{addWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget)\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1Container_af64026a23b5a1ca6f25367ee180971f6}{onUpdate}}(\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD::WidgetFocus}}\ a\_focus)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1Container_a86c739cf0782a95633bce6b207efa9e6}{registerChildWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_childWidget);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1Container_a31f4eeb34e9c81e85dcea782951d1165}{removeChildWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_childWidget);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1Container_a22e20b5519a43c522af66a8011b16299}{onRun}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::vector<Widget*>\ \mbox{\hyperlink{classQCD_1_1Container_ac90fb0903bdc52571c73f4c88c370611}{m\_childWidgets}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ QWidget\ *\mbox{\hyperlink{classQCD_1_1Container_a11d3dc1e03ad7cc375821c3431de87f7}{m\_wrapperWidget}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ QVBoxLayout\ *m\_layout;}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_CONTAINER\_H}}
+
+\end{DoxyCode}

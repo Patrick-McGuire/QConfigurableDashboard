@@ -1,0 +1,15 @@
+digraph "QCD::QConfigurableDashboard"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="QCD::QConfigurableDashboard",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="core class for running a QCD dashboard application."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCD::CoreObject",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CoreObject.html",tooltip="core object extended by all QCD classes"];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCD::CallbackDispatcherInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CallbackDispatcherInterface.html",tooltip="Interface definition for callback dispatchers."];
+  Node1 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" m_app" ];
+}

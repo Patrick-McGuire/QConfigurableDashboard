@@ -1,0 +1,36 @@
+\hypertarget{PanelContainer_8h_source}{}\doxysection{Panel\+Container.\+h}
+\label{PanelContainer_8h_source}\index{QConfigurableDashboard/include/PanelContainer.h@{QConfigurableDashboard/include/PanelContainer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_PANELCONTAINER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_PANELCONTAINER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}vector"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Widget.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{QCD_8h}{QCD.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Container.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1PanelContainer}{PanelContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1Container}{Container}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classQCD_1_1PanelContainer_adcb93bd6fa4fd3dcc17ef70f3c35e71a}{PanelContainer}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1PanelContainer_ac438c1c9088855ae4483331a6ff77f00}{addWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1PanelContainer_ac438c1c9088855ae4483331a6ff77f00}{addWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget,\ \textcolor{keywordtype}{int}\ a\_x,\ \textcolor{keywordtype}{int}\ a\_y);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1PanelContainer_ac35be5f88650c99c8f21a0998e488fea}{setBackgroundWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget,\ QFlags<Qt::AlignmentFlag>\ a\_alignment\ =\ Qt::Alignment());}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ QVBoxLayout\ *\mbox{\hyperlink{classQCD_1_1PanelContainer_aa63d2db43c8a90743d027f4358102d53}{m\_layout}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *\mbox{\hyperlink{classQCD_1_1PanelContainer_afa1ecd79d6647018b1046b45e2d8b388}{m\_backgroundWidget}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_PANELCONTAINER\_H}}
+
+\end{DoxyCode}

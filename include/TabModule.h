@@ -13,8 +13,6 @@ namespace QCD {
     public:
         TabModule();
 
-        void addWidget(Widget *a_widget, const QString &a_tabName = "No name");
-
     protected:
         static TabContainer *m_tabs;
     };

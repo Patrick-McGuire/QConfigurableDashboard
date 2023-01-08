@@ -6,9 +6,9 @@
 * Figure out size policy/hints
 ## Back end
 * Config Loading, and OS specific config stuff
-* Look into subscriber/publisher direct connection
 * Connect menus to internal event structure (base menu & base action class?)
-* Module system test
+  * Kinda jank now?
+* ~~Module system test~~
 * Finish adding CoreObject functionality to Widget 
   * run/other method integration
 * ~~App manager -> base QCD object, make members static~~

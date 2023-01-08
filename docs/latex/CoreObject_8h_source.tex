@@ -1,0 +1,55 @@
+\hypertarget{CoreObject_8h_source}{}\doxysection{Core\+Object.\+h}
+\label{CoreObject_8h_source}\index{QConfigurableDashboard/include/CoreObject.h@{QConfigurableDashboard/include/CoreObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_COREOBJECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_COREOBJECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{QCD_8h}{QCD.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <CallbackDispatcherInterface.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <CallbackDispatcher.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }QConfigurableDashboard;\ \ \ \ \ \ \ \textcolor{comment}{//\ Forward\ decl}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1CoreObject}{CoreObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{CallbackDispatcherInterface}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}{CoreObject}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}{CoreObject}}(\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurableDashboard}}\ *a\_app);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ run();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ runUpdate(\textcolor{keywordtype}{bool}\ a\_focus);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ finish();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{registerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}}\ \&a\_callback)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{registerTunnelCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{TunnelCallback}}\ \&a\_callback)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1CoreObject_a3c059dbd82bdb2ed65f0e5698363a284}{triggerCallback}}(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_json\ =\ Json::object(),\ \textcolor{keywordtype}{int}\ a\_excludeIdIndex\ =\ -\/1)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1CoreObject_a51c39be9d5c9472765afb12d2f81fd00}{setTheme}}(\textcolor{keyword}{const}\ std::string\ \&a\_theme);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::string\ \&\mbox{\hyperlink{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}{getTheme}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}{m\_draggingEnabled}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \mbox{\hyperlink{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}{m\_inputData}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \mbox{\hyperlink{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}{m\_outputData}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \mbox{\hyperlink{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}{m\_configData}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \mbox{\hyperlink{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}{m\_themeData}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{ImageMap}}\ \mbox{\hyperlink{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}{m\_images}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurableDashboard}}\ *\mbox{\hyperlink{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}{m\_app}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ m\_theme;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Track\ current\ theme}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{CallbackDispatcher}}\ *m\_callbackDispatcher;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ private\ so\ that\ we\ can\ wrap\ its\ methods\ making\ the\ interface\ a\ little\ cleaner}}
+\DoxyCodeLine{00086\ \ \ \ \ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_COREOBJECT\_H}}
+
+\end{DoxyCode}

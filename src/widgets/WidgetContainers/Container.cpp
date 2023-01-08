@@ -41,8 +41,4 @@ namespace QCD {
         }
     }
 
-    bool Container::addWidget(Widget *a_baseWidget) {
-        return false;
-    }
-
 } // QCD

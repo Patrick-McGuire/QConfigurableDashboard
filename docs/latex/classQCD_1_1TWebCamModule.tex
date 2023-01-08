@@ -1,0 +1,122 @@
+\hypertarget{classQCD_1_1TWebCamModule}{}\doxysection{QCD\+::TWeb\+Cam\+Module Class Reference}
+\label{classQCD_1_1TWebCamModule}\index{QCD::TWebCamModule@{QCD::TWebCamModule}}
+
+
+Inheritance diagram for QCD\+::TWeb\+Cam\+Module\+:
+% FIG 0
+
+
+Collaboration diagram for QCD\+::TWeb\+Cam\+Module\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1TWebCamModule_ad01e6c6cfe2d4973db3f93460db02eaf}\label{classQCD_1_1TWebCamModule_ad01e6c6cfe2d4973db3f93460db02eaf}} 
+{\bfseries TWeb\+Cam\+Module} (double a\+\_\+rate)
+\item 
+\mbox{\Hypertarget{classQCD_1_1TWebCamModule_a190b020d1a7814fe7bceaee494e25ab3}\label{classQCD_1_1TWebCamModule_a190b020d1a7814fe7bceaee494e25ab3}} 
+void {\bfseries toggle\+Color} (const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCD_1_1ThreadedModule_ab0b4f88ecd767ef95a712a6fbda24419}{Threaded\+Module}} (double a\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1ThreadedModule_a4ef5c2c97fdf1fd342a3a4bc0295246a}{run}} () override
+\begin{DoxyCompactList}\small\item\em Start this thread going. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa379a7540b2dafeb4f1bb17ed802f7e5}{run\+Update}} (bool a\+\_\+focus) override
+\begin{DoxyCompactList}\small\item\em Pass relevant data from main thread into shared memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_a747da024d9d8c3eca218e63deed85503}{finish}} () override
+\begin{DoxyCompactList}\small\item\em Tell this thread to end. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_aa535290c0df3d92409abec42084c8523}{queue\+Callback}} (const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json, const std\+::string \&a\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Queue a callback to be tunneled into the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Module}{QCD\+::\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCD_1_1Module_a6a110df311f28e1d7924ce06618d6a54}{Module}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}\label{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}} 
+{\bfseries Core\+Object} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
+\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a tunnel callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_a3c059dbd82bdb2ed65f0e5698363a284}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}{get\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classQCD_1_1CoreObject_a51c39be9d5c9472765afb12d2f81fd00}{set\+Theme}} (const std\+::string \&a\+\_\+theme)
+\begin{DoxyCompactList}\small\item\em Sets the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1ThreadedModule_a961f2632ec08d334123a911381111c8a}\label{classQCD_1_1ThreadedModule_a961f2632ec08d334123a911381111c8a}} 
+virtual void {\bfseries tick} ()
+\begin{DoxyCompactList}\small\item\em Overriden function that serves as the main loop for this thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1ThreadedModule_a77a1435b0b11b1c29698131700c867b2}\label{classQCD_1_1ThreadedModule_a77a1435b0b11b1c29698131700c867b2}} 
+virtual void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em Overriden function that serves as the setup for this thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_afa66c9160db694af0ed155e42918dafa}{set\+Json}} (const std\+::string \&a\+\_\+key, \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Queues a json value to be passed to the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_ae4e92457b073cf31d1e8acf0d90299d3}{set\+Image}} (const std\+::string \&a\+\_\+key, const \mbox{\hyperlink{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}{Image}} \&a\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Queues a image to be passed to the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \& \mbox{\hyperlink{classQCD_1_1ThreadedModule_a0cc84b77bde0c494904efe9255a76793}{get\+Incoming\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Gets the incoming json data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_abccd677486ccd63d514b0430076541c7}{trigger\+Incoming\+Callbacks}} ()
+\begin{DoxyCompactList}\small\item\em runs all callbacks in incoming queue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_a93058aee7eb95e386350641b64f44831}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1ThreadedModule_a816ed44dce3bba3ae5cd73688fe05d3b}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1ThreadedModule_a303332a8520b48f7af87f224c1d217c3}\label{classQCD_1_1ThreadedModule_a303332a8520b48f7af87f224c1d217c3}} 
+bool {\bfseries m\+\_\+auto\+Clear}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}\label{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}} 
+static bool {\bfseries m\+\_\+dragging\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em If the application allows dragging of widgets currently (only applicable to widgets in panel containers) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}\label{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+input\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from modules and read by widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}\label{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+output\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from widgets to modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}\label{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+config\+Data}
+\begin{DoxyCompactList}\small\item\em App wide config info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}\label{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+theme\+Data}
+\begin{DoxyCompactList}\small\item\em Theme stuff (redoing?) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}\label{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}} 
+static \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{Image\+Map}} {\bfseries m\+\_\+images}
+\begin{DoxyCompactList}\small\item\em Images sent from modules to widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}\label{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}} 
+static \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$ {\bfseries m\+\_\+app}
+\begin{DoxyCompactList}\small\item\em Pointer to app for everyone to access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+QConfigurable\+Dashboard/include/TWeb\+Cam\+Module.\+h\item 
+QConfigurable\+Dashboard/src/modules/\+Data\+Examples/TWeb\+Cam\+Module.\+cpp\end{DoxyCompactItemize}

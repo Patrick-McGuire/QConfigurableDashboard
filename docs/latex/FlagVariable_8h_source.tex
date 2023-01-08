@@ -1,0 +1,75 @@
+\hypertarget{FlagVariable_8h_source}{}\doxysection{Flag\+Variable.\+h}
+\label{FlagVariable_8h_source}\index{QConfigurableDashboard/src/util/FlagVariable.h@{QConfigurableDashboard/src/util/FlagVariable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLAGVARIABLE\_FLAGVARIABLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLAGVARIABLE\_FLAGVARIABLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Var,\ \textcolor{keyword}{class}\ FlagStorage>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFlagVariable}{FlagVariable}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ create()\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classFlagVariable}{FlagVariable}}()\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ flags\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classFlagVariable}{FlagVariable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classFlagVariable}{FlagVariable<Var,\ FlagStorage>}}\ \&other)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ flags\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ variable\ =\ other.variable;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classFlagVariable}{FlagVariable}}(\textcolor{keyword}{const}\ Var\ \&var)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ flags\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ variable\ =\ var;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ Var\ *\mbox{\hyperlink{classFlagVariable_a652329127bcb612c33a97c6bae450c78}{get}}()\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&variable;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ Var\ *\ \mbox{\hyperlink{classFlagVariable_a429cfd80209d0a8034bde8fdf7d5d0d0}{operator-\/>}}()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&variable;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classFlagVariable}{FlagVariable}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classFlagVariable}{FlagVariable<Var,\ FlagStorage>}}\ \&other)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ flags\ =\ other.flags;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ variable\ =\ other.variable;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ addFlag(FlagStorage\ flag)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ flags\ =\ flags\ |\ flag;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ removeFlag(FlagStorage\ flag)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(checkFlag(flag))\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ flags\ =\ flags\ \string^\ flag;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkFlag(FlagStorage\ flag)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (flags\ \&\ flag)\ ==\ flag;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ onlyFlag(FlagStorage\ flag)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ flags\ ==\ flag;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ setFlag(FlagStorage\ flag)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ flags\ =\ flag;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ FlagStorage\ flags;}
+\DoxyCodeLine{00073\ \ \ \ \ Var\ variable;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FLAGVARIABLE\_FLAGVARIABLE\_H}}
+
+\end{DoxyCode}

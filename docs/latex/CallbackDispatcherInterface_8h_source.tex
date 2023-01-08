@@ -1,0 +1,24 @@
+\hypertarget{CallbackDispatcherInterface_8h_source}{}\doxysection{Callback\+Dispatcher\+Interface.\+h}
+\label{CallbackDispatcherInterface_8h_source}\index{QConfigurableDashboard/include/CallbackDispatcherInterface.h@{QConfigurableDashboard/include/CallbackDispatcherInterface.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHERINTERFACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHERINTERFACE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{QCD_8h}{QCD.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{CallbackDispatcherInterface}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ registerCallback(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}}\ \&a\_callback)\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ triggerCallback(\textcolor{keyword}{const}\ std::string\ \&a\_identifier,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_json\ =\ Json::object(),\ \textcolor{keywordtype}{int}\ a\_excludeIdIndex\ =\ -\/1)\ =\ 0;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ registerTunnelCallback(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{TunnelCallback}}\ \&a\_callback)\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_CALLBACKDISPATCHERINTERFACE\_H}}
+
+\end{DoxyCode}

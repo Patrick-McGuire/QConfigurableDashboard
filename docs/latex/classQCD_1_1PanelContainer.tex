@@ -1,0 +1,241 @@
+\hypertarget{classQCD_1_1PanelContainer}{}\doxysection{QCD\+::Panel\+Container Class Reference}
+\label{classQCD_1_1PanelContainer}\index{QCD::PanelContainer@{QCD::PanelContainer}}
+
+
+\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} that allows you to specify absolute positions.  
+
+
+
+
+{\ttfamily \#include $<$Panel\+Container.\+h$>$}
+
+
+
+Inheritance diagram for QCD\+::Panel\+Container\+:
+% FIG 0
+
+
+Collaboration diagram for QCD\+::Panel\+Container\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_adcb93bd6fa4fd3dcc17ef70f3c35e71a}\label{classQCD_1_1PanelContainer_adcb93bd6fa4fd3dcc17ef70f3c35e71a}} 
+{\bfseries Panel\+Container} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1PanelContainer_ac438c1c9088855ae4483331a6ff77f00}{add\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+base\+Widget) override
+\begin{DoxyCompactList}\small\item\em Adds a widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1PanelContainer_abbd899715f5795e9ddac75b7d7a3b92f}{add\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+base\+Widget, int a\+\_\+x, int a\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Adds a widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1PanelContainer_ac35be5f88650c99c8f21a0998e488fea}{set\+Background\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+base\+Widget, QFlags$<$ Qt\+::\+Alignment\+Flag $>$ a\+\_\+alignment=Qt\+::\+Alignment())
+\begin{DoxyCompactList}\small\item\em Sets the background for the entire panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Container}{QCD\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1Container_addfe8b8d3b5c6cd566df59428365d545}\label{classQCD_1_1Container_addfe8b8d3b5c6cd566df59428365d545}} 
+{\bfseries Container} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classQCD_1_1Container_aff13b9f48fcdff33dbe3916862df3430}{add\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+base\+Widget)=0
+\begin{DoxyCompactList}\small\item\em Adds a widget to the layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1Widget_a39e91844026624686a898b2cdd24ab66}\label{classQCD_1_1Widget_a39e91844026624686a898b2cdd24ab66}} 
+{\bfseries Widget} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1Widget_a9ed60700f044ee59c113c348bb8a7d35}{run}} () override
+\begin{DoxyCompactList}\small\item\em Finish initializing this widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1Widget_aec0c912a7292819474a19ea2d8933857}{run\+Update}} (bool a\+\_\+in\+Focus) override
+\begin{DoxyCompactList}\small\item\em Updates this widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1Widget_a1e2bbbc52eb75eb371ea69f9097428e4}{disable\+Floating}} ()
+\begin{DoxyCompactList}\small\item\em Disables dragging for this widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1Widget_adf19ae4eb2b587e6f69ed0d96d294de3}{enable\+Floating}} ()
+\begin{DoxyCompactList}\small\item\em Enables dragging for this widget. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classQCD_1_1Widget_aa4ce6c342c8561ff667fb5dc36007313}{set\+Update\+Rate\+Scale}} (int a\+\_\+scale)
+\begin{DoxyCompactList}\small\item\em Sets a multiplier on the application run\+Update rate specific to this widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1Widget_ad3ae1f660e19a79788f906e719305142}{set\+In\+Layout}} (bool a\+\_\+in\+Layout)
+\begin{DoxyCompactList}\small\item\em Set if this object is in a layout (vs just have a parent) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}\label{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}} 
+{\bfseries Core\+Object} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
+\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a tunnel callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_a3c059dbd82bdb2ed65f0e5698363a284}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}{get\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_aa63d2db43c8a90743d027f4358102d53}\label{classQCD_1_1PanelContainer_aa63d2db43c8a90743d027f4358102d53}} 
+QVBox\+Layout $\ast$ {\bfseries m\+\_\+layout}
+\begin{DoxyCompactList}\small\item\em Internal layout object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_afa1ecd79d6647018b1046b45e2d8b388}\label{classQCD_1_1PanelContainer_afa1ecd79d6647018b1046b45e2d8b388}} 
+\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$ {\bfseries m\+\_\+background\+Widget} = nullptr
+\begin{DoxyCompactList}\small\item\em Background widget pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1Container}{QCD\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1Container_ac90fb0903bdc52571c73f4c88c370611}\label{classQCD_1_1Container_ac90fb0903bdc52571c73f4c88c370611}} 
+std\+::vector$<$ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$ $>$ {\bfseries m\+\_\+child\+Widgets}
+\begin{DoxyCompactList}\small\item\em List of all child widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1Container_a11d3dc1e03ad7cc375821c3431de87f7}\label{classQCD_1_1Container_a11d3dc1e03ad7cc375821c3431de87f7}} 
+QWidget $\ast$ {\bfseries m\+\_\+wrapper\+Widget}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classQCD_1_1Widget}{Widget}} used internally to get around QT weirdness. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1Widget_a4da9384745bae1b07b35f67ec2954f97}\label{classQCD_1_1Widget_a4da9384745bae1b07b35f67ec2954f97}} 
+bool {\bfseries m\+\_\+in\+Layout} = true
+\begin{DoxyCompactList}\small\item\em Boolean that tracks if the widget is stored in a layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classQCD_1_1Widget_a4dcc5b7aff5f98dd9615b4dc199e7c7d}{register\+Theme}} (QWidget $\ast$a\+\_\+widget, const QString \&attribute)
+\begin{DoxyCompactList}\small\item\em Add a CSS esque class property to a QWidget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classQCD_1_1CoreObject_a51c39be9d5c9472765afb12d2f81fd00}{set\+Theme}} (const std\+::string \&a\+\_\+theme)
+\begin{DoxyCompactList}\small\item\em Sets the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Container}{QCD\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCD_1_1Container_af64026a23b5a1ca6f25367ee180971f6}{on\+Update}} (\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD\+::\+Widget\+Focus}} a\+\_\+focus) override
+\begin{DoxyCompactList}\small\item\em Updates all child widgets. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1Container_a86c739cf0782a95633bce6b207efa9e6}{register\+Child\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+child\+Widget)
+\begin{DoxyCompactList}\small\item\em Adds a child widget to this. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1Container_a31f4eeb34e9c81e85dcea782951d1165}{remove\+Child\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+child\+Widget)
+\begin{DoxyCompactList}\small\item\em Removes a child widget from this. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1Container_a22e20b5519a43c522af66a8011b16299}{on\+Run}} () override
+\begin{DoxyCompactList}\small\item\em Runs the container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1Widget_ac16a846ed3ae8262127d71abd86c7d18}{on\+Run}} ()
+\begin{DoxyCompactList}\small\item\em Runs on Application startup. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classQCD_1_1Widget_ae72d03f16c1ee3037049525d015606b1}{on\+Update}} (\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{Widget\+Focus}} a\+\_\+focus)
+\begin{DoxyCompactList}\small\item\em Runs when the Application updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classQCD_1_1Widget_ae9dc62e950bf3da58f04133c6b3f9488}{is\+In\+Focus}} (\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD\+::\+Widget\+Focus}} a\+\_\+focus)
+\begin{DoxyCompactList}\small\item\em Determines if a Widget\+Focus is currently visible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}\label{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}} 
+static bool {\bfseries m\+\_\+dragging\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em If the application allows dragging of widgets currently (only applicable to widgets in panel containers) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}\label{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+input\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from modules and read by widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}\label{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+output\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from widgets to modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}\label{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+config\+Data}
+\begin{DoxyCompactList}\small\item\em App wide config info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}\label{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+theme\+Data}
+\begin{DoxyCompactList}\small\item\em Theme stuff (redoing?) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}\label{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}} 
+static \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{Image\+Map}} {\bfseries m\+\_\+images}
+\begin{DoxyCompactList}\small\item\em Images sent from modules to widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}\label{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}} 
+static \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$ {\bfseries m\+\_\+app}
+\begin{DoxyCompactList}\small\item\em Pointer to app for everyone to access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} that allows you to specify absolute positions. 
+
+Stores widgets is absolute (pixel) positions, and allows for dragging. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCD_1_1Container}{QCD\+::\+Container}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_ac438c1c9088855ae4483331a6ff77f00}\label{classQCD_1_1PanelContainer_ac438c1c9088855ae4483331a6ff77f00}} 
+\index{QCD::PanelContainer@{QCD::PanelContainer}!addWidget@{addWidget}}
+\index{addWidget@{addWidget}!QCD::PanelContainer@{QCD::PanelContainer}}
+\doxysubsubsection{\texorpdfstring{addWidget()}{addWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool QCD\+::\+Panel\+Container\+::add\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$}]{a\+\_\+base\+Widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a widget. 
+
+Adds a widget into the panel 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+base\+Widget} & \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if successful 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classQCD_1_1Container_aff13b9f48fcdff33dbe3916862df3430}{QCD\+::\+Container}}.
+
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_abbd899715f5795e9ddac75b7d7a3b92f}\label{classQCD_1_1PanelContainer_abbd899715f5795e9ddac75b7d7a3b92f}} 
+\index{QCD::PanelContainer@{QCD::PanelContainer}!addWidget@{addWidget}}
+\index{addWidget@{addWidget}!QCD::PanelContainer@{QCD::PanelContainer}}
+\doxysubsubsection{\texorpdfstring{addWidget()}{addWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool QCD\+::\+Panel\+Container\+::add\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$}]{a\+\_\+base\+Widget,  }\item[{int}]{a\+\_\+x,  }\item[{int}]{a\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Adds a widget. 
+
+Adds a widget into the panel 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+base\+Widget} & \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}} to add \\
+\hline
+{\em a\+\_\+x} & x position (pixels) \\
+\hline
+{\em a\+\_\+y} & y position (pixels) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1PanelContainer_ac35be5f88650c99c8f21a0998e488fea}\label{classQCD_1_1PanelContainer_ac35be5f88650c99c8f21a0998e488fea}} 
+\index{QCD::PanelContainer@{QCD::PanelContainer}!setBackgroundWidget@{setBackgroundWidget}}
+\index{setBackgroundWidget@{setBackgroundWidget}!QCD::PanelContainer@{QCD::PanelContainer}}
+\doxysubsubsection{\texorpdfstring{setBackgroundWidget()}{setBackgroundWidget()}}
+{\footnotesize\ttfamily bool QCD\+::\+Panel\+Container\+::set\+Background\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$}]{a\+\_\+base\+Widget,  }\item[{QFlags$<$ Qt\+::\+Alignment\+Flag $>$}]{a\+\_\+alignment = {\ttfamily Qt\+:\+:Alignment()} }\end{DoxyParamCaption})}
+
+
+
+Sets the background for the entire panel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+base\+Widget} & \mbox{\hyperlink{classQCD_1_1Widget}{Widget}} to be the background \\
+\hline
+{\em a\+\_\+alignment} & Optional\+: alignment of the widget \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if successful 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+QConfigurable\+Dashboard/include/Panel\+Container.\+h\item 
+QConfigurable\+Dashboard/src/widgets/\+Widget\+Containers/Panel\+Container.\+cpp\end{DoxyCompactItemize}

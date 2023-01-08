@@ -1,0 +1,32 @@
+\hypertarget{GridContainer_8h_source}{}\doxysection{Grid\+Container.\+h}
+\label{GridContainer_8h_source}\index{QConfigurableDashboard/include/GridContainer.h@{QConfigurableDashboard/include/GridContainer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_GRIDCONTAINER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_GRIDCONTAINER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Container.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}QGridLayout"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1GridContainer}{GridContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1Container}{Container}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classQCD_1_1GridContainer_a07d0fce430fdffd15b66b4730951b7bd}{GridContainer}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1GridContainer_a9ca37af688ca431a64bc21093568dd5f}{addWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1GridContainer_a9ca37af688ca431a64bc21093568dd5f}{addWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_baseWidget,\ \textcolor{keywordtype}{int}\ a\_row,\ \textcolor{keywordtype}{int}\ a\_col);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QGridLayout\ *\mbox{\hyperlink{classQCD_1_1GridContainer_a764a0cb896cba8808cb63f094885774c}{getLayout}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1GridContainer_a7ee35013a08f163fe5cc303bffbe7401}{onUpdate}}(\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD::WidgetFocus}}\ a\_focus)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ QGridLayout\ *\mbox{\hyperlink{classQCD_1_1GridContainer_accebefadb3487a86b44423a8702ee3cb}{m\_layout}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_GRIDCONTAINER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,95 @@
+\hypertarget{QConfigurableDashboard_8h_source}{}\doxysection{QConfigurable\+Dashboard.\+h}
+\label{QConfigurableDashboard_8h_source}\index{QConfigurableDashboard/include/QConfigurableDashboard.h@{QConfigurableDashboard/include/QConfigurableDashboard.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ROBOT\_GUI\_V3\_QCONFIGURABLEDASHBOARD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ROBOT\_GUI\_V3\_QCONFIGURABLEDASHBOARD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <CoreObject.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Module.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}QApplication"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{QCD_8h}{QCD.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Widget.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <UtilFunctions.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ @todo\ fix\ menu\ events}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }Module;\ \ \ \ \ \ \ \textcolor{comment}{//\ Forward\ decl}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }CoreObject;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurableDashboard}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1CoreObject}{CoreObject}}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurableDashboard}}(\textcolor{keywordtype}{int}\ a\_argc,\ \textcolor{keywordtype}{char}\ **a\_argv,\ \textcolor{keywordtype}{double}\ a\_rate\ =\ 30);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a0b5e24833776950829808233bbc9254a}{\string~QConfigurableDashboard}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}{run}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a40ede7d38ac4e9df7827966dd6017313}{setCentralWidget}}(\mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *a\_widget,\ QFlags<Qt::AlignmentFlag>\ a\_alignment\ =\ Qt::Alignment());}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a92c784d89e78a94883bd6ec70b14be1f}{getCentralWidget}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_af2103bd628c43cab349717fbcecc7edb}{addModule}}(\mbox{\hyperlink{classQCD_1_1Module}{Module}}\ *a\_baseModule);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ QMenu\ *\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aa0142bf623c794d5fff4d78240f67b25}{addMenu}}(\textcolor{keyword}{const}\ QString\ \&a\_name,\ \textcolor{keyword}{const}\ QString\ \&a\_parentName\ =\ \textcolor{stringliteral}{"{}none"{}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ QAction\ *\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a0ae1a22e474175d45de19411ac221fd3}{addMenuAction}}(\textcolor{keyword}{const}\ QString\ \&a\_name,\ \textcolor{keyword}{const}\ QString\ \&a\_parentName\ =\ \textcolor{stringliteral}{"{}none"{}});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_ace3c726063c3fbba580aea512ff3935b}{updateTheme}}(\textcolor{keyword}{const}\ std::string\ \&a\_activeTheme);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aefcae8d1f28935699c7d1b76724bedfb}{setUpdateAlways}}(\textcolor{keywordtype}{bool}\ a\_updateAlways);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aa5e9fd43424f34047606127f7dba5210}{setAutoScale}}(\textcolor{keywordtype}{bool}\ a\_autoScale);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a70659ed25ae8581695456c9db46abce8}{updateThemeCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\&\ a\_data);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateDragging(QAction\ *a\_action);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateGUI();}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ forwardEvent(QAction\ *a\_action);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ getClassStylesheet(\textcolor{keyword}{const}\ QString\ \&a\_class,\ \textcolor{keyword}{const}\ QString\ \&a\_style);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ getThemeDataString(\textcolor{keyword}{const}\ QString\ \&a\_themeName,\ \textcolor{keyword}{const}\ QString\ \&a\_attribute);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ QMenu\ *findMenu(\textcolor{keyword}{const}\ QString\ \&a\_name);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Things}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_argc;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **m\_argv;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_updateAlways\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_autoScale\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_lastTime\ =\ 0;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_desiredRate;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_currentRate;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ core\ objects}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ QApplication\ *m\_qApplication;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ QMainWindow\ *m\_mainWindow;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ QWidget\ *m\_window;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ QVBoxLayout\ *m\_layout;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ QTimer\ *m\_timer;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ std::vector<QMenu\ *>\ m\_menus;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Custom\ objects}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ *m\_centralWidget;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ std::vector<Module\ *>\ m\_modules;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ std::deque<double>\ m\_times\ =\ std::deque<double>();}
+\DoxyCodeLine{00189\ \ \ \ \ \};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ROBOT\_GUI\_V3\_QCONFIGURABLEDASHBOARD\_H}}
+
+\end{DoxyCode}

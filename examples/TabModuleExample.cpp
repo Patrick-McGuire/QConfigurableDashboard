@@ -27,9 +27,9 @@
 int main(int argc, char **argv) {
     QCD::QConfigurableDashboard dashboard(argc, argv, 60);
 
-    QCD::TRandomDataModule randomDataInterface(200);
+    QCD::TRandomDataModule randomDataInterface(10);
     dashboard.addModule(&randomDataInterface);
-    QCD::TWebCamModule webCamStreamInterface(70);
+    QCD::TWebCamModule webCamStreamInterface(30);
     dashboard.addModule(&webCamStreamInterface);
 
     QCD::MainPageExample tabModule;

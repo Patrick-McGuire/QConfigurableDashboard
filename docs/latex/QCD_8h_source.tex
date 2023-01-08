@@ -1,0 +1,58 @@
+\hypertarget{QCD_8h_source}{}\doxysection{QCD.\+h}
+\label{QCD_8h_source}\index{QConfigurableDashboard/include/QCD.h@{QConfigurableDashboard/include/QCD.h}}
+\mbox{\hyperlink{QCD_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ROBOT\_GUI\_V3\_QCD\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ROBOT\_GUI\_V3\_QCD\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../lib/NlohmannJson/json.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}QMenuBar"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}QMenu"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}functional"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}opencv2/opencv.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ QCD\_CALLBACK(ptr,\ func)\ std::bind(\&std::remove\_pointer<decltype(ptr)>::type::func,\ ptr,\ std::placeholders::\_1)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ QCD\_TUNNEL\_CALLBACK(ptr,\ func)\ std::bind(\&std::remove\_pointer<decltype(ptr)>::type::func,\ ptr,\ std::placeholders::\_1,\ std::placeholders::\_2)}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ TODO:\ link\ to\ proper\ library's}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typedef}\ nlohmann::json\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typedef}\ cv::Mat\ \mbox{\hyperlink{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}{Image}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<std::string,\ Image>\ \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{ImageMap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(\mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}})>\ \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(\mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}},\ std::string)>\ \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{TunnelCallback}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad6ad19deb8f8f7c9fcf548b2aa48b40e}{THEME\_PROPERTY}}\ =\ \textcolor{stringliteral}{"{}theme"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a847a3882d9002168fb14280cf3a9a576}{WIDGET\_BACKGROUND\_CLASS}}\ =\ \textcolor{stringliteral}{"{}widgetBackground"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a8cd1c23024dc3e89a8c48b778ca5b840}{CONTAINER\_BACKGROUND\_CLASS}}\ =\ \textcolor{stringliteral}{"{}containerBackground"{}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a86b3a7405c57e4828b65c3444e9d86ed}{HIGHLIGHT\_COLOR\_CLASS}}\ =\ \textcolor{stringliteral}{"{}highlightColor"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_afc70e1e4ed5e291429828decb35d1cfa}{TITLE\_TEXT\_COLOR\_CLASS}}\ =\ \textcolor{stringliteral}{"{}titleTextColor"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a0720653573ffcb71a30ed617f19821c8}{TEXT\_COLOR\_CLASS}}\ =\ \textcolor{stringliteral}{"{}textColor"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a1728aaccb660ecfdb10b377c9370e7e0}{BORDER\_COLOR\_CLASS}}\ =\ \textcolor{stringliteral}{"{}borderColor"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a88dc3b677e3444917c4fd9852af74159}{THEME\_CHANGED\_CALLBACK}}\ =\ \textcolor{stringliteral}{"{}themeChanged"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a248a4a109c56f78eb750c7b698187219}{MENU\_BASE\_CALLBACK}}\ =\ \textcolor{stringliteral}{"{}menuEvent"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a68d765d8524dc092b6ac36eda221cb7e}{TICK\_TIME\_KEY}}\ =\ \textcolor{stringliteral}{"{}tickTime"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_aed6e82d9cbfbac5ee44fe97b91c69ee8}{TICK\_RATE\_KEY}}\ =\ \textcolor{stringliteral}{"{}tickRate"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ae14b5850a2d9b429781fa969334e96a2}{TICK\_DESIRED\_RATE\_KEY}}\ =\ \textcolor{stringliteral}{"{}tickDesRate"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a01d4681b2383bba10d289fc67560bd3d}{VIDEO\_RECORD\_CALLBACK}}\ =\ \textcolor{stringliteral}{"{}recordVideo"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a57248bec7d8cf53c1eaa38f9548f3156}{VIDEO\_RECORD\_PATH\_KEY}}\ =\ \textcolor{stringliteral}{"{}path"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_add7d941d23cdaadcabc406adca76c193}{VIDEO\_RECORD\_ID\_KEY}}\ =\ \textcolor{stringliteral}{"{}key"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_a3639d898bb07e672a572aa003f71a3c2}{VIDEO\_RECORD\_TYPE\_KEY}}\ =\ \textcolor{stringliteral}{"{}type"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{WidgetFocus}}\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2a3d05321865e48f3b5d49e9cb90a190f8}{NO\_FOCUS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2a739b2c5a995d1a1acf626757c735c743}{IN\_FOCUS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2ad5caa91899c119c871752a93b3afca12}{ON\_IN\_FOCUS}},\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2ad877c32cfecf83de525885bf4e29aea6}{ON\_NO\_FOCUS}},\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ROBOT\_GUI\_V3\_QCD\_H}}
+
+\end{DoxyCode}

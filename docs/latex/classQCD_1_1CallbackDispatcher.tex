@@ -1,0 +1,119 @@
+\hypertarget{classQCD_1_1CallbackDispatcher}{}\doxysection{QCD\+::Callback\+Dispatcher Class Reference}
+\label{classQCD_1_1CallbackDispatcher}\index{QCD::CallbackDispatcher@{QCD::CallbackDispatcher}}
+
+
+\mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{Callback\+Dispatcher}} provides a module to register and trigger callbacks based on string identifiers.  
+
+
+
+
+{\ttfamily \#include $<$Callback\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for QCD\+::Callback\+Dispatcher\+:
+% FIG 0
+
+
+Collaboration diagram for QCD\+::Callback\+Dispatcher\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CallbackDispatcher_ad0b6ca03393111fdcfd5653399f6f883}\label{classQCD_1_1CallbackDispatcher_ad0b6ca03393111fdcfd5653399f6f883}} 
+{\bfseries Callback\+Dispatcher} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_ad8213c241dfc36674f7f1ffc652f06c1}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a tunnel callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{Callback\+Dispatcher}} provides a module to register and trigger callbacks based on string identifiers. 
+
+Callbacks are standard functions, and must have 1 argument of type \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}}. Alternatively tunnel Callbacks can be used, which are called regardless of the identifier triggered. tunnel Callbacks are instead passed 2 arguments (must be of types \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}}, std\+::string). The string will be the identifier. This is primarily used by \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}} to tunnel events into it\textquotesingle{}s thread. This class is intended to be used as a parent class, and is derived by QCD\+::\+App\+Manager and \mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}} 
+
+\mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+Patrick-\/\+Mc\+Guire 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}\label{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}} 
+\index{QCD::CallbackDispatcher@{QCD::CallbackDispatcher}!registerCallback@{registerCallback}}
+\index{registerCallback@{registerCallback}!QCD::CallbackDispatcher@{QCD::CallbackDispatcher}}
+\doxysubsubsection{\texorpdfstring{registerCallback()}{registerCallback()}}
+{\footnotesize\ttfamily void QCD\+::\+Callback\+Dispatcher\+::register\+Callback (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+identifier,  }\item[{const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&}]{a\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers a callback to a specified identifier. 
+
+This callback will be triggered when ever some object calls \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}{QCD\+::\+Callback\+Dispatcher\+::trigger\+Callback()}} with the same identifier. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+identifier} & String identifier to listen too \\
+\hline
+{\em a\+\_\+callback} & Callback to call when identifier is triggered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{QCD\+::\+Callback\+Dispatcher\+Interface}}.
+
+\mbox{\Hypertarget{classQCD_1_1CallbackDispatcher_ad8213c241dfc36674f7f1ffc652f06c1}\label{classQCD_1_1CallbackDispatcher_ad8213c241dfc36674f7f1ffc652f06c1}} 
+\index{QCD::CallbackDispatcher@{QCD::CallbackDispatcher}!registerTunnelCallback@{registerTunnelCallback}}
+\index{registerTunnelCallback@{registerTunnelCallback}!QCD::CallbackDispatcher@{QCD::CallbackDispatcher}}
+\doxysubsubsection{\texorpdfstring{registerTunnelCallback()}{registerTunnelCallback()}}
+{\footnotesize\ttfamily int QCD\+::\+Callback\+Dispatcher\+::register\+Tunnel\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&}]{a\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers a tunnel callback. 
+
+This callback will be triggered when ever some object calls \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}{QCD\+::\+Callback\+Dispatcher\+::trigger\+Callback()}} regardless of the identifier used. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+callback} & Callback to call when identifier is triggered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of callback in list of callbacks. This can be used to prevent recursion/thread locking by passing it as the exclude\+Id\+Index in \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}{QCD\+::\+Callback\+Dispatcher\+::trigger\+Callback()}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{QCD\+::\+Callback\+Dispatcher\+Interface}}.
+
+\mbox{\Hypertarget{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}\label{classQCD_1_1CallbackDispatcher_a359a1106f329f4dbb9569ecdbc66a2e9}} 
+\index{QCD::CallbackDispatcher@{QCD::CallbackDispatcher}!triggerCallback@{triggerCallback}}
+\index{triggerCallback@{triggerCallback}!QCD::CallbackDispatcher@{QCD::CallbackDispatcher}}
+\doxysubsubsection{\texorpdfstring{triggerCallback()}{triggerCallback()}}
+{\footnotesize\ttfamily void QCD\+::\+Callback\+Dispatcher\+::trigger\+Callback (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+identifier,  }\item[{const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&}]{a\+\_\+json = {\ttfamily Json\+:\+:object()},  }\item[{int}]{a\+\_\+exclude\+Id\+Index = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Triggers all callbacks registered to the specified identifier. 
+
+All callbacks registered with \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}{QCD\+::\+Callback\+Dispatcher\+::register\+Callback()}}, with the same identifier, will be called and passed the specified Json data. This also triggers all tunnel Callbacks. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+identifier} & String identifier to trigger \\
+\hline
+{\em a\+\_\+json} & Json data to pass \\
+\hline
+{\em a\+\_\+exclude\+Id\+Index} & Index in vector of callbacks to skip \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classQCD_1_1CallbackDispatcherInterface}{QCD\+::\+Callback\+Dispatcher\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+QConfigurable\+Dashboard/include/Callback\+Dispatcher.\+h\item 
+QConfigurable\+Dashboard/src/core/Callback\+Dispatcher.\+cpp\end{DoxyCompactItemize}

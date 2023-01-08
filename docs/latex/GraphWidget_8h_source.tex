@@ -1,0 +1,77 @@
+\hypertarget{GraphWidget_8h_source}{}\doxysection{Graph\+Widget.\+h}
+\label{GraphWidget_8h_source}\index{QConfigurableDashboard/include/GraphWidget.h@{QConfigurableDashboard/include/GraphWidget.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QCONFIGURABLEDASHBOARD\_GRAPHWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QCONFIGURABLEDASHBOARD\_GRAPHWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Widget.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../lib/QCustomPlot/qcustomplot.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceQCD}{QCD}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQCD_1_1GraphWidget}{GraphWidget}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classQCD_1_1Widget}{Widget}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classQCD_1_1GraphWidget}{GraphWidget}}(\textcolor{keyword}{const}\ QString\ \&a\_title\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ QString\ \&a\_yAxisTitle\ =\ \textcolor{stringliteral}{"{}y"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ listen(\textcolor{keyword}{const}\ std::string\ \&a\_key,\ \textcolor{keyword}{const}\ QString\ \&a\_name\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ QString\ \&a\_color\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classQCD_1_1GraphWidget_af2f33dd818700d91a69885a11369ebb6}{setUpdateRateScale}}(\textcolor{keywordtype}{int}\ a\_scale)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ reset(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\&\ value\ =\ Json::object());}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mouseMoveSignal(QMouseEvent\ *a\_event);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mousePressSignal(QMouseEvent\ *a\_event);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mouseReleaseSignal(QMouseEvent\ *a\_event);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ beforeReplot();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onThemeChange(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}}\ \&a\_data);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Series\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ key;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ name;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ color;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ QVector<double>\ values;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onUpdate(\mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD::WidgetFocus}}\ a\_focus)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateSeriesData();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ redrawPlot();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateSeriesTimes();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onRun()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ QColor\ getThemeData(\textcolor{keyword}{const}\ QString\ \&a\_attribute);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ QVBoxLayout\ *m\_layout;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ QLabel\ *m\_title;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ QCustomPlot\ *m\_plot;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<Series>\ m\_seriesList;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ QVector<double>\ m\_xValues;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_lastTime\ =\ -\/1;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_updateRateScale\ =\ 1;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_updateCounter\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_maxTime\ =\ 10;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ QPointF\ dragLegendOrigin;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_clicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}\ \textcolor{comment}{//\ QCD}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//QCONFIGURABLEDASHBOARD\_GRAPHWIDGET\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,15 @@
+digraph "QConfigurableDashboard"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_fc70314cc70d5f6d2e31b98b592c4275 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_fc70314cc70d5f6d2e31b98b592c4275.html",tooltip=""]
+    dir_fc70314cc70d5f6d2e31b98b592c4275 [shape=plaintext, label="QConfigurableDashboard"];
+  dir_034bf8a0ebbddc680c261a6478c4c50c [label="include", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_034bf8a0ebbddc680c261a6478c4c50c.html",tooltip=""];
+  dir_a61774ce3f45b5f6acf9c7fdf1502887 [label="src", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a61774ce3f45b5f6acf9c7fdf1502887.html",tooltip=""];
+  }
+  dir_a61774ce3f45b5f6acf9c7fdf1502887->dir_034bf8a0ebbddc680c261a6478c4c50c [headlabel="5", labeldistance=1.5 headhref="dir_000007_000004.html" color="steelblue1" fontcolor="steelblue1"];
+}

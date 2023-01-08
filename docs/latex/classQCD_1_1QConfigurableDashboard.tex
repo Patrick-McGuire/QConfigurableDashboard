@@ -1,0 +1,346 @@
+\hypertarget{classQCD_1_1QConfigurableDashboard}{}\doxysection{QCD\+::QConfigurable\+Dashboard Class Reference}
+\label{classQCD_1_1QConfigurableDashboard}\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+
+
+core class for running a \mbox{\hyperlink{namespaceQCD}{QCD}} dashboard application.  
+
+
+
+
+{\ttfamily \#include $<$QConfigurable\+Dashboard.\+h$>$}
+
+
+
+Inheritance diagram for QCD\+::QConfigurable\+Dashboard\+:
+% FIG 0
+
+
+Collaboration diagram for QCD\+::QConfigurable\+Dashboard\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a70659ed25ae8581695456c9db46abce8}{update\+Theme\+Callback}} (const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Slot for updating theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a26b668510c91a0032a4c7d72e4b8a1a2}{QConfigurable\+Dashboard}} (int a\+\_\+argc, char $\ast$$\ast$a\+\_\+argv, double a\+\_\+rate=30)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a0b5e24833776950829808233bbc9254a}\label{classQCD_1_1QConfigurableDashboard_a0b5e24833776950829808233bbc9254a}} 
+{\bfseries $\sim$\+QConfigurable\+Dashboard} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the application. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a40ede7d38ac4e9df7827966dd6017313}{set\+Central\+Widget}} (\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$a\+\_\+widget, QFlags$<$ Qt\+::\+Alignment\+Flag $>$ a\+\_\+alignment=Qt\+::\+Alignment())
+\begin{DoxyCompactList}\small\item\em Sets the central widget of the application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a92c784d89e78a94883bd6ec70b14be1f}{get\+Central\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current central widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_af2103bd628c43cab349717fbcecc7edb}{add\+Module}} (\mbox{\hyperlink{classQCD_1_1Module}{Module}} $\ast$a\+\_\+base\+Module)
+\begin{DoxyCompactList}\small\item\em Adds a module to the application. \end{DoxyCompactList}\item 
+QMenu $\ast$ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aa0142bf623c794d5fff4d78240f67b25}{add\+Menu}} (const QString \&a\+\_\+name, const QString \&a\+\_\+parent\+Name=\char`\"{}none\char`\"{})
+\begin{DoxyCompactList}\small\item\em Adds a menu to the application. \end{DoxyCompactList}\item 
+QAction $\ast$ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a0ae1a22e474175d45de19411ac221fd3}{add\+Menu\+Action}} (const QString \&a\+\_\+name, const QString \&a\+\_\+parent\+Name=\char`\"{}none\char`\"{})
+\begin{DoxyCompactList}\small\item\em Adds a action item to a menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_ace3c726063c3fbba580aea512ff3935b}{update\+Theme}} (const std\+::string \&a\+\_\+active\+Theme)
+\begin{DoxyCompactList}\small\item\em Sets the current theme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aefcae8d1f28935699c7d1b76724bedfb}{set\+Update\+Always}} (bool a\+\_\+update\+Always)
+\begin{DoxyCompactList}\small\item\em Sets if the application checks whether it is the active application on the computer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aa5e9fd43424f34047606127f7dba5210}{set\+Auto\+Scale}} (bool a\+\_\+auto\+Scale)
+\begin{DoxyCompactList}\small\item\em Sets if the application preforms autoscaling on it\textquotesingle{}s run\+Update rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}\label{classQCD_1_1CoreObject_ae045ae03b424e02276e1ecb2baa56b11}} 
+{\bfseries Core\+Object} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQCD_1_1CoreObject_a89d596aa54e686603936ee5be9f2aa81}{Core\+Object}} (\mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$a\+\_\+app)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classQCD_1_1CoreObject_ae13c53e2c47feef1f672d6412ed67e30}{run}} ()
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_a84f7eb79c1261a4b5a58bc9b4b62a0e8}{run\+Update}} (bool a\+\_\+focus)
+\item 
+virtual void \mbox{\hyperlink{classQCD_1_1CoreObject_ad6c0299d9d00a8ee8cc279c21ee8cd31}{finish}} ()
+\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_abc5f02942de2c639a4fcb318517f1ab2}{register\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}{Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a callback to a specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQCD_1_1CoreObject_aa9d82eed2f6a0d315406a78ccaf5fd3b}{register\+Tunnel\+Callback}} (const \mbox{\hyperlink{namespaceQCD_acda96bf30f35933a39a69810f97facf0}{Tunnel\+Callback}} \&a\+\_\+callback) override
+\begin{DoxyCompactList}\small\item\em Registers a tunnel callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQCD_1_1CoreObject_a3c059dbd82bdb2ed65f0e5698363a284}{trigger\+Callback}} (const std\+::string \&a\+\_\+identifier, const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&a\+\_\+json=Json\+::object(), int a\+\_\+exclude\+Id\+Index=-\/1) override
+\begin{DoxyCompactList}\small\item\em Triggers all callbacks registered to the specified identifier. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classQCD_1_1CoreObject_ae3cd883364f850a5885942006c30e32a}{get\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classQCD_1_1CoreObject_a51c39be9d5c9472765afb12d2f81fd00}{set\+Theme}} (const std\+::string \&a\+\_\+theme)
+\begin{DoxyCompactList}\small\item\em Sets the current theme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}\label{classQCD_1_1CoreObject_a855c499fc38cc2d78ae93fc7fe4d0a5e}} 
+static bool {\bfseries m\+\_\+dragging\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em If the application allows dragging of widgets currently (only applicable to widgets in panel containers) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}\label{classQCD_1_1CoreObject_a4c8cbf184e086291cdb9c3c25653ef8c}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+input\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from modules and read by widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}\label{classQCD_1_1CoreObject_ae07bca3a8db0d9ee5c0db0b42a3f30a7}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+output\+Data}
+\begin{DoxyCompactList}\small\item\em Data sent from widgets to modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}\label{classQCD_1_1CoreObject_afff68ae6995457cec17f6462b09e5eff}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+config\+Data}
+\begin{DoxyCompactList}\small\item\em App wide config info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}\label{classQCD_1_1CoreObject_aab8bf4de1280f1a5c79bba444cf47676}} 
+static \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} {\bfseries m\+\_\+theme\+Data}
+\begin{DoxyCompactList}\small\item\em Theme stuff (redoing?) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}\label{classQCD_1_1CoreObject_a788fc3447cb72e6cad6f3eb80b8cfa42}} 
+static \mbox{\hyperlink{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}{Image\+Map}} {\bfseries m\+\_\+images}
+\begin{DoxyCompactList}\small\item\em Images sent from modules to widgets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}\label{classQCD_1_1CoreObject_af433ced07aea9ae9314431b978269f28}} 
+static \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} $\ast$ {\bfseries m\+\_\+app}
+\begin{DoxyCompactList}\small\item\em Pointer to app for everyone to access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+core class for running a \mbox{\hyperlink{namespaceQCD}{QCD}} dashboard application. 
+
+Handles updating data, menus, adding widgets, adding modules, changing themes and running the entire application. This only has the ability to set 1 core widget. In most cases where many widgets are desired, set a \mbox{\hyperlink{classQCD_1_1Container}{QCD\+::\+Container}} as the central widget. Then you can add as many widgets to the container as you like. Setting the central widget and creating widgets is best done from modules but can also be done from the main function. Calling \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}{QCD\+::\+QConfigurable\+Dashboard\+::run()}} runs the entire dashboard application. This needs to be called in the main thread, and is blocking. Updating of widgets is handled on a periodic basis based by the update rated specified in the constructor. There is an option to dynamically scale down the run\+Update rate based on program performance. It is advisable to enable this option by setting \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aa5e9fd43424f34047606127f7dba5210}{QCD\+::\+QConfigurable\+Dashboard\+::set\+Auto\+Scale()}} to true because some features like file dialogs become unusably slow when the cpu is saturated. widgets can be told they are not visible (increasing performance) when the application is not the active window on the computer by setting \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard_aefcae8d1f28935699c7d1b76724bedfb}{QCD\+::\+QConfigurable\+Dashboard\+::set\+Update\+Always()}} to false. A standard main function for a application could be as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)\ \{}
+\DoxyCodeLine{\ \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QCD::QConfigurableDashboard}}\ dashboard(argc,\ argv,\ 90);\ \ \ \ \ \ \textcolor{comment}{//\ 90\ Hz\ runUpdate\ rate}}
+\DoxyCodeLine{\ dashboard.setUpdateAlways(\textcolor{keyword}{true});}
+\DoxyCodeLine{\ dashboard.setAutoScale(\textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ dashboard.addMenu(\textcolor{stringliteral}{"{}SettingsSubMenu"{}},\ \textcolor{stringliteral}{"{}Settings"{}});\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ sub\ menu\ to\ settings\ menu}}
+\DoxyCodeLine{\ dashboard.addMenuAction(\textcolor{stringliteral}{"{}Action"{}},\ \textcolor{stringliteral}{"{}SettingsSubMenu"{}});\ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ action\ to\ the\ new\ sub\ menu}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ YourModule\ module();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ module\ could\ create\ the\ widgets\ for\ the\ application}}
+\DoxyCodeLine{\ dashboard.addModule(\&module);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ DataModule\ dataModule();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ module\ could\ populate\ data}}
+\DoxyCodeLine{\ dashboard.addModule(\&dataModule);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \textcolor{keywordflow}{return}\ dashboard.run();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Blocking,\ runs\ the\ application}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCD_1_1Module}{QCD\+::\+Module}} Base class for all modules that can be used in a \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} application 
+
+\mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}} Base class for all widgets that can be used in a \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}} application 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+Patrick-\/\+Mc\+Guire 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a26b668510c91a0032a4c7d72e4b8a1a2}\label{classQCD_1_1QConfigurableDashboard_a26b668510c91a0032a4c7d72e4b8a1a2}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!QConfigurableDashboard@{QConfigurableDashboard}}
+\index{QConfigurableDashboard@{QConfigurableDashboard}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{QConfigurableDashboard()}{QConfigurableDashboard()}}
+{\footnotesize\ttfamily QCD\+::\+QConfigurable\+Dashboard\+::\+QConfigurable\+Dashboard (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+argc,  }\item[{char $\ast$$\ast$}]{a\+\_\+argv,  }\item[{double}]{a\+\_\+rate = {\ttfamily 30} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+argc} & argc from main function \\
+\hline
+{\em a\+\_\+argv} & argc from main function \\
+\hline
+{\em a\+\_\+rate} & Update rate of the application in Hz \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_aa0142bf623c794d5fff4d78240f67b25}\label{classQCD_1_1QConfigurableDashboard_aa0142bf623c794d5fff4d78240f67b25}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!addMenu@{addMenu}}
+\index{addMenu@{addMenu}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{addMenu()}{addMenu()}}
+{\footnotesize\ttfamily QMenu $\ast$ QCD\+::\+QConfigurable\+Dashboard\+::add\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+name,  }\item[{const QString \&}]{a\+\_\+parent\+Name = {\ttfamily \char`\"{}none\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Adds a menu to the application. 
+
+Adds a menu. Leave parent name blank or \char`\"{}none\char`\"{} to add to the root menu bar. There are a few stock menus that already exist, so don\textquotesingle{}t try and add them (but feel free to add to them)\+: Settings, Tools and Theme. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & Name of menu to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+must be unique 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+parent\+Name} & Name of parent to add menu too \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+must be a menu that has already been added 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+QMenu added 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a0ae1a22e474175d45de19411ac221fd3}\label{classQCD_1_1QConfigurableDashboard_a0ae1a22e474175d45de19411ac221fd3}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!addMenuAction@{addMenuAction}}
+\index{addMenuAction@{addMenuAction}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{addMenuAction()}{addMenuAction()}}
+{\footnotesize\ttfamily QAction $\ast$ QCD\+::\+QConfigurable\+Dashboard\+::add\+Menu\+Action (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+name,  }\item[{const QString \&}]{a\+\_\+parent\+Name = {\ttfamily \char`\"{}none\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Adds a action item to a menu. 
+
+Adds a action. Leave parent name blank or \char`\"{}none\char`\"{} to add to the root menu bar. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & Name of action to add \\
+\hline
+{\em a\+\_\+parent\+Name} & Name of parent to add menu too \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+must be a menu that has already been added 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+QAction added 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_af2103bd628c43cab349717fbcecc7edb}\label{classQCD_1_1QConfigurableDashboard_af2103bd628c43cab349717fbcecc7edb}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!addModule@{addModule}}
+\index{addModule@{addModule}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{addModule()}{addModule()}}
+{\footnotesize\ttfamily bool QCD\+::\+QConfigurable\+Dashboard\+::add\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCD_1_1Module}{Module}} $\ast$}]{a\+\_\+base\+Module }\end{DoxyParamCaption})}
+
+
+
+Adds a module to the application. 
+
+Registers the module internally. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+base\+Module} & \mbox{\hyperlink{classQCD_1_1Module}{QCD\+::\+Module}} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if added successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a92c784d89e78a94883bd6ec70b14be1f}\label{classQCD_1_1QConfigurableDashboard_a92c784d89e78a94883bd6ec70b14be1f}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!getCentralWidget@{getCentralWidget}}
+\index{getCentralWidget@{getCentralWidget}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{getCentralWidget()}{getCentralWidget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$ QCD\+::\+QConfigurable\+Dashboard\+::get\+Central\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current central widget. 
+
+\begin{DoxyReturn}{Returns}
+Central widget 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}\label{classQCD_1_1QConfigurableDashboard_a72da3171c2d9d3bcd93d66e94b04e123}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!run@{run}}
+\index{run@{run}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int QCD\+::\+QConfigurable\+Dashboard\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs the application. 
+
+Starts all modules and widgets, then enters the Qt main loop \begin{DoxyReturn}{Returns}
+exit code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}}.
+
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_aa5e9fd43424f34047606127f7dba5210}\label{classQCD_1_1QConfigurableDashboard_aa5e9fd43424f34047606127f7dba5210}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!setAutoScale@{setAutoScale}}
+\index{setAutoScale@{setAutoScale}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{setAutoScale()}{setAutoScale()}}
+{\footnotesize\ttfamily void QCD\+::\+QConfigurable\+Dashboard\+::set\+Auto\+Scale (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+auto\+Scale }\end{DoxyParamCaption})}
+
+
+
+Sets if the application preforms autoscaling on it\textquotesingle{}s run\+Update rate. 
+
+Dynamically scale down the run\+Update rate based on program performance. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+auto\+Scale} & if enabled \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a40ede7d38ac4e9df7827966dd6017313}\label{classQCD_1_1QConfigurableDashboard_a40ede7d38ac4e9df7827966dd6017313}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!setCentralWidget@{setCentralWidget}}
+\index{setCentralWidget@{setCentralWidget}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{setCentralWidget()}{setCentralWidget()}}
+{\footnotesize\ttfamily bool QCD\+::\+QConfigurable\+Dashboard\+::set\+Central\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCD_1_1Widget}{Widget}} $\ast$}]{a\+\_\+widget,  }\item[{QFlags$<$ Qt\+::\+Alignment\+Flag $>$}]{a\+\_\+alignment = {\ttfamily Qt\+:\+:Alignment()} }\end{DoxyParamCaption})}
+
+
+
+Sets the central widget of the application. 
+
+Call this to set the core widget of the GUI. Usually this will be a container that you will add many other widgets too. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+widget} & \mbox{\hyperlink{classQCD_1_1Widget}{QCD\+::\+Widget}} to add \\
+\hline
+{\em a\+\_\+alignment} & How to align the widget (see Qt alignment flags in the Qt docs) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if added successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_aefcae8d1f28935699c7d1b76724bedfb}\label{classQCD_1_1QConfigurableDashboard_aefcae8d1f28935699c7d1b76724bedfb}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!setUpdateAlways@{setUpdateAlways}}
+\index{setUpdateAlways@{setUpdateAlways}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{setUpdateAlways()}{setUpdateAlways()}}
+{\footnotesize\ttfamily void QCD\+::\+QConfigurable\+Dashboard\+::set\+Update\+Always (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+update\+Always }\end{DoxyParamCaption})}
+
+
+
+Sets if the application checks whether it is the active application on the computer. 
+
+widgets can be told they are not visible (increasing performance) when the application is not the active window on the computer by setting this to false 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+update\+Always} & if disabled \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_ace3c726063c3fbba580aea512ff3935b}\label{classQCD_1_1QConfigurableDashboard_ace3c726063c3fbba580aea512ff3935b}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!updateTheme@{updateTheme}}
+\index{updateTheme@{updateTheme}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{updateTheme()}{updateTheme()}}
+{\footnotesize\ttfamily void QCD\+::\+QConfigurable\+Dashboard\+::update\+Theme (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+active\+Theme }\end{DoxyParamCaption})}
+
+
+
+Sets the current theme. 
+
+Sets the current theme. The name should be the key of the theme in the \mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}} theme json object. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+active\+Theme} & name of theme \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQCD_1_1QConfigurableDashboard_a70659ed25ae8581695456c9db46abce8}\label{classQCD_1_1QConfigurableDashboard_a70659ed25ae8581695456c9db46abce8}} 
+\index{QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}!updateThemeCallback@{updateThemeCallback}}
+\index{updateThemeCallback@{updateThemeCallback}!QCD::QConfigurableDashboard@{QCD::QConfigurableDashboard}}
+\doxysubsubsection{\texorpdfstring{updateThemeCallback}{updateThemeCallback}}
+{\footnotesize\ttfamily void QCD\+::\+QConfigurable\+Dashboard\+::update\+Theme\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{Json}} \&}]{a\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot for updating theme. 
+
+Runs when user selects a new theme 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+data} & Action data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+QConfigurable\+Dashboard/include/QConfigurable\+Dashboard.\+h\item 
+QConfigurable\+Dashboard/src/core/QConfigurable\+Dashboard.\+cpp\end{DoxyCompactItemize}

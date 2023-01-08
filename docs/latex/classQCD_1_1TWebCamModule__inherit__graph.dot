@@ -1,0 +1,18 @@
+digraph "QCD::TWebCamModule"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="QCD::TWebCamModule",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCD::ThreadedModule",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1ThreadedModule.html",tooltip="Base class for all threaded modules."];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCD::Module",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1Module.html",tooltip="Base class for all modules."];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCD::CoreObject",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CoreObject.html",tooltip="core object extended by all QCD classes"];
+  Node6 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCD::CallbackDispatcherInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CallbackDispatcherInterface.html",tooltip="Interface definition for callback dispatchers."];
+}

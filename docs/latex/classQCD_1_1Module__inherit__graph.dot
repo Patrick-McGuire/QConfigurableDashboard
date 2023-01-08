@@ -1,0 +1,31 @@
+digraph "QCD::Module"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCD::Module",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Base class for all modules."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCD::CoreObject",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CoreObject.html",tooltip="core object extended by all QCD classes"];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCD::CallbackDispatcherInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1CallbackDispatcherInterface.html",tooltip="Interface definition for callback dispatchers."];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCD::TabModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1TabModule.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCD::MainPageExample",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1MainPageExample.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCD::ThreadedModule",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1ThreadedModule.html",tooltip="Base class for all threaded modules."];
+  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="QCD::TRandomDataModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1TRandomDataModule.html",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="QCD::TWebCamModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1TWebCamModule.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="QCD::TimerModule",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classQCD_1_1TimerModule.html",tooltip="Base Module that allows for a custom update rate."];
+  Node10 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="QCD::RandomDataModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1RandomDataModule.html",tooltip=" "];
+  Node10 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="QCD::WebCamModule",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classQCD_1_1WebCamModule.html",tooltip=" "];
+}

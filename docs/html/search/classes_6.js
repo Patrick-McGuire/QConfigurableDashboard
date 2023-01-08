@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['panelcontainer_110',['PanelContainer',['../classQCD_1_1PanelContainer.html',1,'QCD']]]
+  ['mainpageexample_0',['MainPageExample',['../classQCD_1_1MainPageExample.html',1,'QCD']]],
+  ['module_1',['Module',['../classQCD_1_1Module.html',1,'QCD']]]
 ];

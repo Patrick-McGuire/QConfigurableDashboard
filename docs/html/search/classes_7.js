@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qconfigurabledashboard_111',['QConfigurableDashboard',['../classQCD_1_1QConfigurableDashboard.html',1,'QCD']]]
+  ['panelcontainer_0',['PanelContainer',['../classQCD_1_1PanelContainer.html',1,'QCD']]]
 ];

@@ -1,0 +1,173 @@
+\hypertarget{QCD_8h}{}\doxysection{QConfigurable\+Dashboard/include/\+QCD.h File Reference}
+\label{QCD_8h}\index{QConfigurableDashboard/include/QCD.h@{QConfigurableDashboard/include/QCD.h}}
+
+
+Constants for QConfigurable\+Dashboard.  
+
+
+{\ttfamily \#include \char`\"{}../lib/\+Nlohmann\+Json/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}QMenu\+Bar\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}QMenu\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functional\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}opencv2/opencv.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for QCD.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceQCD}{QCD}}
+\begin{DoxyCompactList}\small\item\em Namespace encompassing \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{QCD_8h_a7b78bc2a4ab8c19e40304691888d16fd}{QCD\+\_\+\+CALLBACK}}(ptr,  func)~std\+::bind(\&std\+::remove\+\_\+pointer$<$decltype(ptr)$>$\+::type\+::func, ptr, std\+::placeholders\+::\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Create callback for use with \mbox{\hyperlink{namespaceQCD}{QCD}}\textquotesingle{}s custom event structure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{QCD_8h_a897ab0a41c2f5149b4210487225b3c08}{QCD\+\_\+\+TUNNEL\+\_\+\+CALLBACK}}(ptr,  func)~std\+::bind(\&std\+::remove\+\_\+pointer$<$decltype(ptr)$>$\+::type\+::func, ptr, std\+::placeholders\+::\+\_\+1, std\+::placeholders\+::\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Create callback for use with \mbox{\hyperlink{namespaceQCD}{QCD}}\textquotesingle{}s custom event structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}\label{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}} 
+typedef nlohmann\+::json {\bfseries QCD\+::\+Json}
+\begin{DoxyCompactList}\small\item\em Json format used throughout \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}}, from nlohmann json. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}\label{namespaceQCD_afb71faca1d5542df313f09a57a389fb8}} 
+typedef cv\+::\+Mat {\bfseries QCD\+::\+Image}
+\begin{DoxyCompactList}\small\item\em Image format used throughout \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}}, from opencv. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}\label{namespaceQCD_a67a623cc0f61782c9184cd2d9265ca2d}} 
+typedef std\+::map$<$ std\+::string, Image $>$ {\bfseries QCD\+::\+Image\+Map}
+\begin{DoxyCompactList}\small\item\em Image map format used throughout \mbox{\hyperlink{classQCD_1_1QConfigurableDashboard}{QConfigurable\+Dashboard}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}\label{namespaceQCD_a3f18ae9080ece99c92490c18c696875f}} 
+typedef std\+::function$<$ void(Json)$>$ {\bfseries QCD\+::\+Callback}
+\begin{DoxyCompactList}\small\item\em Callback format used for our implementation of events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_acda96bf30f35933a39a69810f97facf0}\label{namespaceQCD_acda96bf30f35933a39a69810f97facf0}} 
+typedef std\+::function$<$ void(Json, std\+::string)$>$ {\bfseries QCD\+::\+Tunnel\+Callback}
+\begin{DoxyCompactList}\small\item\em Callback format used underlying our implementation of events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2}{QCD\+::\+Widget\+Focus}} \{ \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2a3d05321865e48f3b5d49e9cb90a190f8}{QCD\+::\+NO\+\_\+\+FOCUS}}
+, \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2a739b2c5a995d1a1acf626757c735c743}{QCD\+::\+IN\+\_\+\+FOCUS}}
+, \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2ad5caa91899c119c871752a93b3afca12}{QCD\+::\+ON\+\_\+\+IN\+\_\+\+FOCUS}}
+, \mbox{\hyperlink{namespaceQCD_a27ff6c59d371b96bbd9a852bbcaf25f2ad877c32cfecf83de525885bf4e29aea6}{QCD\+::\+ON\+\_\+\+NO\+\_\+\+FOCUS}}
+ \}
+\begin{DoxyCompactList}\small\item\em States to track a widgets current visibility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceQCD_ad6ad19deb8f8f7c9fcf548b2aa48b40e}\label{namespaceQCD_ad6ad19deb8f8f7c9fcf548b2aa48b40e}} 
+const char $\ast$const {\bfseries QCD\+::\+THEME\+\_\+\+PROPERTY} = \char`\"{}theme\char`\"{}
+\begin{DoxyCompactList}\small\item\em Name of QWidget property used for themes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a847a3882d9002168fb14280cf3a9a576}\label{namespaceQCD_a847a3882d9002168fb14280cf3a9a576}} 
+const char $\ast$const {\bfseries QCD\+::\+WIDGET\+\_\+\+BACKGROUND\+\_\+\+CLASS} = \char`\"{}widget\+Background\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget background color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a8cd1c23024dc3e89a8c48b778ca5b840}\label{namespaceQCD_a8cd1c23024dc3e89a8c48b778ca5b840}} 
+const char $\ast$const {\bfseries QCD\+::\+CONTAINER\+\_\+\+BACKGROUND\+\_\+\+CLASS} = \char`\"{}container\+Background\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget container background color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a86b3a7405c57e4828b65c3444e9d86ed}\label{namespaceQCD_a86b3a7405c57e4828b65c3444e9d86ed}} 
+const char $\ast$const {\bfseries QCD\+::\+HIGHLIGHT\+\_\+\+COLOR\+\_\+\+CLASS} = \char`\"{}highlight\+Color\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget highlight/hover color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_afc70e1e4ed5e291429828decb35d1cfa}\label{namespaceQCD_afc70e1e4ed5e291429828decb35d1cfa}} 
+const char $\ast$const {\bfseries QCD\+::\+TITLE\+\_\+\+TEXT\+\_\+\+COLOR\+\_\+\+CLASS} = \char`\"{}title\+Text\+Color\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget title text color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a0720653573ffcb71a30ed617f19821c8}\label{namespaceQCD_a0720653573ffcb71a30ed617f19821c8}} 
+const char $\ast$const {\bfseries QCD\+::\+TEXT\+\_\+\+COLOR\+\_\+\+CLASS} = \char`\"{}text\+Color\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget normal text color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a1728aaccb660ecfdb10b377c9370e7e0}\label{namespaceQCD_a1728aaccb660ecfdb10b377c9370e7e0}} 
+const char $\ast$const {\bfseries QCD\+::\+BORDER\+\_\+\+COLOR\+\_\+\+CLASS} = \char`\"{}border\+Color\char`\"{}
+\begin{DoxyCompactList}\small\item\em CSS class equivalent identifier for widget border color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a88dc3b677e3444917c4fd9852af74159}\label{namespaceQCD_a88dc3b677e3444917c4fd9852af74159}} 
+const char $\ast$const {\bfseries QCD\+::\+THEME\+\_\+\+CHANGED\+\_\+\+CALLBACK} = \char`\"{}theme\+Changed\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved event identifier for when the theme changes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a248a4a109c56f78eb750c7b698187219}\label{namespaceQCD_a248a4a109c56f78eb750c7b698187219}} 
+const char $\ast$const {\bfseries QCD\+::\+MENU\+\_\+\+BASE\+\_\+\+CALLBACK} = \char`\"{}menu\+Event\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved prefix event identifier for menu events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a68d765d8524dc092b6ac36eda221cb7e}\label{namespaceQCD_a68d765d8524dc092b6ac36eda221cb7e}} 
+const char $\ast$const {\bfseries QCD\+::\+TICK\+\_\+\+TIME\+\_\+\+KEY} = \char`\"{}tick\+Time\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved input data key updated with the loop time of the application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_aed6e82d9cbfbac5ee44fe97b91c69ee8}\label{namespaceQCD_aed6e82d9cbfbac5ee44fe97b91c69ee8}} 
+const char $\ast$const {\bfseries QCD\+::\+TICK\+\_\+\+RATE\+\_\+\+KEY} = \char`\"{}tick\+Rate\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved input data key updated with the run\+Update rate of the application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_ae14b5850a2d9b429781fa969334e96a2}\label{namespaceQCD_ae14b5850a2d9b429781fa969334e96a2}} 
+const char $\ast$const {\bfseries QCD\+::\+TICK\+\_\+\+DESIRED\+\_\+\+RATE\+\_\+\+KEY} = \char`\"{}tick\+Des\+Rate\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved input data key updated with the desired run\+Update rate of the application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a01d4681b2383bba10d289fc67560bd3d}\label{namespaceQCD_a01d4681b2383bba10d289fc67560bd3d}} 
+const char $\ast$const {\bfseries QCD\+::\+VIDEO\+\_\+\+RECORD\+\_\+\+CALLBACK} = \char`\"{}record\+Video\char`\"{}
+\begin{DoxyCompactList}\small\item\em Reserved callback identifier for starting/stopping recording of video. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a57248bec7d8cf53c1eaa38f9548f3156}\label{namespaceQCD_a57248bec7d8cf53c1eaa38f9548f3156}} 
+const char $\ast$const {\bfseries QCD\+::\+VIDEO\+\_\+\+RECORD\+\_\+\+PATH\+\_\+\+KEY} = \char`\"{}path\char`\"{}
+\begin{DoxyCompactList}\small\item\em Json key for video recording\+: path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_add7d941d23cdaadcabc406adca76c193}\label{namespaceQCD_add7d941d23cdaadcabc406adca76c193}} 
+const char $\ast$const {\bfseries QCD\+::\+VIDEO\+\_\+\+RECORD\+\_\+\+ID\+\_\+\+KEY} = \char`\"{}key\char`\"{}
+\begin{DoxyCompactList}\small\item\em Json key for video recording\+: image map key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceQCD_a3639d898bb07e672a572aa003f71a3c2}\label{namespaceQCD_a3639d898bb07e672a572aa003f71a3c2}} 
+const char $\ast$const {\bfseries QCD\+::\+VIDEO\+\_\+\+RECORD\+\_\+\+TYPE\+\_\+\+KEY} = \char`\"{}type\char`\"{}
+\begin{DoxyCompactList}\small\item\em Json key for video recording\+: start/stop specifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for QConfigurable\+Dashboard. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{QCD_8h_a7b78bc2a4ab8c19e40304691888d16fd}\label{QCD_8h_a7b78bc2a4ab8c19e40304691888d16fd}} 
+\index{QCD.h@{QCD.h}!QCD\_CALLBACK@{QCD\_CALLBACK}}
+\index{QCD\_CALLBACK@{QCD\_CALLBACK}!QCD.h@{QCD.h}}
+\doxysubsubsection{\texorpdfstring{QCD\_CALLBACK}{QCD\_CALLBACK}}
+{\footnotesize\ttfamily \#define QCD\+\_\+\+CALLBACK(\begin{DoxyParamCaption}\item[{}]{ptr,  }\item[{}]{func }\end{DoxyParamCaption})~std\+::bind(\&std\+::remove\+\_\+pointer$<$decltype(ptr)$>$\+::type\+::func, ptr, std\+::placeholders\+::\+\_\+1)}
+
+
+
+Create callback for use with \mbox{\hyperlink{namespaceQCD}{QCD}}\textquotesingle{}s custom event structure. 
+
+This creates a standard function with 1 argument (must be of type \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}}) from a pointer and a method. This can be used with \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_a5499729fcaf8ab09f3780556898bf846}{QCD\+::\+Callback\+Dispatcher\+::register\+Callback()}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}} 
+
+\mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}} 
+
+\mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{QCD\+::\+Callback\+Dispatcher}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to object to call function on \\
+\hline
+{\em func} & function call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+func is a member of ptr 
+
+func takes 1 argument of type \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{QCD_8h_a897ab0a41c2f5149b4210487225b3c08}\label{QCD_8h_a897ab0a41c2f5149b4210487225b3c08}} 
+\index{QCD.h@{QCD.h}!QCD\_TUNNEL\_CALLBACK@{QCD\_TUNNEL\_CALLBACK}}
+\index{QCD\_TUNNEL\_CALLBACK@{QCD\_TUNNEL\_CALLBACK}!QCD.h@{QCD.h}}
+\doxysubsubsection{\texorpdfstring{QCD\_TUNNEL\_CALLBACK}{QCD\_TUNNEL\_CALLBACK}}
+{\footnotesize\ttfamily \#define QCD\+\_\+\+TUNNEL\+\_\+\+CALLBACK(\begin{DoxyParamCaption}\item[{}]{ptr,  }\item[{}]{func }\end{DoxyParamCaption})~std\+::bind(\&std\+::remove\+\_\+pointer$<$decltype(ptr)$>$\+::type\+::func, ptr, std\+::placeholders\+::\+\_\+1, std\+::placeholders\+::\+\_\+2)}
+
+
+
+Create callback for use with \mbox{\hyperlink{namespaceQCD}{QCD}}\textquotesingle{}s custom event structure. 
+
+This creates a standard function with 2 arguments (must be of types \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}}, std\+::string) from a pointer and a method. This can be used with \mbox{\hyperlink{classQCD_1_1CallbackDispatcher_ad8213c241dfc36674f7f1ffc652f06c1}{QCD\+::\+Callback\+Dispatcher\+::register\+Tunnel\+Callback()}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCD_1_1CoreObject}{QCD\+::\+Core\+Object}} 
+
+\mbox{\hyperlink{classQCD_1_1ThreadedModule}{QCD\+::\+Threaded\+Module}} 
+
+\mbox{\hyperlink{classQCD_1_1CallbackDispatcher}{QCD\+::\+Callback\+Dispatcher}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to object to call function on \\
+\hline
+{\em func} & function call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+func is a member of ptr 
+
+func takes 2 arguments of types \mbox{\hyperlink{namespaceQCD_ad0c1bf8c2985617119593554d8b1db33}{QCD\+::\+Json}}, std\+::string 
+\end{DoxyPrecond}

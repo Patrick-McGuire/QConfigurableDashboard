@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qconfigurabledashboard_202',['QConfigurableDashboard',['../index.html',1,'']]]
+  ['qconfigurabledashboard_0',['QConfigurableDashboard',['../index.html',1,'']]]
 ];
